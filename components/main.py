@@ -1,10 +1,15 @@
 import os
 import shutil
+import base64
 dirs = list(filter(lambda x: x.endswith(".py"), os.listdir('.')))
 dirs.remove("main.py")
 print(dirs)
 
 args = ["redback.v0.0.0.1.ghpy"]+dirs
+
+with open("ghContent\\Icon-TableMaker.png","r") as image:
+    converted_string = base64.b64encode(image.read())
+    print(converted_string)
 
 try:
 	import clr
