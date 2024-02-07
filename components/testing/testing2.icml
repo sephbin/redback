@@ -34,24 +34,24 @@
 		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
 		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
 		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
-		<Table Self="u34fi365" HeaderRowCount="1" FooterRowCount="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="3" ColumnCount="4" AppliedTableStyle="TableStyle/Generated%3aBasic Table" TableDirection="LeftToRightDirection">
+		<Table Self="u34fi365" HeaderRowCount="0" FooterRowCount="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="4" ColumnCount="4" AppliedTableStyle="TableStyle/Generated%3aBasic Table" TableDirection="LeftToRightDirection">
 		<!-- DEFINE ROWS -->
-		<Row Self="u34fi365Row0" Name="0" ClipContentToTextCell="false" SingleRowHeight="14.173228346456694" MinimumHeight="14.173228346456694" />
-<Row Self="u34fi365Row1" Name="1" ClipContentToTextCell="false" SingleRowHeight="14.173228346456694" MinimumHeight="14.173228346456694" />
-<Row Self="u34fi365Row2" Name="2" ClipContentToTextCell="false" SingleRowHeight="14.173228346456694" MinimumHeight="14.173228346456694" />
-<Row Self="u34fi365Row3" Name="3" ClipContentToTextCell="false" SingleRowHeight="14.173228346456694" MinimumHeight="14.173228346456694" />
+		<Row Self="u34fi365Row0" Name="0" ClipContentToTextCell="false" SingleRowHeight="14.1732283465" MinimumHeight="14.1732283465" />
+<Row Self="u34fi365Row1" Name="1" ClipContentToTextCell="false" SingleRowHeight="14.1732283465" MinimumHeight="14.1732283465" />
+<Row Self="u34fi365Row2" Name="2" ClipContentToTextCell="false" SingleRowHeight="14.1732283465" MinimumHeight="14.1732283465" />
+<Row Self="u34fi365Row3" Name="3" ClipContentToTextCell="false" SingleRowHeight="14.1732283465" MinimumHeight="14.1732283465" />
 		<!-- DEFINE COLUMNS -->
-		<Column Self="u570i5a61Column0" Name="0" ClipContentToTextCell="false" SingleColumnWidth="19.84251968503937" />
-<Column Self="u570i5a61Column1" Name="1" ClipContentToTextCell="false" SingleColumnWidth="39.68503937007874" />
-<Column Self="u570i5a61Column2" Name="2" ClipContentToTextCell="false" SingleColumnWidth="39.68503937007874" />
-<Column Self="u570i5a61Column3" Name="3" ClipContentToTextCell="false" SingleColumnWidth="19.84251968503937" />
+		<Column Self="u570i5a61Column0" Name="0" ClipContentToTextCell="false" SingleColumnWidth="19.8425196850" />
+<Column Self="u570i5a61Column1" Name="1" ClipContentToTextCell="false" SingleColumnWidth="39.6850393701" />
+<Column Self="u570i5a61Column2" Name="2" ClipContentToTextCell="false" SingleColumnWidth="39.6850393701" />
+<Column Self="u570i5a61Column3" Name="3" ClipContentToTextCell="false" SingleColumnWidth="19.8425196850" />
 		<!-- DEFINE CELLS -->
 		<Cell Self="u34fi365i0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" ClipContentToTextCell="false"
 		AppliedCellStyle="CellStyle/[None]" AppliedCellStylePriority="2"
 		
 		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1">
 		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3aBold">
+		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
 		<Content>A</Content>
 		</CharacterStyleRange>
 		</ParagraphStyleRange>
@@ -62,7 +62,7 @@
 		
 		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1">
 		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3aBold">
+		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
 		<Content>B</Content>
 		</CharacterStyleRange>
 		</ParagraphStyleRange>
@@ -73,7 +73,7 @@
 		
 		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1">
 		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3aBold">
+		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
 		<Content>C</Content>
 		</CharacterStyleRange>
 		</ParagraphStyleRange>
@@ -84,7 +84,7 @@
 		
 		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1">
 		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3aBold">
+		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
 		<Content>D</Content>
 		</CharacterStyleRange>
 		</ParagraphStyleRange>
