@@ -20,6 +20,20 @@ def isfloat(text):
 	text = text.replace(".","",1)
 	return text.isdigit()
 
+def checkValue(value):
+	lut = {
+		"isdigit": int,
+		"isfloat": float
+		}
+	for check in [value.isdigit, isfloat]:
+		try:	runCheck = check()
+		except:	runCheck = check(value)
+		# print(key, check.__name__, runCheck, value)
+		if runCheck:
+			value = lut[check.__name__](value)
+			break
+	return value
+
 def generateAllSelector(selector):
 	return "True"
 def generateClassSelector(selector):
@@ -32,13 +46,41 @@ def generateIDSelector(selector):
 	template = '''ob["id"] == {idText}'''.format(**{"idText":selector})
 	return template
 
-def simpleSelector(selector):
-	selector = selector.lstrip(".")
-	selector = selector.lstrip("#")
+def generateSquareBracketSelector(selector):
+	try:
+		selector = selector.lstrip("[").rstrip("]")
+		lut = [
+		{"operator": "~=",	"description":"contains",					"convertToStr":True, "template":'''{value} in ob["{key}"]'''},
+		{"operator": "|=",	"description":"equal to or startswith",		"convertToStr":False, "template":'''ob["{key}"] == '{value}' or ob["{key}"].startswith('{value}')'''},
+		{"operator": "^=",	"description":"startswith",					"convertToStr":False, "template":'''ob["{key}"].startswith('{value}')'''},
+		{"operator": "$=",	"description":"endswith",					"convertToStr":False, "template":'''ob["{key}"].endswith('{value}')'''},
+		{"operator": "*=",	"description":"contains substring",			"convertToStr":False, "template":r'''re.search("\\b{value}\\b", ob["{key}"])'''},
+		{"operator": "=",	"description":"equals",						"convertToStr":True, "template":'''ob["{key}"] == {value}'''},
+		{"operator": ">=",	"description":"greater than or equal to",	"convertToStr":True, "template":'''ob["{key}"] >= {value}'''},
+		{"operator": ">",	"description":"greater than",				"convertToStr":True, "template":'''ob["{key}"] > {value}'''},
+		{"operator": "<",	"description":"less than or equal to",		"convertToStr":True, "template":'''ob["{key}"] <= {value}'''},
+		{"operator": "<",	"description":"less than",					"convertToStr":True, "template":'''ob["{key}"] < {value}'''},
+		]
 
-	template = r'''re.search("\b{classText}\b", ob["class"])'''.format({"classText":selector})
+		for check in lut:
+			if check["operator"] in selector:
+				#print(check)
+				key, value = tuple(selector.split(check["operator"]))
+				value = checkValue(value)
+				if check["convertToStr"]:
+					if type(value) == type(""):
+						value = '"%s"'%(value)
+				#print("-"*10,key,value)
+				#print("-"*10,check["template"])
+				execute = check["template"].format(**{"key":key,"value":value})
+				print("+"*10,execute)
+				return execute
+				break
+	except Exception as e:
+		print("generateSquareBracketSelector",e)
+	return '''False'''
 
-	return template
+
 def equals(a,b):
 	return a == b
 def parseSelector(selector):
@@ -47,6 +89,7 @@ def parseSelector(selector):
 		{"searchFunction": "equals", "variables":["*"], "name": "class","runFunction":generateAllSelector},
 		{"searchFunction": "startswith", "variables":["."], "name": "class","runFunction":generateClassSelector},
 		{"searchFunction": "startswith", "variables":["#"], "name": "id", "runFunction":generateIDSelector},
+		{"searchFunction": "startswith", "variables":["["], "name": "id", "runFunction":generateSquareBracketSelector},
 		]
 		for check in checks:
 			#print(check)
@@ -75,17 +118,7 @@ def parseStyle(text):
 		key = strip(key)
 		value = strip(value)
 		# print(key, value)
-		lut = {
-		"isdigit": int,
-		"isfloat": float
-		}
-		for check in [value.isdigit, isfloat]:
-			try:	runCheck = check()
-			except:	runCheck = check(value)
-			# print(key, check.__name__, runCheck, value)
-			if runCheck:
-				value = lut[check.__name__](value)
-				break
+		value = checkValue(value)
 		outDict[key] = value
 		return outDict
 	except Exception as e:
@@ -118,7 +151,7 @@ def parseCSS(text):
 	lines = list(filter(lambda x: x, lines))
 	outList = []
 	for line in lines:
-		print("#"*100)
+		#print("#"*100)
 		try:
 			line = line.replace("{", "█{")
 			selectors, styles = tuple(line.split("█"))
@@ -133,9 +166,9 @@ def parseCSS(text):
 		except Exception as e:
 			print("error - parseCSS",e)
 			pass
-		print("#"*100)
+		#print("#"*100)
 	return outList
 	# print(text)
 
 
-print(parseCSS(test))
+#print(parseCSS(test))
