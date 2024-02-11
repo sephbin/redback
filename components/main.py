@@ -34,29 +34,31 @@ for fp in dirs:
     with open(fp, "w") as pyfile:
         pyfile.writelines(pyfileData)
 
-args = ["redback.v0.0.0.1.ghpy"]+dirs
-
+args = ["redback.v0.0.0.2.ghpy"]+dirs
+print(args)
 
 
 try:
     import clr
     clr.CompileModules(*args)
-
-    os.system('"C:\\Program Files\\Rhino 7\\System\\Yak.exe" build')
-    with open("manifest.yml", "r") as file:
-        filestring = ""
-        for line in file.readlines():
-            #print(line)
-            if line.startswith("name:"):
-                line = line.replace("name:","").replace("\n","")
-                line = line.lstrip()
-                filestring = filestring+line
-                filestring = filestring+"-"
-            if line.startswith("version:"):
-                line = line.replace("version:","").replace("\n","")
-                line = line.lstrip()
-                filestring = filestring+line
-                filestring = filestring+"-any-any.yak"
-        print(filestring)
-    shutil.move(filestring, "..\\"+filestring)
-except: pass
+    if False:
+        os.system('"C:\\Program Files\\Rhino 7\\System\\Yak.exe" build')
+        with open("manifest.yml", "r") as file:
+            filestring = ""
+            for line in file.readlines():
+                #print(line)
+                if line.startswith("name:"):
+                    line = line.replace("name:","").replace("\n","")
+                    line = line.lstrip()
+                    filestring = filestring+line
+                    filestring = filestring+"-"
+                if line.startswith("version:"):
+                    line = line.replace("version:","").replace("\n","")
+                    line = line.lstrip()
+                    filestring = filestring+line
+                    filestring = filestring+"-any-any.yak"
+            print(filestring)
+        shutil.move(filestring, "..\\"+filestring)
+except Exception as e:
+    print(e)
+    pass
