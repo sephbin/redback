@@ -1,16 +1,14 @@
 ---
 name: Redback
-version: 0.0.1
+version: 0.0.2
 authors:
 - Andrew Butler
 - Danielle Bisazza
-description: >
-  This plug-in does something. I'm not really sure exactly what it's supposed to
-  do, but it does it better than any other plug-in.
+description: This plug-in does something. I'm not really sure exactly what it's supposed to do, but it does it better than any other plug-in.
 url: https://github.com/sephbin/redback
-icon: icon.png
+icon: Redback-Logo.png
 keywords:
-- data
-- icml
-- json
 - svg
+- indesign
+- icml
+- data
