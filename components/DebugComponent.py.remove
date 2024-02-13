@@ -1,0 +1,29 @@
+#### Constants ####
+global __var__
+__var__ = {
+	"guid":"3f9c365f-cccc-469a-9d4e-72a0b3c94343",
+	
+	"name":"Debug",
+	"nickname":"Debug",
+	"description":"Debug",
+	"icon": "ghContent\\Icon-RelativePath.png",
+
+	"tabname":"Redback",
+	"section":"Debug",
+
+	"inputs":[
+		{"name":"E",		"nickname":"E",	"objectAccess":"Exec",	"description":"E", },
+	],
+	"outputs":[
+		{"name":"LOG",		"nickname":"L",	"description":"LOG"},
+	]
+}
+__author__ = "Andrew.Butler"
+__version__ = "2024.02.02"
+#### Constants ####
+
+import os
+import Rhino
+import scriptcontext as sc
+L = []
+exec(E) in globals(), locals()

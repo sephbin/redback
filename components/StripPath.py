@@ -12,7 +12,7 @@ __var__ = {
 	"section":"Util",
 
 	"inputs":[
-		{"name":"Document",		"nickname":"D",	"objectAccess":"item",	"description":"Boolean to choose (F)Grasshopper or (T)Rhino", },
+		{"name":"Path",		"nickname":"P",	"objectAccess":"item",	"description":"Path to append, or Boolean to choose current (F)Grasshopper or (T)Rhino document.", },
 		{"name":"Relative Path",			"nickname":"R",	"objectAccess":"item",	"description":"Relative Path string", },
 	],
 	"outputs":[
@@ -29,30 +29,57 @@ import os
 import Rhino
 import scriptcontext as sc
 try:
-	if D:
-	    DOC = Rhino.RhinoDoc.ActiveDoc.Path
+	#print(P)
+	if P == None:
+		P = False
+	#if not R:
+	#	R = ""
+	if type(P) == type(False): 
+		if P:
+		    DOC = Rhino.RhinoDoc.ActiveDoc.Path
+		else:
+		    DOC = str(self.Attributes.Owner.OnPingDocument().FilePath)
 	else:
-	    DOC = str(sc.doc.Component.Attributes.Owner.OnPingDocument().FilePath)
-
-	print(DOC)
-	docDir, docName = os.path.split(DOC)
+		DOC = P
+	#print(DOC)
+	if os.path.isdir(DOC):
+		docDir = DOC
+		docName = None
+	else:
+		docDir, docName = os.path.split(DOC)
+	
 	docDirs = docDir.split(os.sep)
-	relDirs = R.split(os.sep)
+	#print("1 docDirs",docDirs)
+	if R == None:
+		R = docName
+	try:
+		relDirs = R.split(os.sep)
+	except:
+		relDirs = []
 
 
 
 	for pathStep in relDirs:
+	    #print("pathstep", pathStep)
 	    if pathStep == ".":
 	        del docDirs[-1]
 
 	relDirs = list(filter(lambda x: x != ".", relDirs))
+	#print("relDirs",relDirs)
+	#print("docDirs",docDirs)
 	newDirs = docDirs+relDirs
-	print(newDirs)
+	#print("newDirs",newDirs)
+	newDirs = list(map(lambda x: x.replace(":", ":"+os.sep), newDirs))
 	newDir = os.path.join(*newDirs)
 
-
+	#print(newDir)
 	F = newDir
-	D, N = os.path.split(newDir)
-except:
+	if os.path.isdir(newDir):
+		D = newDir
+		N = None
+	else:
+		D, N = os.path.split(newDir)
+except Exception as e:
+	#print(e)
 	F = R
 	D, N = os.path.split(R)

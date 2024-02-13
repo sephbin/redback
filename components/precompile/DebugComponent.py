@@ -1,24 +1,21 @@
 #### Constants ####
 global __var__
 __var__ = {
-	"guid":"41bdcdeb-7482-4608-873f-59490830db42",
+	"guid":"3f9c365f-cccc-469a-9d4e-72a0b3c94343",
 	
-	"name":"Relative Path",
-	"nickname":"Rel Path",
-	"description":"Creates a relative path to Rhino/GH document",
+	"name":"Debug",
+	"nickname":"Debug",
+	"description":"Debug",
 	"icon": "ghContent\\Icon-RelativePath.png",
 
 	"tabname":"Redback",
-	"section":"Util",
+	"section":"Debug",
 
 	"inputs":[
-		{"name":"Path",		"nickname":"P",	"objectAccess":"item",	"description":"Path to append, or Boolean to choose current (F)Grasshopper or (T)Rhino document.", },
-		{"name":"Relative Path",			"nickname":"R",	"objectAccess":"item",	"description":"Relative Path string", },
+		{"name":"E",		"nickname":"E",	"objectAccess":"Exec",	"description":"E", },
 	],
 	"outputs":[
-		{"name":"Full path",		"nickname":"F",	"description":"Full Path"},
-		{"name":"Directory path",	"nickname":"D",	"description":"Directory Path"},
-		{"name":"File name",		"nickname":"N",	"description":"File name"},
+		{"name":"LOG",		"nickname":"L",	"description":"LOG"},
 	]
 }
 __author__ = "Andrew.Butler"
@@ -90,67 +87,13 @@ class MyComponent(component):
         global __var__
         _vars_ = dict(zip(list(map(lambda x: x["nickname"], __var__["inputs"])),argv))
         _log_ = []
-        P = _vars_['P']
-        R = _vars_['R']
+        E = _vars_['E']
         
         import os
         import Rhino
         import scriptcontext as sc
-        try:
-        	#print(P)
-        	if P == None:
-        		P = False
-        	#if not R:
-        	#	R = ""
-        	if type(P) == type(False): 
-        		if P:
-        		    DOC = Rhino.RhinoDoc.ActiveDoc.Path
-        		else:
-        		    DOC = str(self.Attributes.Owner.OnPingDocument().FilePath)
-        	else:
-        		DOC = P
-        	#print(DOC)
-        	if os.path.isdir(DOC):
-        		docDir = DOC
-        		docName = None
-        	else:
-        		docDir, docName = os.path.split(DOC)
-        	
-        	docDirs = docDir.split(os.sep)
-        	#print("1 docDirs",docDirs)
-        	if R == None:
-        		R = docName
-        	try:
-        		relDirs = R.split(os.sep)
-        	except:
-        		relDirs = []
-        
-        
-        
-        	for pathStep in relDirs:
-        	    #print("pathstep", pathStep)
-        	    if pathStep == ".":
-        	        del docDirs[-1]
-        
-        	relDirs = list(filter(lambda x: x != ".", relDirs))
-        	#print("relDirs",relDirs)
-        	#print("docDirs",docDirs)
-        	newDirs = docDirs+relDirs
-        	#print("newDirs",newDirs)
-        	newDirs = list(map(lambda x: x.replace(":", ":"+os.sep), newDirs))
-        	newDir = os.path.join(*newDirs)
-        
-        	#print(newDir)
-        	F = newDir
-        	if os.path.isdir(newDir):
-        		D = newDir
-        		N = None
-        	else:
-        		D, N = os.path.split(newDir)
-        except Exception as e:
-        	#print(e)
-        	F = R
-        	D, N = os.path.split(R)        
+        L = []
+        eval(E)        
         returnTuple = []
         for output in __var__["outputs"]:
             varName = output["nickname"]
@@ -175,4 +118,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("4edc818f-1bfd-43fa-a86a-a83ddec7060c")
+        return System.Guid("335ee0ea-1cc4-4610-aad7-fd1a52d83360")
