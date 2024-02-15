@@ -9,15 +9,10 @@
 var = {"guid":"89da792a-24b2-41fa-a674-20d9df2b5b6f","name":"ICML Generator","nickname":"ICML",
 "description":"Takes JSON data formated as a lists of lists and creates a InCopy Markup Language format of a table.",
 "tabname":"Redback","section":"Table",
-"inputs":[
-{"name":"Data","nickname":"D","description":"Table data formated as a JSON list of lists", "objectAccess":"item"},
-{"name":"Options","nickname":"O","description":"Table options as a JSON dictionary", "objectAccess":"list"},
-{"name":"CSS","nickname":"C","description":"CSS to apply styles to the table", "objectAccess":"list"}
-]
-"outputs":[
-{"name":"Table","nickname":"T","description":"ICML Table"},
-],
-}
+"inputs":[{"name":"Data","nickname":"D","description":"Table data formated as a JSON list of lists",
+"objectAccess":"item"}, {"name":"Options","nickname":"O","description":"Table options as a JSON dictionary",
+"objectAccess":"list"}, {"name":"CSS","nickname":"C","description":"CSS to apply styles to the table",
+"objectAccess":"list"} ], "outputs":[{"name":"Table","nickname":"T","description":"ICML Table"}, ], }
 __author__ = "Andrew.Butler"
 __version__ = "2024.02.02"
 
