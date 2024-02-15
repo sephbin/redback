@@ -4,18 +4,7 @@
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         width="24mm" height="24mm" viewBox="0 0 24 24" xml:space="preserve">
         <style type="text/css">
-        *{fill:None;}
-.plane,.y,.x{fill:#ffc200;
-stroke:#aa240d;
-stroke-width:0.8px;}
-.page{
-fill:#fff;
-stroke:#bbb;
-stroke-width:0.8px;}
+        
         </style>
-        <polygon points="12.7216367452, 6.94790898342 0.68728640132, 13.1697499776 9.73745728026, 17.8487498878 23.3127135987, 10.8302500224 15.8034486942, 6.94790898342" class="page"/>
-<polygon points="12.7216367452, 6.94790898342 14.2625427197, 7.74456785459 15.8034486942, 6.94790898342" class="page"/>
-<polygon points="5.14620703138, 12.0 12.0, 15.5434575892 18.8537929686, 12.0 12.0, 8.45654241078" class="plane"/>
-<line x1="12.0" y1="12.0" x2="15.4268964843" y2="13.7717287946" class="x"/>
-<line x1="12.0" y1="12.0" x2="15.4268964843" y2="10.2282712054" class="y"/>
+        <circle cx="12.70" cy="14.79" r="5.82" />
         </svg>

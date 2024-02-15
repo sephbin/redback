@@ -6,7 +6,7 @@ __var__ = {
 	"name":"SVG Layout",
 	"nickname":"SVG Layout",
 	"description":"Creates a SVG layout dictionary",
-	"icon": "ghContent\\Icon-MakeJSON.png",
+	"icon": "ghContent\\Icon-SVGLayout.png",
 
 	"tabname":"Redback",
 	"section":"SVG",
