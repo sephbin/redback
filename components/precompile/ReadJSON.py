@@ -1,24 +1,22 @@
 #### Constants ####
 global __var__
 __var__ = {
-	"guid":"9bf0fbf6-1cb9-49e0-b0a0-0ced95dcf5f9",
+	"guid":"33f7772a-c9ff-4356-915e-6a0b99bf4fcc",
 	
-	"name":"Write File",
-	"nickname":"Write",
-	"description":"Saves data to file",
-	"icon": "ghContent\\Icon-WriteFile.png",
+	"name":"Read JSON",
+	"nickname":"Read JSON",
+	"description":"Reads keys from a JSON string. It can use javascript style key notation (a.b.c)",
+	"icon": "ghContent\\Icon-ReadJSON.png",
 
 	"tabname":"Redback",
-	"section":"Files",
+	"section":"JSON",
 
 	"inputs":[
-		{"name":"Run",			"nickname":"R",	"objectAccess":"item",	"description":"", },
-		{"name":"Content",		"nickname":"C",	"objectAccess":"list",	"description":"", },
-		{"name":"Folder",		"nickname":"P",	"objectAccess":"item",	"description":"", },
-		{"name":"Name",			"nickname":"N",	"objectAccess":"item",	"description":"", },
+		{"name":"JSON",			"nickname":"J",	"objectAccess":"list",	"description":"JSON object to read", },
+		{"name":"Key",			"nickname":"K",	"objectAccess":"item",	"description":"Key to access from JSON", },
 	],
 	"outputs":[
-		{"name":"Filepath",	"nickname":"F",	"description":"Absolute path to saved file"}
+		{"name":"Value",	"nickname":"V",	"description":"Returned value from JSON"}
 	]
 }
 __author__ = "Andrew.Butler"
@@ -82,38 +80,48 @@ class MyComponent(component):
                 self.marshal.SetOutput(result[r], DA, r, True)
         
     def get_Internal_Icon_24x24(self):
-        #imageLoc#ghContent\Icon-WriteFile.png
-        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAAyklEQVRIiWP8//8/Ay0BE01NZ2BgYIEx3smqkuuVhUKPbyfgkqSGD+LfyaouoKUFeC2hZhxgtYTakYxhCS1SEYoltEqm8TAGC351CMCsrcnA5u4K5v85fpLh9/GTROmD52R8+YDV0pyBd9USFLGPHn4Mf69ex2mw0OPbjAzEBhGLpTmGGMw3hADNiwqiLPi1czdRYtgAUZEMCmtQmMOCBWQ4vvBHBkRFMjmApEimBBAVREKPb2MVfyerSlDv4EhFI9uCId6qYGBgAACDJUMuZsuj+AAAAABJRU5ErkJggg=="
+        #imageLoc#ghContent\Icon-ReadJSON.png
+        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAAcElEQVRIiWP8//8/Ay0BE01NZ2BgYIExGBkZqeqV////MzLQ1QdINsPZjIyMGGKEAEwPTgvQFeASI9sHb2VU4GzhJ3cwxAgBmB4YoHkcwPMBrVLRMIzkUR+M+oBkMOoDgo6huQ/oV5rSCtDWBwwMDAAl2EFvQnsgLgAAAABJRU5ErkJggg=="
         return System.Drawing.Bitmap(System.IO.MemoryStream(System.Convert.FromBase64String(o)))
 
     def RunScript(self, *argv):
         global __var__
         _vars_ = dict(zip(list(map(lambda x: x["nickname"], __var__["inputs"])),argv))
         _log_ = []
-        R = _vars_['R']
-        C = _vars_['C']
-        P = _vars_['P']
-        N = _vars_['N']
-        
-        import os
-        from json import dumps
-        def check(o):
-            if str(type(o)) == "<type 'dict'>":
-                return dumps(o)
-            else:
-                return o
-        F = None
-        if R:
-            con = list(map(lambda u: check(u), C))
-            conwrite = "\n".join(con)
-            directory = P+"\\"+N
-            fileDir, _t = os.path.split(directory)
-            if not os.path.isdir(fileDir):
-            	os.makedirs(fileDir)
-            F = directory
-            with open(directory,'wb') as f:
-                f.write(conwrite.encode("UTF-8"))
-        
+        J = _vars_['J']
+        K = _vars_['K']
+                
+        import json
+        def deepGet(key, object):
+            try:
+                keylist = key.split(".")
+                for ki, k in enumerate(keylist):
+                    try: k = int(k)
+                    except: pass
+                    print(k,type(k))
+                    if ki < len(keylist)-1:
+                        if type(k) == type("") and k not in object:
+                            object[k] = {}
+                        object = object[k]
+                    else:
+                        print("last",k, object)
+                        returnOb = object[k]
+                        return returnOb
+            except Exception as e:
+                print(e)
+                return None
+                
+                
+        out = []
+        for o in J:
+            o = json.loads(o)
+            apob = deepGet(K,o)
+            print(apob)
+            if type(apob) == type([]) or type(apob) == type({}):
+                apob = json.dumps(apob)
+            out.append(apob)
+                
+        V = out        
         returnTuple = []
         for output in __var__["outputs"]:
             varName = output["nickname"]
@@ -138,4 +146,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("05c51cc4-523c-41e5-8fc7-e748a45080e2")
+        return System.Guid("afcd77bc-795e-4e42-8fec-0d7c33070502")

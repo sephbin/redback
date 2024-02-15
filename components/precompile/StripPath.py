@@ -9,7 +9,7 @@ __var__ = {
 	"icon": "ghContent\\Icon-RelativePath.png",
 
 	"tabname":"Redback",
-	"section":"Util",
+	"section":"Files",
 
 	"inputs":[
 		{"name":"Path",		"nickname":"P",	"objectAccess":"item",	"description":"Path to append, or Boolean to choose current (F)Grasshopper or (T)Rhino document.", },
@@ -83,7 +83,7 @@ class MyComponent(component):
         
     def get_Internal_Icon_24x24(self):
         #imageLoc#ghContent\Icon-RelativePath.png
-        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAWCAYAAADafVyIAAAACXBIWXMAAAsSAAALEgHS3X78AAAA1klEQVRIiWN8w9AjwMDAkMDAwODAwMAAYmMDDcL/iw/gkMMLQBaANNoToXYjyCHC/4s/kGrBfxLUgyy5QKTaD8L/iyeQZAGTAh8DR4IOQXX/Pvxk+DHhLIi5kIVYw8EaH3xiYDYQZWAU4MCrjlmBj4HFQJThS8KOeFKDiChf/D7wmIFvfxjDW8ZeBpJ8wAD1xZ8Lrxg4Coxxqvm14Q6cTbIPiAUgn4Icw0QLwxmgPgUBmlkAA6MWjFowasFwseAgDc0/CCquA6CVPoimFgDV2wcYGBgWAADYoj+ZEL2zKwAAAABJRU5ErkJggg=="
+        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAA/ElEQVRIiWP8//8/Ay0B41sZFQEGBoYEBgaGADz2HGBgYFgg9Pj2A1LdArIApNmeCLUfQY4Qenz7AKkWEB1GfxkYPt7692sCkco/WD99OIEkC0DgW3Icw38+Xrxq/nz6xPBs9lwQcyELKYaDAPenzwxM7q541XDIyjJwa2sx3C4ojifZB//Z2Rh++nkx/JWRxqnm47HjDDprVjIclZZnINkHjD9/MXCs3sDA5ubCwKytiVXNvyfPGX6uXgdRT6oPSAHv/v9lYKKV4SAgxMhMWwtAYNSCUQtGLRguFhykofkHQcU1qLIHVfoODAwMoAYAtcAGUEOBts0WBgYGAMH6SksO3FJrAAAAAElFTkSuQmCC"
         return System.Drawing.Bitmap(System.IO.MemoryStream(System.Convert.FromBase64String(o)))
 
     def RunScript(self, *argv):
@@ -175,4 +175,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("4edc818f-1bfd-43fa-a86a-a83ddec7060c")
+        return System.Guid("674dd138-e2fc-4f99-a6c1-376d10365960")

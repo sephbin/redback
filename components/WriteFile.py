@@ -9,7 +9,7 @@ __var__ = {
 	"icon": "ghContent\\Icon-WriteFile.png",
 
 	"tabname":"Redback",
-	"section":"Util",
+	"section":"Files",
 
 	"inputs":[
 		{"name":"Run",			"nickname":"R",	"objectAccess":"item",	"description":"", },

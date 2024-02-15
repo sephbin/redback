@@ -9,7 +9,7 @@ __var__ = {
 	"icon": "ghContent\\Icon-RelativePath.png",
 
 	"tabname":"Redback",
-	"section":"Util",
+	"section":"Files",
 
 	"inputs":[
 		{"name":"Path",		"nickname":"P",	"objectAccess":"item",	"description":"Path to append, or Boolean to choose current (F)Grasshopper or (T)Rhino document.", },

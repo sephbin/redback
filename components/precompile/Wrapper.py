@@ -1,24 +1,23 @@
 #### Constants ####
 global __var__
 __var__ = {
-	"guid":"9bf0fbf6-1cb9-49e0-b0a0-0ced95dcf5f9",
+	"guid":"8e12d3d2-9c02-4af4-8931-ae8a51372bd0",
 	
-	"name":"Write File",
-	"nickname":"Write",
-	"description":"Saves data to file",
-	"icon": "ghContent\\Icon-WriteFile.png",
+	"name":"Text Wrapper",
+	"nickname":"Wrapper",
+	"description":"Wraps and joins text with selected data characters",
+	"icon": "ghContent\\Icon-Wrapper.png",
 
 	"tabname":"Redback",
-	"section":"Files",
+	"section":"JSON",
 
 	"inputs":[
-		{"name":"Run",			"nickname":"R",	"objectAccess":"item",	"description":"", },
-		{"name":"Content",		"nickname":"C",	"objectAccess":"list",	"description":"", },
-		{"name":"Folder",		"nickname":"P",	"objectAccess":"item",	"description":"", },
-		{"name":"Name",			"nickname":"N",	"objectAccess":"item",	"description":"", },
+		{"name":"Content",			"nickname":"C",	"objectAccess":"list",	"description":"Text content to wrap", },
+		{"name":"Wrap Character",	"nickname":"W",	"objectAccess":"item",	"description":"Character that will wrap the text", },
+		{"name":"Join Character",	"nickname":"J",	"objectAccess":"item",	"description":"Character that will join the text, leave empty to wrap each individually", },
 	],
 	"outputs":[
-		{"name":"Filepath",	"nickname":"F",	"description":"Absolute path to saved file"}
+		{"name":"Wrapped Text",	"nickname":"W",	"description":"Wrapped Text"}
 	]
 }
 __author__ = "Andrew.Butler"
@@ -82,38 +81,47 @@ class MyComponent(component):
                 self.marshal.SetOutput(result[r], DA, r, True)
         
     def get_Internal_Icon_24x24(self):
-        #imageLoc#ghContent\Icon-WriteFile.png
-        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAAyklEQVRIiWP8//8/Ay0BE01NZ2BgYIEx3smqkuuVhUKPbyfgkqSGD+LfyaouoKUFeC2hZhxgtYTakYxhCS1SEYoltEqm8TAGC351CMCsrcnA5u4K5v85fpLh9/GTROmD52R8+YDV0pyBd9USFLGPHn4Mf69ex2mw0OPbjAzEBhGLpTmGGMw3hADNiwqiLPi1czdRYtgAUZEMCmtQmMOCBWQ4vvBHBkRFMjmApEimBBAVREKPb2MVfyerSlDv4EhFI9uCId6qYGBgAACDJUMuZsuj+AAAAABJRU5ErkJggg=="
+        #imageLoc#ghContent\Icon-Wrapper.png
+        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAABA0lEQVRIie2UwW0CMRBF3yLuiTZXrHDAZ7YDKIESSAWhBOiADiAdQAdQAcl5OYCWK06owGjQLELIhJUgkRLtSNaMPfPn2/6WI+89t5gz9lHgcZZ+hdpUQovO2KEz1uuYOWOTQE0iOeBThmAKEThj68ArMAVeAJkvnLHdkxqJF5obAHPBKPbqCfKi9zhLx0CiZCNprM1HwJvk4iztA7Mz7NGCGjhjV8Cz7iwH94AHjXdAfiVtoAWs4ywtTCDCyU47gMRNTc3Vt9R/ACLuBBiHhL75FV2z6pEpiu7K5L2PuPRM72l/n+D3RKaA0Nta4+CfNstvm+YCU4pcEpQE/4TgZ/8iYA9kxVrpb6NLcQAAAABJRU5ErkJggg=="
         return System.Drawing.Bitmap(System.IO.MemoryStream(System.Convert.FromBase64String(o)))
 
     def RunScript(self, *argv):
         global __var__
         _vars_ = dict(zip(list(map(lambda x: x["nickname"], __var__["inputs"])),argv))
         _log_ = []
-        R = _vars_['R']
         C = _vars_['C']
-        P = _vars_['P']
-        N = _vars_['N']
+        W = _vars_['W']
+        J = _vars_['J']
+                
+        lut = {
+        	'"': {'t':'"{value}"'},
+        	"'": {'t':"'{value}'"},
+        	'{': {'t':'{{{value}}}'},
+        	'}': {'t':'{{{value}}}'},
+        	'{}': {'t':'{{{value}}}'},
+        	'[': {'t':'[{value}]'},
+        	']': {'t':'[{value}]'},
+        	'[]': {'t':'[{value}]'},
+        	'(': {'t':'({value})'},
+        	')': {'t':'({value})'},
+        	'()': {'t':'({value})'},
+        }
         
-        import os
-        from json import dumps
-        def check(o):
-            if str(type(o)) == "<type 'dict'>":
-                return dumps(o)
-            else:
-                return o
-        F = None
-        if R:
-            con = list(map(lambda u: check(u), C))
-            conwrite = "\n".join(con)
-            directory = P+"\\"+N
-            fileDir, _t = os.path.split(directory)
-            if not os.path.isdir(fileDir):
-            	os.makedirs(fileDir)
-            F = directory
-            with open(directory,'wb') as f:
-                f.write(conwrite.encode("UTF-8"))
+        def wrapText(text, wrap):
+        	if wrap in lut:
+        		template = lut[wrap]["t"]
+        		print(template)
+        		return template.format(value=text)
+        	else:
+        		return wrap+text+wrap
         
+        if J != None:
+        	C = [J.join(C)]
+        
+        outText = list(map(lambda x: wrapText(x, W), C))
+        
+        
+        W = outText        
         returnTuple = []
         for output in __var__["outputs"]:
             varName = output["nickname"]
@@ -138,4 +146,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("05c51cc4-523c-41e5-8fc7-e748a45080e2")
+        return System.Guid("53111b66-d5cb-4f25-8606-7b1153eb82cb")
