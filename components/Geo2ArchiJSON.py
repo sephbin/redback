@@ -278,6 +278,12 @@ def Convert(geom,prop):
                 ot = otype["3"]
         if othertype == "<type 'Plane'>":
             ot = otype["5"]
+        othertype = str(geom.__class__.__name__)
+        print("othertype" ,othertype)
+        if othertype == "archJSONText":
+            ot = otype["6"]
+        if othertype == "archJSONImage":
+            ot = otype["9"]
         if othertype == "<type 'instance'>":
             if geom.type == "text":
                 ot = otype["6"]
