@@ -1,25 +1,22 @@
 #### Constants ####
 global __var__
 __var__ = {
-	"guid":"bb0530c2-d04f-4c52-8fb1-7f81d876a193",
+	"guid":"983d9511-87a8-479f-a688-dcef879bd7dc",
 	
-	"name":"SVG Layout",
-	"nickname":"SVG Layout",
-	"description":"Creates a SVG layout dictionary",
-	"icon": "ghContent\\Icon-SVGLayout.png",
+	"name":"Text Object",
+	"nickname":"Text Object",
+	"description":"Creates a text object that can be parsed by archJSON",
+	"icon": "ghContent\\Icon-TextObject.png",
 
 	"tabname":"Redback",
 	"section":"SVG",
 
 	"inputs":[
-		{"name":"Plane",		"nickname":"P",	"objectAccess":"item",	"description":"", },
-		{"name":"Dimensions",	"nickname":"D",	"objectAccess":"item",	"description":"", },
-		{"name":"Scale",		"nickname":"S",	"objectAccess":"item",	"description":"", },
-		{"name":"Location",		"nickname":"L",	"objectAccess":"item",	"description":"", },
+		{"name":"Rectangle",		"nickname":"R",	"objectAccess":"item",	"description":"", },
+		{"name":"Image",			"nickname":"I",	"objectAccess":"item",	"description":"", },
 	],
 	"outputs":[
-		{"name":"Layout",		"nickname":"L",	"description":"JSON Layout"},
-		{"name":"Rectangle",	"nickname":"R",	"description":"Page Border"},
+		{"name":"Image Object",		"nickname":"O",	"description":"archJSON Text Object"},
 	]
 }
 __author__ = "Andrew.Butler"
@@ -32,7 +29,7 @@ import Rhino as r
 
 
 
-class image:
+class archJSONImage:
     def __init__(self, rec, img):
         p = rs.CurvePoints(rec)
         self.location = rs.PlaneFromPoints(p[0],p[1],p[2])
@@ -40,6 +37,7 @@ class image:
         self.width = self.bounds[2][0]
         self.height = self.bounds[2][1]
         self.img = str(img)
-        self.type = "image"
+    def __str__(self):
+        return ("ArchJSON Image")
 
-O = image(REC,IMG)
+O = archJSONImage(R,I)

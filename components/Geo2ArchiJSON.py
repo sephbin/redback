@@ -141,7 +141,7 @@ def Curve(geom,prop=None):
     #print("isCirc: ",isCirc)
     pts = map(lambda g: Point(g), t) #object to points
     print(pts)
-    crv = {"type":"Feature","geometry":{'coordinates':pts, 'type': 'Polyline','closed':tc, "deg":tdeg}}
+    crv = {"type":"Feature","geometry":{'coordinates':pts, 'type': 'Spline','closed':tc, "deg":tdeg}}
     print("tdeg: "+str(tdeg))
     print("tcPo: "+str(tcPo))
     print(crv)
@@ -152,7 +152,8 @@ def Curve(geom,prop=None):
     if tdeg >= 2                : crv['geometry']['type']='Spline'
     if tdeg == 2 and tcPo == 3  :
         print("3ARC")
-        crv['geometry']['type']='Arc'
+        crv['geometry']['deg']=tdeg
+        # crv['geometry']['type']='Arc'
     if tdeg == 2 and tcPo == 5  :
         arc = rs.AddArc3Pt(pts[0],pts[4],pts[2])
         pt0 = convertToRPT(pts[0])

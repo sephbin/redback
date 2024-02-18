@@ -16,7 +16,7 @@ __var__ = {
 		{"name":"Text",			"nickname":"T",	"objectAccess":"item",	"description":"", },
 	],
 	"outputs":[
-		{"name":"Layout",		"nickname":"O",	"description":"archJSON Text Object"},
+		{"name":"Text Object",		"nickname":"O",	"description":"archJSON Text Object"},
 	]
 }
 __author__ = "Andrew.Butler"
