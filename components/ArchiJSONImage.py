@@ -1,7 +1,7 @@
 #### Constants ####
 global __var__
 __var__ = {
-	"guid":"983d9511-87a8-479f-a688-dcef879bd7dc",
+	"guid":"53cc467c-f4e5-4782-ac66-a8ce3084f988",
 	
 	"name":"Text Object",
 	"nickname":"Text Object",

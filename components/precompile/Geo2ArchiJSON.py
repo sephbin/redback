@@ -98,7 +98,7 @@ class MyComponent(component):
         import ghpythonlib as ghp
         import json
         log = []
-        
+        CHECKGEOM = []
         #document = sc.doc
         #sc.doc = rh.RhinoDoc.ActiveDoc
         #sc.doc = ghdoc
@@ -189,9 +189,9 @@ class MyComponent(component):
             return image
         def Curve(geom,prop=None):
             print("Curve def")
-            
+        
             t = rs.CurvePoints(geom)
-            
+            print(t)
             #check if curve closed
             tc = rs.ClosedCurveOrientation(geom)
             if tc == 0: tc = False
@@ -209,28 +209,29 @@ class MyComponent(component):
             #print("isCirc: ",isCirc)
             pts = map(lambda g: Point(g), t) #object to points
             print(pts)
-            crv = {"type":"Feature","geometry":{'coordinates':pts, 'type': 'Polyline','closed':tc, "deg":tdeg}}
+            crv = {"type":"Feature","geometry":{'coordinates':pts, 'type': 'Spline','closed':tc, "deg":tdeg}}
             print("tdeg: "+str(tdeg))
             print("tcPo: "+str(tcPo))
             print(crv)
-            print(isArc)
+            print("isArc",isArc)
             print("----------------------------------")
             if tdeg == 1 and tc  : del crv['geometry']['coordinates'][-1]
             if tdeg == 1 and tcPo == 2  : crv['geometry']['type']='Line'
             if tdeg >= 2                : crv['geometry']['type']='Spline'
             if tdeg == 2 and tcPo == 3  :
                 print("3ARC")
-                crv['geometry']['type']='Arc'
-            if tdeg == 2 and tcPo == 5  :
-                arc = rs.AddArc3Pt(pts[0],pts[4],pts[2])
-                pt0 = convertToRPT(pts[0])
-                pt2 = convertToRPT(pts[2])
-                pt4 = convertToRPT(pts[4])
-                arc = rh.Geometry.Arc(startPoint = pt0, pointOnInterior = pt2, endPoint = pt4)
-                crv['geometry']['type']='Arc'
+                crv['geometry']['deg']=tdeg
+                # crv['geometry']['type']='Arc'
+            #if tdeg == 2 and tcPo == 5  :
+                #arc = rs.AddArc3Pt(pts[0],pts[4],pts[2])
+                #pt0 = convertToRPT(pts[0])
+                #pt2 = convertToRPT(pts[2])
+                #pt4 = convertToRPT(pts[4])
+                #arc = rh.Geometry.Arc(startPoint = pt0, pointOnInterior = pt2, endPoint = pt4)
+                
                 #print(crv['geometry']['coordinates'])
-                del crv['geometry']['coordinates'][3]
-                del crv['geometry']['coordinates'][1]
+                #del crv['geometry']['coordinates'][3]
+                #del crv['geometry']['coordinates'][1]
             if isArc:
                 cpt = rs.ArcCenterPoint(geom)
                 testCrvPts = rs.CurvePoints(geom)
@@ -255,10 +256,13 @@ class MyComponent(component):
                 crv['geometry']['radius'] = crd
             if prop:
                 crv['properties'] = json.loads(prop)
+            #if not isArc and crv["geometry"]['type'] == "Arc":
+                #crv['geometry']['type']='Spline'
         #    if tdeg >= 2:
             print (crv)
             return crv
         def PolyCurve(geom, prop=None):
+            #print(geom)
             
             print("PolyCurve def")
             print(geom, type(geom))
@@ -315,6 +319,12 @@ class MyComponent(component):
                 try:
                     if ot == Curve:
                         geom = rs.coercegeometry(geom)
+                        #geom = rs.coercegeometry(geom)
+                        geom = ghp.components.Explode(geom, True)
+                        #print(geom)
+                        geom = ghp.components.JoinCurves(geom["segments"],True)
+                        global CHECKGEOM
+                        CHECKGEOM.append(geom)
                         othertype = str(type(geom))
                         print("othertype", othertype)
                         if othertype == "<type 'PolyCurve'>":
@@ -346,6 +356,12 @@ class MyComponent(component):
                         ot = otype["3"]
                 if othertype == "<type 'Plane'>":
                     ot = otype["5"]
+                othertype = str(geom.__class__.__name__)
+                print("othertype" ,othertype)
+                if othertype == "archJSONText":
+                    ot = otype["6"]
+                if othertype == "archJSONImage":
+                    ot = otype["9"]
                 if othertype == "<type 'instance'>":
                     if geom.type == "text":
                         ot = otype["6"]
@@ -391,4 +407,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("4a6407d4-3c69-4048-8f41-fa3932c79377")
+        return System.Guid("9ec00f7d-8611-49ee-8758-ade23472548c")

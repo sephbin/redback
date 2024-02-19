@@ -1,23 +1,22 @@
 #### Constants ####
 global __var__
 __var__ = {
-	"guid":"8e12d3d2-9c02-4af4-8931-ae8a51372bd0",
+	"guid":"53cc467c-f4e5-4782-ac66-a8ce3084f988",
 	
-	"name":"Text Wrapper",
-	"nickname":"Wrapper",
-	"description":"Wraps and joins text with selected data characters",
-	"icon": "ghContent\\Icon-Wrapper.png",
+	"name":"Text Object",
+	"nickname":"Text Object",
+	"description":"Creates a text object that can be parsed by archJSON",
+	"icon": "ghContent\\Icon-TextObject.png",
 
 	"tabname":"Redback",
-	"section":"JSON",
+	"section":"SVG",
 
 	"inputs":[
-		{"name":"Content",			"nickname":"C",	"objectAccess":"list",	"description":"Text content to wrap", },
-		{"name":"Wrap Character",	"nickname":"W",	"objectAccess":"item",	"description":"Character that will wrap the text", },
-		{"name":"Join Character",	"nickname":"J",	"objectAccess":"item",	"description":"Character that will join the text, leave empty to wrap each individually", },
+		{"name":"Rectangle",		"nickname":"R",	"objectAccess":"item",	"description":"", },
+		{"name":"Image",			"nickname":"I",	"objectAccess":"item",	"description":"", },
 	],
 	"outputs":[
-		{"name":"Wrapped Text",	"nickname":"W",	"description":"Wrapped Text"}
+		{"name":"Image Object",		"nickname":"O",	"description":"archJSON Text Object"},
 	]
 }
 __author__ = "Andrew.Butler"
@@ -81,47 +80,35 @@ class MyComponent(component):
                 self.marshal.SetOutput(result[r], DA, r, True)
         
     def get_Internal_Icon_24x24(self):
-        #imageLoc#ghContent\Icon-Wrapper.png
-        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAABA0lEQVRIie2UwW0CMRBF3yLuiTZXrHDAZ7YDKIESSAWhBOiADiAdQAdQAcl5OYCWK06owGjQLELIhJUgkRLtSNaMPfPn2/6WI+89t5gz9lHgcZZ+hdpUQovO2KEz1uuYOWOTQE0iOeBThmAKEThj68ArMAVeAJkvnLHdkxqJF5obAHPBKPbqCfKi9zhLx0CiZCNprM1HwJvk4iztA7Mz7NGCGjhjV8Cz7iwH94AHjXdAfiVtoAWs4ywtTCDCyU47gMRNTc3Vt9R/ACLuBBiHhL75FV2z6pEpiu7K5L2PuPRM72l/n+D3RKaA0Nta4+CfNstvm+YCU4pcEpQE/4TgZ/8iYA9kxVrpb6NLcQAAAABJRU5ErkJggg=="
+        #imageLoc#ghContent\Icon-TextObject.png
+        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAA3ElEQVRIiWP8//8/Ay0BC8zsIi5uuE19374ykmMnNjOYkBX0ffsKphkZGf+Tg5HNgAEWZE4RFzeY/ugZQFagNRzYBTcDBlDiAOSKtzIqZBkOA8JP7jD8//8fHsRMBHVQCOA+QI4gX15huKmbP7+Fs2uEpcB0y9tnDITU4o1kp1eP4ZgBS8SRohbFAlgEgcIQhpHFyVFLVEYDRf4+MVkGfTZ2uBh6ZOICNI/kUQtGLRi1gJ6lKS6AXMpiK00JVa9E+QBWQoLKHxBGFiMEiLIAveREFiMEaNtsYWBgAAA5sY2tq3QwZQAAAABJRU5ErkJggg=="
         return System.Drawing.Bitmap(System.IO.MemoryStream(System.Convert.FromBase64String(o)))
 
     def RunScript(self, *argv):
         global __var__
         _vars_ = dict(zip(list(map(lambda x: x["nickname"], __var__["inputs"])),argv))
         _log_ = []
-        C = _vars_['C']
-        W = _vars_['W']
-        J = _vars_['J']
-                
-        lut = {
-        	'"': {'t':'"{value}"'},
-        	"'": {'t':"'{value}'"},
-        	'{': {'t':'{{{value}}}'},
-        	'}': {'t':'{{{value}}}'},
-        	'{}': {'t':'{{{value}}}'},
-        	'[': {'t':'[{value}]'},
-        	']': {'t':'[{value}]'},
-        	'[]': {'t':'[{value}]'},
-        	'(': {'t':'({value})'},
-        	')': {'t':'({value})'},
-        	'()': {'t':'({value})'},
-        }
+        R = _vars_['R']
+        I = _vars_['I']
         
-        def wrapText(text, wrap):
-        	if wrap in lut:
-        		template = lut[wrap]["t"]
-        		print(template)
-        		return template.format(value=text)
-        	else:
-        		return wrap+text+wrap
-        
-        if J != None:
-        	C = [J.join(C)]
-        
-        outText = list(map(lambda x: wrapText(x, W), C))
+        import rhinoscriptsyntax as rs
+        import Rhino as r
         
         
-        W = outText        
+        
+        
+        class archJSONImage:
+            def __init__(self, rec, img):
+                p = rs.CurvePoints(rec)
+                self.location = rs.PlaneFromPoints(p[0],p[1],p[2])
+                self.bounds = rs.BoundingBox(rec,self.location,False)
+                self.width = self.bounds[2][0]
+                self.height = self.bounds[2][1]
+                self.img = str(img)
+            def __str__(self):
+                return ("ArchJSON Image")
+        
+        O = archJSONImage(R,I)        
         returnTuple = []
         for output in __var__["outputs"]:
             varName = output["nickname"]
@@ -146,4 +133,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("5d9aef01-c5d7-42b7-8423-dde927dae951")
+        return System.Guid("13fbc3bb-5212-47ae-8a3d-3d83149479e6")
