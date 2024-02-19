@@ -9,7 +9,7 @@ __var__ = {
 	"icon": "ghContent\\Icon-TextObject.png",
 
 	"tabname":"Redback",
-	"section":"SVG",
+	"section":"ArchJSON",
 
 	"inputs":[
 		{"name":"Plane",		"nickname":"P",	"objectAccess":"item",	"description":"", },

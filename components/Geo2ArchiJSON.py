@@ -9,14 +9,16 @@ __var__ = {
 	"icon": "ghContent\\Icon-Geo2ArchiJSON.png",
 
 	"tabname":"Redback",
-	"section":"ArchiJSON",
+	"section":"ArchJSON",
 
 	"inputs":[
-		{"name":"Geometry",			"nickname":"G",	"objectAccess":"list",	"description":"List of Geometry to convert", },
-		{"name":"Properties",		"nickname":"P",	"objectAccess":"list",	"description":"List of Properties per geometry", },
+		{"name":"Geometry",			"nickname":"G",	"objectAccess":"list", "objectType":"Geometry"	,"description":"List of Geometry to convert", },
+		{"name":"Properties",		"nickname":"P",	"objectAccess":"list", "objectType":"String"	,"description":"List of Properties per geometry", },
 	],
 	"outputs":[
-		{"name":"JSON",	"nickname":"J",	"description":"ArchiJSON representing the geometry"}
+		{"name":"JSON",	"nickname":"J",	"description":"ArchiJSON representing the geometry"},
+        #{"name":"CHECKGEOM", "nickname":"CHECKGEOM", "description":"ArchiJSON representing the geometry"},
+        #{"name":"LOG", "nickname":"LOG", "description":"ArchiJSON representing the geometry"}
 	]
 }
 __author__ = "Andrew.Butler"
@@ -29,7 +31,7 @@ import scriptcontext as sc
 import Grasshopper as g
 import ghpythonlib as ghp
 import json
-log = []
+#LOG = []
 CHECKGEOM = []
 #document = sc.doc
 #sc.doc = rh.RhinoDoc.ActiveDoc
@@ -249,20 +251,21 @@ def Convert(geom,prop):
     try:
         ot = otype[str(rs.ObjectType(geom))]
         try:
-            if ot == Curve:
-                geom = rs.coercegeometry(geom)
-                #geom = rs.coercegeometry(geom)
-                geom = ghp.components.Explode(geom, True)
-                #print(geom)
-                geom = ghp.components.JoinCurves(geom["segments"],True)
-                global CHECKGEOM
-                CHECKGEOM.append(geom)
+            if ot.__name__ == "Curve":
+                try:
+                    geom = rs.coercegeometry(geom)
+                    geom = ghp.components.Explode(geom, True)
+                    geom = ghp.components.JoinCurves(geom["segments"],True)
+                except Exception as e:
+                    pass
                 othertype = str(type(geom))
-                print("othertype", othertype)
+                #print("othertype", othertype)
                 if othertype == "<type 'PolyCurve'>":
                     ot = PolyCurve
-                    print("POLYCURVE")
-        except Exception as e:  print("e",e)
+                    #print("POLYCURVE")
+        except Exception as e:
+            #print("e",e)
+            pass
         
         
     except Exception as e:
@@ -314,4 +317,3 @@ P = map(lambda g,p: Convert(g,p), G,P)
 
     
 J = json.dumps({"type":"FeatureCollection", "features":P})
-L = log

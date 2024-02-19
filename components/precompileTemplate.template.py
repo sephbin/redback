@@ -20,11 +20,16 @@ class MyComponent(component):
         p.NickName = nickname
         p.Description = description
         p.Optional = True
+        print(p.Name, p.Nickname)
     
     def RegisterInputParams(self, pManager):
         global __var__
         for inputOb in __var__["inputs"]:
-            p = GhPython.Assemblies.MarshalParam()
+            try:    pfunc = getattr(Grasshopper.Kernel.Parameters, "Param_"+inputOb["objectType"])
+            except Exception as e:
+                print(e)
+                pfunc = getattr(GhPython.Assemblies, "MarshalParam")
+            p = pfunc()
             self.SetUpParam(p, inputOb["name"], inputOb["nickname"], inputOb["description"])
             access = getattr(Grasshopper.Kernel.GH_ParamAccess, inputOb["objectAccess"])
             p.Access = access

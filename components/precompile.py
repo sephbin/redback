@@ -38,6 +38,8 @@ def precompile(path):
 
     scriptIndex = None
     for index, tline in enumerate(template):
+        template[index] = tline.replace("print(", "#print(")
+    for index, tline in enumerate(template):
         if "{runscript}" in tline:
             scriptIndex = index
             break

@@ -17,7 +17,8 @@ __var__ = {
 		{"name":"Properties",		"nickname":"C",	"objectAccess":"list",	"description":"", },
 	],
 	"outputs":[
-		{"name":"SVG",	"nickname":"S",	"description":"SVG"}
+		{"name":"SVG",	"nickname":"S",	"description":"SVG"},
+		{"name":"LOG",	"nickname":"LOG",	"description":"LOG"},
 	]
 }
 __author__ = "Andrew.Butler"
@@ -45,11 +46,16 @@ class MyComponent(component):
         p.NickName = nickname
         p.Description = description
         p.Optional = True
+        #print(p.Name, p.Nickname)
     
     def RegisterInputParams(self, pManager):
         global __var__
         for inputOb in __var__["inputs"]:
-            p = GhPython.Assemblies.MarshalParam()
+            try:    pfunc = getattr(Grasshopper.Kernel.Parameters, "Param_"+inputOb["objectType"])
+            except Exception as e:
+                #print(e)
+                pfunc = getattr(GhPython.Assemblies, "MarshalParam")
+            p = pfunc()
             self.SetUpParam(p, inputOb["name"], inputOb["nickname"], inputOb["description"])
             access = getattr(Grasshopper.Kernel.GH_ParamAccess, inputOb["objectAccess"])
             p.Access = access
@@ -100,13 +106,21 @@ class MyComponent(component):
         import Rhino as r
         from string import Template
         
-        log = []
+        LOG = []
         #The inputs to this node will be stored as a list in the IN variables.
         ARCHIJSON = J
         LAYOUT = L
         CSS = C
         
-        CHECKPTS = []
+        def errorLog(e, log=[]):
+        	import os, sys
+        	exc_type, exc_obj, exc_tb = sys.exc_info()
+        	other = sys.exc_info()[0].__name__
+        	fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        	errorType = str(exc_type)
+        	errob = {"isError": True, "error":str(e), "errorType":errorType, "function":fname, "line":exc_tb.tb_lineno, "log":log}
+        	return errob
+        
         def checkRB(ob):
         	if str(type(ob)) == "<type 'str'>":
         		return json.loads(ob)
@@ -300,53 +314,60 @@ class MyComponent(component):
            
         def avgpts(p1, p2, w1=0.5, w2=0.5):
         	p3 = []
-        	#log.append(" "*20+"avgpts"+str([p1,p2,w1,w2]))
+        	#LOG.append(" "*20+"avgpts"+str([p1,p2,w1,w2]))
         	for p1p, p2p in zip(p1, p2):
         		p3.append((p1p*w1)+(p2p*w2))
-        	#log.append(" "*20+"avgpts"+str([p3]))
+        	#LOG.append(" "*20+"avgpts"+str([p3]))
         	return p3
         def spline_1deg(initCoords, props, outType=None, closed = True, skipFirst = False):
-        	polarray = []
-        	#print("spline_1deg",initCoords)
-        	initCoords = [initCoords]
-        	knotPtsList = initCoords
-        	beizerPtsList = []
-        	coordStringList = []
-        	#log.append(" knotPtsList --- "+str(knotPtsList))#########################################################
-        	
-        	for sPts in initCoords:
-        		coordString = []
-        		start = sPts.pop(0)
-        		start = point(start, 'line')
-        		start = start[:-1]
-        		start = list(map(lambda x: "{:.2f}".format(float(x)), start))
-        		if not skipFirst:
-        			coordString.append(" M"+",".join(start))
-        		for pts in sPts:
-        			pts = point(pts, 'line')
-        			pts = list(map(lambda x: "{:.2f}".format(float(x)), pts))
-        			pts = pts[:-1]
-        			coordString.append(" L"+",".join(pts))
+        	try:
+        		polarray = []
+        		#print("spline_1deg",initCoords)
+        		initCoords = [initCoords]
+        		knotPtsList = initCoords
+        		beizerPtsList = []
+        		coordStringList = []
+        		#LOG.append(" knotPtsList --- "+str(knotPtsList))#########################################################
+        		
+        		for sPts in initCoords:
+        			coordString = []
+        			start = sPts.pop(0)
+        			start = point(start, 'line')
+        			start = start[:-1]
+        			start = list(map(lambda x: "{:.2f}".format(float(x)), start))
+        			if not skipFirst:
+        				coordString.append(" M"+",".join(start))
+        			for pts in sPts:
+        				pts = point(pts, 'line')
+        				pts = list(map(lambda x: "{:.2f}".format(float(x)), pts))
+        				pts = pts[:-1]
+        				coordString.append(" L"+",".join(pts))
         
-        		coordString = "".join(coordString)
-        		#log.append(" coordString --- "+str(coordString))#########################################################
-        		if closed:
-        			coordString = coordString+"Z"
-        		coordStringList.append(coordString)
-        	#log.append(" coordStringList --- "+str(coordStringList))#########################################################
-        	propString = []
-        	for k in props:
-        		propString.append(str(k)+'=\"'+str(props[k])+'\"')
-        	pString = " ".join(propString)
-        	coordStringList = " ".join(coordStringList)
-        	pline = '<path d="'+coordStringList+'" '+pString+'/>'
-        	#pline = NurbsCurve.ByControlPoints(polarray,1,o['properties']['closed'])
-        	#log.append("pline"+str(pline))#########################################################
-        	#print("bp",bezierPts)    
-        	if outType == "coordinates":
-        		return coordStringList
-        	else:
-        		return pline
+        			coordString = "".join(coordString)
+        			#LOG.append(" coordString --- "+str(coordString))#########################################################
+        			if closed:
+        				coordString = coordString+"Z"
+        			coordStringList.append(coordString)
+        		#LOG.append(" coordStringList --- "+str(coordStringList))#########################################################
+        		propString = []
+        		for k in props:
+        			propString.append(str(k)+'=\"'+str(props[k])+'\"')
+        		pString = " ".join(propString)
+        		coordStringList = " ".join(coordStringList)
+        		pline = '<path d="'+coordStringList+'" '+pString+'/>'
+        		#pline = NurbsCurve.ByControlPoints(polarray,1,o['properties']['closed'])
+        		#LOG.append("pline"+str(pline))#########################################################
+        		#print("bp",bezierPts)    
+        		if outType == "coordinates":
+        			return coordStringList
+        		else:
+        			return pline
+        	except Exception as e:
+        		print(e)
+        		LOG.append(e)
+        		return "<>"
+        		pass
+        
         def spline_2deg(initCoords, props, outType=None, closed = True, skipFirst = False):
         	polarray = []
         	
@@ -430,11 +451,8 @@ class MyComponent(component):
         			knotPts.append(polarray[-1])
         		knotPtsList.append(knotPts)
         		beizerPtsList.append(bezierPts)
-        	print("knotPtsList",knotPtsList)
-        	print("beizerPtsList",beizerPtsList)
-        	global CHECKPTS
-        	CHECKPTS = CHECKPTS+knotPtsList
-        	CHECKPTS = CHECKPTS+beizerPtsList
+        	#print("knotPtsList",knotPtsList)
+        	#print("beizerPtsList",beizerPtsList)
         	coordStringList = []
         	#print(len(knotPts),knotPts)
         	#print(len(bezierPts),bezierPts)
@@ -496,18 +514,18 @@ class MyComponent(component):
         def spline_3deg(initCoords, props, outType=None, closed = True, skipFirst = False):
         	#<polyline points="118.85,155.3 118.85,180.7" class="FOPActual" zindex="10"/>
         	polarray = []
-        	#log.append("CLOSED ---"+str(closed))#########################################################
-        	#log.append("SPLINE COORDS -- "+str(initCoords['coords']))####################################
+        	#LOG.append("CLOSED ---"+str(closed))#########################################################
+        	#LOG.append("SPLINE COORDS -- "+str(initCoords['coords']))####################################
         	initCoords = [initCoords]
         	
         	knotPtsList = []
         	beizerPtsList = []
         	for indvCoords in initCoords:
         		polarray = []
-        		#log.append("SPLINE COORD -- "+str(indvCoords))###########################################
+        		#LOG.append("SPLINE COORD -- "+str(indvCoords))###########################################
         		for index, p in enumerate(indvCoords):
         			pnt = point(p, type = 'line')
-        			#log.append("   pnt ----- "+str(pnt))
+        			#LOG.append("   pnt ----- "+str(pnt))
         			
         			pt = [pnt[0],pnt[1]]
         			#print('pnt', pnt)
@@ -516,7 +534,7 @@ class MyComponent(component):
         		polarray_len = len(polarray)
         		bezierPts = []
         		knotPts = []
-        		#log.append("  polarray ---- "+str(polarray))
+        		#LOG.append("  polarray ---- "+str(polarray))
         		if closed:
         			for index in range(polarray_len-1):
         				pt1 = polarray[index]
@@ -524,22 +542,22 @@ class MyComponent(component):
         				pt3 = avgpts(pt1,pt2,float(2.0/3.0),float(1.0/3.0))
         				pt4 = avgpts(pt1,pt2,float(1.0/3.0),float(2.0/3.0))
         				#print("par",pt1,pt2,pt3,pt4)
-        				#log.append(" "*10+"pt3,pt4 ----- "+str([pt3,pt4]))
+        				#LOG.append(" "*10+"pt3,pt4 ----- "+str([pt3,pt4]))
         				bezierPts.append(pt3)
         				bezierPts.append(pt4)
         			
         			fpoint = bezierPts.pop(0)
         			bezierPts.append(fpoint)
         			#print(bezierPts)
-        			#log.append("   bezierPts ----- "+str(bezierPts))
-        			#log.append("   runningKnots")
+        			#LOG.append("   bezierPts ----- "+str(bezierPts))
+        			#LOG.append("   runningKnots")
         			for index in range(int(len(bezierPts)/2.0)-1):
         				index = index*2
         				pt1 = bezierPts[index]
         				pt2 = bezierPts[(index+1) % len(bezierPts)]
         				#print("avg",index,index+1,pt1,pt2)
         				avgresult = avgpts(pt1,pt2)
-        				#log.append("   avgresult ----- "+str(avgresult))
+        				#LOG.append("   avgresult ----- "+str(avgresult))
         				knotPts.append(avgresult)
         			fpoint = bezierPts.pop(0)
         			bezierPts.append(fpoint)
@@ -548,7 +566,7 @@ class MyComponent(component):
         			mode = "normal"
         			if len(polarray) == 4:
         				mode = "4pt"
-        			#log.append("  mode ---- "+str(mode))
+        			#LOG.append("  mode ---- "+str(mode))
         			if mode == "normal":
         				bezierPts.append(avgpts(polarray[1],polarray[2]))
         			for index in range(polarray_len-5):
@@ -556,7 +574,7 @@ class MyComponent(component):
         				bezierPts.append(avgpts(polarray[index+2],polarray[index+3],float(1.0/3.0),float(2.0/3.0)))
         			if mode == "normal":
         				bezierPts.append(avgpts(polarray[-2],polarray[-3]))
-        			#log.append("   adding to knotPts ----- "+str(polarray[0])+str(knotPts))
+        			#LOG.append("   adding to knotPts ----- "+str(polarray[0])+str(knotPts))
         			knotPts = [polarray[0]]+knotPts
         			if mode == "normal":
         				for index in range(int(len(bezierPts)/2.0)):
@@ -576,7 +594,7 @@ class MyComponent(component):
         		knotPtsList.append(knotPts)
         	
         	coordStringList = []
-        	#log.append(" knotPtsList --- "+str(knotPtsList))#########################################################
+        	#LOG.append(" knotPtsList --- "+str(knotPtsList))#########################################################
         	for sPts in range(len(knotPtsList)):
         		splineCoords = []
         		#print(sPts)
@@ -597,7 +615,7 @@ class MyComponent(component):
         				for coord in rspoint:
         					splineCoords.append("%.2f"%(coord))
         		#print (splineCoords)
-        		# #log.append(" splineCoords --- "+str(splineCoords))#########################################################
+        		# #LOG.append(" splineCoords --- "+str(splineCoords))#########################################################
         		if not skipFirst:
         			coordString = ["M"]+list(" , ".join(splineCoords))
         		
@@ -610,11 +628,11 @@ class MyComponent(component):
         					coordString[index] = "S"
         				delimIndex += 1
         		coordString = "".join(coordString)
-        		#log.append(" coordString --- "+str(coordString))#########################################################
+        		#LOG.append(" coordString --- "+str(coordString))#########################################################
         		if closed:
         			coordString = coordString+"Z"
         		coordStringList.append(coordString)
-        	#log.append(" coordStringList --- "+str(coordStringList))#########################################################
+        	#LOG.append(" coordStringList --- "+str(coordStringList))#########################################################
         	propString = []
         	for k in props:
         		propString.append(str(k)+'=\"'+str(props[k])+'\"')
@@ -622,7 +640,7 @@ class MyComponent(component):
         	coordStringList = " ".join(coordStringList)
         	pline = '<path d="'+coordStringList+'" '+pString+'/>'
         	#pline = NurbsCurve.ByControlPoints(polarray,1,o['properties']['closed'])
-        	#log.append("pline"+str(pline))#########################################################
+        	#LOG.append("pline"+str(pline))#########################################################
         	#print("bp",bezierPts)    
         
         	if outType == "coordinates":
@@ -631,76 +649,88 @@ class MyComponent(component):
         		return pline
         	
         def spline(o, props, outType=None, collection = False):
-        	print("SPLINE")
-        	print(o)
-        	splineObject = ""
-        	
-        	for segmentIndex, coords in enumerate(o):
-        		if "geometry" in coords:
-        			coords = coords["geometry"]
-        		deg = coords["deg"]
-        		print("coords",deg)
-        		func = globals()["spline_"+str(deg)+"deg"]
-        		skipFirst = True
-        		if segmentIndex == 0:
-        			skipFirst = False
-        		appendSpline = func(coords["coordinates"], props, outType, closed = coords['closed'], skipFirst=skipFirst)
-        		print(appendSpline)
-        		splineObject = splineObject+appendSpline
-        		#print("splineObject",splineObject)
-        
-        		#try:
-        			#coords = coords['geometry']
-        		#except:
-        			#pass
-        		#if coords['deg'] == 1:
-        			#initCoords1d['coords'].append(coords['coordinates'])
-        			#initCoords1d['closed'] = coords['closed']        
-        		#if coords['deg'] == 2:
-        			#initCoords2d['coords'].append(coords['coordinates'])
-        			#initCoords2d['closed'] = coords['closed']        
-        		#if coords['deg'] == 3:
-        			#initCoords3d['coords'].append(coords['coordinates'])
-        			#initCoords3d['closed'] = coords['closed']
-        
-        		#print(initCoords3d)
-        	
-        	#if len(initCoords1d['coords']) >= 1:
-        		#print ("1 degree")
-        		#splineObject = spline_1deg(initCoords1d, props, outType, closed = initCoords1d['closed'])
-        
-        	#if len(initCoords2d['coords']) >= 1:
-        		#print ("2 degree")
-        		#splineObject = spline_2deg(initCoords2d, props, outType, closed = initCoords2d['closed'])
+        	LOG.append("spline")
+        	try:
         		
-        	#elif len(initCoords3d['coords']) >= 1:
-        		#print ("3 degree")
-        		#splineObject = spline_3deg(initCoords3d, props, outType, closed = initCoords3d['closed'])
-        	#knotPts = splineObject['knotPts']
-        	#bezierPts = splineObject['bezierPts']
-        	if outType == "coordinates":
-        		propString = []
-        		for k in props:
-        			propString.append(str(k)+'=\"'+str(props[k])+'\"')
-        		pString = " ".join(propString)
-        		splineObject = "".join(splineObject)
-        		pline = '<path d="'+splineObject+'" '+pString+'/>'
-        		return pline
-        	return splineObject
+        		splineFuncs = {
+        		"spline_1deg" : spline_1deg,
+        		"spline_2deg" : spline_2deg,
+        		"spline_3deg" : spline_3deg,
+        		}
+        		splineObject = ""
+        		
+        		for segmentIndex, coords in enumerate(o):
+        			if "geometry" in coords:
+        				coords = coords["geometry"]
+        			deg = coords["deg"]
+        			print("coords",deg)
+        			func = splineFuncs["spline_"+str(deg)+"deg"]
+        			skipFirst = True
+        			if segmentIndex == 0:
+        				skipFirst = False
+        			appendSpline = func(coords["coordinates"], props, outType, closed = coords['closed'], skipFirst=skipFirst)
+        			print(appendSpline)
+        			splineObject = splineObject+appendSpline
+        			#print("splineObject",splineObject)
         
+        			#try:
+        				#coords = coords['geometry']
+        			#except:
+        				#pass
+        			#if coords['deg'] == 1:
+        				#initCoords1d['coords'].append(coords['coordinates'])
+        				#initCoords1d['closed'] = coords['closed']        
+        			#if coords['deg'] == 2:
+        				#initCoords2d['coords'].append(coords['coordinates'])
+        				#initCoords2d['closed'] = coords['closed']        
+        			#if coords['deg'] == 3:
+        				#initCoords3d['coords'].append(coords['coordinates'])
+        				#initCoords3d['closed'] = coords['closed']
+        
+        			#print(initCoords3d)
+        		
+        		#if len(initCoords1d['coords']) >= 1:
+        			#print ("1 degree")
+        			#splineObject = spline_1deg(initCoords1d, props, outType, closed = initCoords1d['closed'])
+        
+        		#if len(initCoords2d['coords']) >= 1:
+        			#print ("2 degree")
+        			#splineObject = spline_2deg(initCoords2d, props, outType, closed = initCoords2d['closed'])
+        			
+        		#elif len(initCoords3d['coords']) >= 1:
+        			#print ("3 degree")
+        			#splineObject = spline_3deg(initCoords3d, props, outType, closed = initCoords3d['closed'])
+        		#knotPts = splineObject['knotPts']
+        		#bezierPts = splineObject['bezierPts']
+        		if outType == "coordinates":
+        			propString = []
+        			for k in props:
+        				propString.append(str(k)+'=\"'+str(props[k])+'\"')
+        			pString = " ".join(propString)
+        			splineObject = "".join(splineObject)
+        			pline = '<path d="'+splineObject+'" '+pString+'/>'
+        			return pline
+        		return splineObject
+        	except Exception as e:
+        		LOG.append("spline: "+str(errorLog(e)))
+        		return ""
         def polycurve(o, props, collection = False):
         	#print(o)
-        	parts = []
-        	for part in o:
-        		part = part["geometry"]["coordinates"]
-        		polycurvePath = []
-        		for curve_i, curve in enumerate(part):
-        			#for curveInfo in curve['geometry']["coordinates"]:
-        			#print(curve)
-        			svgCurve = spline(curve["geometry"]["coordinates"],{},outType="coordinates")
-        			polycurvePath.append(svgCurve)
-        	polycurvePath = ' '.join(polycurvePath)
-        	return polycurvePath
+        	try:
+        		parts = []
+        		for part in o:
+        			part = part["geometry"]["coordinates"]
+        			polycurvePath = []
+        			for curve_i, curve in enumerate(part):
+        				#for curveInfo in curve['geometry']["coordinates"]:
+        				#print(curve)
+        				svgCurve = spline(curve["geometry"]["coordinates"],{},outType="coordinates")
+        				polycurvePath.append(svgCurve)
+        		polycurvePath = ' '.join(polycurvePath)
+        		return polycurvePath
+        	except Exception as e:
+        		LOG.append("polycurve"+str(errorLog(e)))
+        		return ""
         
         	
         def circPath(cx,cy,r, cclockwise):
@@ -795,35 +825,41 @@ class MyComponent(component):
         lXAx = r.Geometry.Vector3d(lPlane[1][0],lPlane[1][1],lPlane[1][2])
         lYAx = r.Geometry.Vector3d(lPlane[2][0],lPlane[2][1],lPlane[2][2])
         lPlane = r.Geometry.Plane(lOrigin,lXAx,lYAx)
+        try:
+        	for i in ARCHIJSON:
+        		if i["type"]:
+        			#print(i)
+        			fCall = function_mappings[i['type']]
+        			fCall(i)
+        		else:
+        			fCall = function_mappings[i['geometry']['type']]
+        			obarray.append(fCall(i['geometry']))
         
-        for i in ARCHIJSON:
-        	if i["type"]:
-        		#print(i)
-        		fCall = function_mappings[i['type']]
-        		fCall(i)
-        	else:
-        		fCall = function_mappings[i['geometry']['type']]
-        		obarray.append(fCall(i['geometry']))
+        	#OUT = log
+        	template =Template("""<?xml version="1.0" encoding="utf-8"?>
+        	<!-- Generator: Grasshopper 1.0.0, Redback Plugin. SVG Version: 6.00 Build 0) Made by Andrew Butler at Cox Architecture -->
+        	<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+        	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	width="${width}mm" height="${height}mm" viewBox="0 0 ${width} ${height}" xml:space="preserve">
+        	<style type="text/css">
+        	$css
+        	</style>
+        	$svg
+        	</svg>""")
+        	#print(layout)
+        	svgdict = {'svg':"\n".join(obarray),'width':layout['page'][0],'height':layout['page'][1],'css':"\n".join(CSS)}
+        	svgfull = template.substitute(svgdict)
+        	SVG = svgfull.split("\n")
+        	S = SVG
+        	#L = log
         
-        #OUT = log
-        template =Template("""<?xml version="1.0" encoding="utf-8"?>
-        <!-- Generator: Grasshopper 1.0.0, Redback Plugin. SVG Version: 6.00 Build 0) Made by Andrew Butler at Cox Architecture -->
-        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="${width}mm" height="${height}mm" viewBox="0 0 ${width} ${height}" xml:space="preserve">
-        <style type="text/css">
-        $css
-        </style>
-        $svg
-        </svg>""")
-        #print(layout)
-        svgdict = {'svg':"\n".join(obarray),'width':layout['page'][0],'height':layout['page'][1],'css':"\n".join(CSS)}
-        svgfull = template.substitute(svgdict)
-        SVG = svgfull.split("\n")
-        S = SVG
-        #L = log
         
-        CHECKPTS = json.dumps(CHECKPTS)        
+        except Exception as e:
+        	print(e)
+        	LOG.append("based error: "+str(errorLog(e)))
+        	S = None
+        	pass
+        
         returnTuple = []
         for output in __var__["outputs"]:
             varName = output["nickname"]
@@ -848,4 +884,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("5a6727cb-c99d-4632-9756-d1e39a2c7e95")
+        return System.Guid("0abec74d-dd8d-482f-a938-4e4ff4a00b04")

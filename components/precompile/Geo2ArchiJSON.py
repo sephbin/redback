@@ -9,14 +9,16 @@ __var__ = {
 	"icon": "ghContent\\Icon-Geo2ArchiJSON.png",
 
 	"tabname":"Redback",
-	"section":"ArchiJSON",
+	"section":"ArchJSON",
 
 	"inputs":[
-		{"name":"Geometry",			"nickname":"G",	"objectAccess":"list",	"description":"List of Geometry to convert", },
-		{"name":"Properties",		"nickname":"P",	"objectAccess":"list",	"description":"List of Properties per geometry", },
+		{"name":"Geometry",			"nickname":"G",	"objectAccess":"list", "objectType":"Geometry"	,"description":"List of Geometry to convert", },
+		{"name":"Properties",		"nickname":"P",	"objectAccess":"list", "objectType":"String"	,"description":"List of Properties per geometry", },
 	],
 	"outputs":[
-		{"name":"JSON",	"nickname":"J",	"description":"ArchiJSON representing the geometry"}
+		{"name":"JSON",	"nickname":"J",	"description":"ArchiJSON representing the geometry"},
+        #{"name":"CHECKGEOM", "nickname":"CHECKGEOM", "description":"ArchiJSON representing the geometry"},
+        #{"name":"LOG", "nickname":"LOG", "description":"ArchiJSON representing the geometry"}
 	]
 }
 __author__ = "Andrew.Butler"
@@ -44,11 +46,16 @@ class MyComponent(component):
         p.NickName = nickname
         p.Description = description
         p.Optional = True
+        #print(p.Name, p.Nickname)
     
     def RegisterInputParams(self, pManager):
         global __var__
         for inputOb in __var__["inputs"]:
-            p = GhPython.Assemblies.MarshalParam()
+            try:    pfunc = getattr(Grasshopper.Kernel.Parameters, "Param_"+inputOb["objectType"])
+            except Exception as e:
+                #print(e)
+                pfunc = getattr(GhPython.Assemblies, "MarshalParam")
+            p = pfunc()
             self.SetUpParam(p, inputOb["name"], inputOb["nickname"], inputOb["description"])
             access = getattr(Grasshopper.Kernel.GH_ParamAccess, inputOb["objectAccess"])
             p.Access = access
@@ -97,7 +104,7 @@ class MyComponent(component):
         import Grasshopper as g
         import ghpythonlib as ghp
         import json
-        log = []
+        #LOG = []
         CHECKGEOM = []
         #document = sc.doc
         #sc.doc = rh.RhinoDoc.ActiveDoc
@@ -317,20 +324,21 @@ class MyComponent(component):
             try:
                 ot = otype[str(rs.ObjectType(geom))]
                 try:
-                    if ot == Curve:
-                        geom = rs.coercegeometry(geom)
-                        #geom = rs.coercegeometry(geom)
-                        geom = ghp.components.Explode(geom, True)
-                        #print(geom)
-                        geom = ghp.components.JoinCurves(geom["segments"],True)
-                        global CHECKGEOM
-                        CHECKGEOM.append(geom)
+                    if ot.__name__ == "Curve":
+                        try:
+                            geom = rs.coercegeometry(geom)
+                            geom = ghp.components.Explode(geom, True)
+                            geom = ghp.components.JoinCurves(geom["segments"],True)
+                        except Exception as e:
+                            pass
                         othertype = str(type(geom))
-                        print("othertype", othertype)
+                        #print("othertype", othertype)
                         if othertype == "<type 'PolyCurve'>":
                             ot = PolyCurve
-                            print("POLYCURVE")
-                except Exception as e:  print("e",e)
+                            #print("POLYCURVE")
+                except Exception as e:
+                    #print("e",e)
+                    pass
                 
                 
             except Exception as e:
@@ -382,7 +390,7 @@ class MyComponent(component):
         
             
         J = json.dumps({"type":"FeatureCollection", "features":P})
-        L = log        
+        
         returnTuple = []
         for output in __var__["outputs"]:
             varName = output["nickname"]
@@ -407,4 +415,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("9ec00f7d-8611-49ee-8758-ade23472548c")
+        return System.Guid("5d42b776-0323-493e-a828-b33fb32d1376")

@@ -3,13 +3,13 @@ global __var__
 __var__ = {
 	"guid":"53cc467c-f4e5-4782-ac66-a8ce3084f988",
 	
-	"name":"Text Object",
-	"nickname":"Text Object",
-	"description":"Creates a text object that can be parsed by archJSON",
-	"icon": "ghContent\\Icon-TextObject.png",
+	"name":"Image Object",
+	"nickname":"Image Object",
+	"description":"Creates an image object that can be parsed by archJSON",
+	"icon": "ghContent\\Icon-ImageObject.png",
 
 	"tabname":"Redback",
-	"section":"SVG",
+	"section":"ArchJSON",
 
 	"inputs":[
 		{"name":"Rectangle",		"nickname":"R",	"objectAccess":"item",	"description":"", },

@@ -3,13 +3,13 @@ global __var__
 __var__ = {
 	"guid":"53cc467c-f4e5-4782-ac66-a8ce3084f988",
 	
-	"name":"Text Object",
-	"nickname":"Text Object",
-	"description":"Creates a text object that can be parsed by archJSON",
-	"icon": "ghContent\\Icon-TextObject.png",
+	"name":"Image Object",
+	"nickname":"Image Object",
+	"description":"Creates an image object that can be parsed by archJSON",
+	"icon": "ghContent\\Icon-ImageObject.png",
 
 	"tabname":"Redback",
-	"section":"SVG",
+	"section":"ArchJSON",
 
 	"inputs":[
 		{"name":"Rectangle",		"nickname":"R",	"objectAccess":"item",	"description":"", },
@@ -44,11 +44,16 @@ class MyComponent(component):
         p.NickName = nickname
         p.Description = description
         p.Optional = True
+        #print(p.Name, p.Nickname)
     
     def RegisterInputParams(self, pManager):
         global __var__
         for inputOb in __var__["inputs"]:
-            p = GhPython.Assemblies.MarshalParam()
+            try:    pfunc = getattr(Grasshopper.Kernel.Parameters, "Param_"+inputOb["objectType"])
+            except Exception as e:
+                #print(e)
+                pfunc = getattr(GhPython.Assemblies, "MarshalParam")
+            p = pfunc()
             self.SetUpParam(p, inputOb["name"], inputOb["nickname"], inputOb["description"])
             access = getattr(Grasshopper.Kernel.GH_ParamAccess, inputOb["objectAccess"])
             p.Access = access
@@ -80,8 +85,8 @@ class MyComponent(component):
                 self.marshal.SetOutput(result[r], DA, r, True)
         
     def get_Internal_Icon_24x24(self):
-        #imageLoc#ghContent\Icon-TextObject.png
-        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAA3ElEQVRIiWP8//8/Ay0BC8zsIi5uuE19374ykmMnNjOYkBX0ffsKphkZGf+Tg5HNgAEWZE4RFzeY/ugZQFagNRzYBTcDBlDiAOSKtzIqZBkOA8JP7jD8//8fHsRMBHVQCOA+QI4gX15huKmbP7+Fs2uEpcB0y9tnDITU4o1kp1eP4ZgBS8SRohbFAlgEgcIQhpHFyVFLVEYDRf4+MVkGfTZ2uBh6ZOICNI/kUQtGLRi1gJ6lKS6AXMpiK00JVa9E+QBWQoLKHxBGFiMEiLIAveREFiMEaNtsYWBgAAA5sY2tq3QwZQAAAABJRU5ErkJggg=="
+        #imageLoc#ghContent\Icon-ImageObject.png
+        o = "iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAABdklEQVRIibWWvU7DMBSFv1RdWoZWldhqUaR6hjegD8DKzsaIipihsFYCZhb6CAzswBuwd6BS55oulAVh5DSJ3NQkaUKu5J97Y5/jY1u+8bTWlGmVUtGBqqnO6luRjJvFp1cEMI5VsRy/9TxPFyk2VqQgYA67V0UUAJcWFphDDg7aVIPQz1Jm7W5n1u4OZ+1u08IZLGGXfu5DVkKOgHfgHPhQQh66xhW5RUcx/+K/CX6yDCpCMLT638B1bgIlZEcJ2bRjrenYAO4CJ8B2azp+cs2tuoIx8H3gBZgoIXut6XhukUyA+6T5iQqCVT8CDWDPEMWVpFnaFhnwHcsPSXpKyDcl5DxQuLkCJeQdcOD4ZEieg7aRpspJoIQ8Bk6TVmZZIskaQSD5ISN4aH+ej0vBaEPwFZJ40HVNzdWbO+JZbG2enzLtJHH7tXjNCe5bv1aPLoafvAxBv1Y3z6s2bfBs5y421spzHSYJrbVXpNhY0RaVaeX+VQC/YEz5qWBh6ZoAAAAASUVORK5CYII="
         return System.Drawing.Bitmap(System.IO.MemoryStream(System.Convert.FromBase64String(o)))
 
     def RunScript(self, *argv):
@@ -133,4 +138,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("13fbc3bb-5212-47ae-8a3d-3d83149479e6")
+        return System.Guid("488c812c-3f55-4c62-bd20-6f674e08f8d1")
