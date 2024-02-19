@@ -30,7 +30,7 @@ import Grasshopper as g
 import ghpythonlib as ghp
 import json
 log = []
-
+CHECKGEOM = []
 #document = sc.doc
 #sc.doc = rh.RhinoDoc.ActiveDoc
 #sc.doc = ghdoc
@@ -121,9 +121,9 @@ def Image(geom,prop=None):
     return image
 def Curve(geom,prop=None):
     print("Curve def")
-    
+
     t = rs.CurvePoints(geom)
-    
+    print(t)
     #check if curve closed
     tc = rs.ClosedCurveOrientation(geom)
     if tc == 0: tc = False
@@ -145,7 +145,7 @@ def Curve(geom,prop=None):
     print("tdeg: "+str(tdeg))
     print("tcPo: "+str(tcPo))
     print(crv)
-    print(isArc)
+    print("isArc",isArc)
     print("----------------------------------")
     if tdeg == 1 and tc  : del crv['geometry']['coordinates'][-1]
     if tdeg == 1 and tcPo == 2  : crv['geometry']['type']='Line'
@@ -154,16 +154,16 @@ def Curve(geom,prop=None):
         print("3ARC")
         crv['geometry']['deg']=tdeg
         # crv['geometry']['type']='Arc'
-    if tdeg == 2 and tcPo == 5  :
-        arc = rs.AddArc3Pt(pts[0],pts[4],pts[2])
-        pt0 = convertToRPT(pts[0])
-        pt2 = convertToRPT(pts[2])
-        pt4 = convertToRPT(pts[4])
-        arc = rh.Geometry.Arc(startPoint = pt0, pointOnInterior = pt2, endPoint = pt4)
-        crv['geometry']['type']='Arc'
+    #if tdeg == 2 and tcPo == 5  :
+        #arc = rs.AddArc3Pt(pts[0],pts[4],pts[2])
+        #pt0 = convertToRPT(pts[0])
+        #pt2 = convertToRPT(pts[2])
+        #pt4 = convertToRPT(pts[4])
+        #arc = rh.Geometry.Arc(startPoint = pt0, pointOnInterior = pt2, endPoint = pt4)
+        
         #print(crv['geometry']['coordinates'])
-        del crv['geometry']['coordinates'][3]
-        del crv['geometry']['coordinates'][1]
+        #del crv['geometry']['coordinates'][3]
+        #del crv['geometry']['coordinates'][1]
     if isArc:
         cpt = rs.ArcCenterPoint(geom)
         testCrvPts = rs.CurvePoints(geom)
@@ -188,10 +188,13 @@ def Curve(geom,prop=None):
         crv['geometry']['radius'] = crd
     if prop:
         crv['properties'] = json.loads(prop)
+    #if not isArc and crv["geometry"]['type'] == "Arc":
+        #crv['geometry']['type']='Spline'
 #    if tdeg >= 2:
     print (crv)
     return crv
 def PolyCurve(geom, prop=None):
+    #print(geom)
     
     print("PolyCurve def")
     print(geom, type(geom))
@@ -248,6 +251,12 @@ def Convert(geom,prop):
         try:
             if ot == Curve:
                 geom = rs.coercegeometry(geom)
+                #geom = rs.coercegeometry(geom)
+                geom = ghp.components.Explode(geom, True)
+                #print(geom)
+                geom = ghp.components.JoinCurves(geom["segments"],True)
+                global CHECKGEOM
+                CHECKGEOM.append(geom)
                 othertype = str(type(geom))
                 print("othertype", othertype)
                 if othertype == "<type 'PolyCurve'>":

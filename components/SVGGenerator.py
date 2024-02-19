@@ -36,6 +36,8 @@ log = []
 ARCHIJSON = J
 LAYOUT = L
 CSS = C
+
+CHECKPTS = []
 def checkRB(ob):
 	if str(type(ob)) == "<type 'str'>":
 		return json.loads(ob)
@@ -293,40 +295,59 @@ def spline_2deg(initCoords, props, outType=None, closed = True, skipFirst = Fals
 			polarray_len = len(polarray)
 		bezierPts = []
 		knotPts = []
+		print("polLen",polarray_len)
 		if closed:
+			print("closed")
 			for index in range(polarray_len-1):
 				pt1 = polarray[index % len(polarray)]
 				pt2 = polarray[(index+1) % len(polarray)]
-				pt3 = avgpts(pt1,pt2,float(5.0/6.0),float(1.0/6.0))
-				pt4 = avgpts(pt1,pt2,float(1.0/6.0),float(5.0/6.0))
+				pt3 = polarray[(index+2) % len(polarray)]
+				
+				pt4 = avgpts(pt1,pt2,(1.0/6.0),(5.0/6.0))
+				pt5 = avgpts(pt2,pt3,(5.0/6.0),(1.0/6.0))
 				#print("par",pt1,pt2,pt3,pt4)
-				bezierPts.append(pt3)
 				bezierPts.append(pt4)
+				bezierPts.append(pt5)
 				a = bezierPts
 			#fpoint = bezierPts.pop(0)
 			#bezierPts.append(fpoint)
+			# fpoint = bezierPts.pop(0)
+			bezierPts = bezierPts[:-2]
 			for index in range(int(len(bezierPts)/2.0)):
 				index = index*2
-				pt1 = bezierPts[index % len(bezierPts)]
-				pt2 = bezierPts[(index+1) % len(bezierPts)]
+				pt1 = bezierPts[(index+1) % len(bezierPts)]
+				pt2 = bezierPts[(index+2) % len(bezierPts)]
 				#print("avg",index,index+1,pt1,pt2)
 				knotPts.append(avgpts(pt1,pt2))
-			fpoint = bezierPts.pop(0)
 			#bezierPts.append(fpoint)
-		
+			#bezierPts = bezierPts[-1:]+bezierPts[:-1]
+			knotPts = knotPts[-1:]+knotPts[:-1]
+			knotPts = knotPts+[knotPts[0]]
 		else:
 			mode = "normal"
 			if len(polarray) == 3:
 				mode = "3pt"
+			print("_"*10+mode)
 			#print("p",len(polarray),polarray)
+			#if mode == "normal":
+				#apPt = avgpts(polarray[0],polarray[1],1.0/3.0,2.0/3.0)
+				#bezierPts.append(apPt)
+			if mode == "3pt":
+				apPt1 = avgpts(polarray[0],polarray[1],(1.0/3.0),(2.0/3.0))
+				apPt2 = avgpts(polarray[1],polarray[2],(2.0/3.0),(1.0/3.0))
+				bezierPts.append(apPt1)
+				bezierPts.append(apPt2)
 			if mode == "normal":
-				apPt = avgpts(polarray[0],polarray[1],0.25,0.75)
-				bezierPts.append(apPt)
-			for index in range(polarray_len-3):
-				bezierPts.append(avgpts(polarray[index+1],polarray[index+2],(5.0/6.0),(1.0/6.0)))
-				bezierPts.append(avgpts(polarray[index+1],polarray[index+2],(1.0/6.0),(5.0/6.0)))
+				for index in range(int((polarray_len-1)/2)):
+					index = index*2
+					print("index",index)
+					p1 = avgpts(polarray[index+0],polarray[index+1],(1.0/3.0),(2.0/3.0))
+					p2 = avgpts(polarray[index+1],polarray[index+2],(2.0/3.0),(1.0/3.0))
+					print("bez",p1)
+					bezierPts.append(p1)
+					bezierPts.append(p2)
 			if mode == "normal":
-				bezierPts.append(avgpts(polarray[-1],polarray[-2],0.25,0.75))
+				bezierPts.append(avgpts(polarray[-1],polarray[-2],1.0/3.0,2.0/3.0))
 			#print(len(bezierPts),bezierPts)
 			knotPts = [polarray[0]]+knotPts
 			if mode == "normal":
@@ -340,7 +361,11 @@ def spline_2deg(initCoords, props, outType=None, closed = True, skipFirst = Fals
 			knotPts.append(polarray[-1])
 		knotPtsList.append(knotPts)
 		beizerPtsList.append(bezierPts)
-		
+	print("knotPtsList",knotPtsList)
+	print("beizerPtsList",beizerPtsList)
+	global CHECKPTS
+	CHECKPTS = CHECKPTS+knotPtsList
+	CHECKPTS = CHECKPTS+beizerPtsList
 	coordStringList = []
 	#print(len(knotPts),knotPts)
 	#print(len(bezierPts),bezierPts)
@@ -363,13 +388,18 @@ def spline_2deg(initCoords, props, outType=None, closed = True, skipFirst = Fals
 		coordString= []
 		if not skipFirst:
 			coordString= ["M"]
+
 		coordString = coordString+list(" , ".join(splineCoords))
 		delimIndex = 0
 		for index, char in enumerate(coordString):
 			#print(index, char)
 			if char == ",":
 				if delimIndex == 1:
-					coordString[index] = "C"
+					if not skipFirst:
+						coordString[index] = "C"
+					else:
+						coordString[index] = "~C"
+
 				if (delimIndex-7) % 4 == 0 and delimIndex >= 7:
 					coordString[index] = "S"
 				delimIndex += 1
@@ -383,10 +413,13 @@ def spline_2deg(initCoords, props, outType=None, closed = True, skipFirst = Fals
 		propString.append(str(k)+'=\"'+str(props[k])+'\"')
 	pString = " ".join(propString)
 	coordStringList = "".join(coordStringList)
+	if skipFirst:
+		coordStringList = coordStringList.split("~")[1]
 	pline = '<path d="'+coordStringList+'" '+pString+'/>'
 	#print(pline)
 	#pline = NurbsCurve.ByControlPoints(polarray,1,o['properties']['closed'])
 	if outType == "coordinates":
+		print("coordStringList"+"__"+str(coordStringList))
 		return coordStringList
 	else:
 		return pline
@@ -720,3 +753,5 @@ svgfull = template.substitute(svgdict)
 SVG = svgfull.split("\n")
 S = SVG
 #L = log
+
+CHECKPTS = json.dumps(CHECKPTS)
