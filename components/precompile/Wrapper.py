@@ -151,4 +151,4 @@ class AssemblyInfo(GhPython.Assemblies.PythonAssemblyInfo):
         return ""
     
     def get_Id(self):
-        return System.Guid("63ba3d63-89dd-4cf6-baf8-d1d863769cd5")
+        return System.Guid("d59d4e26-1639-458c-a7eb-9d89c58572bf")
