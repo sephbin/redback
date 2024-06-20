@@ -1,0 +1,92 @@
+{
+  "id": "7d142de6-7a37-4b73-961b-a5ef3f7bfbc8",
+  "identity": {
+    "name": "Redback-Beta",
+    "version": "0.3.1-beta",
+    "publisher": {
+      "email": "andrew.butler@strangercollective.com",
+      "name": "Andrew Butler",
+      "company": "Stranger Collective",
+      "country": "Australia",
+      "url": "https://github.com/sephbin/"
+    },
+    "copyright": "Copyright \u00A9 2024 ",
+    "image": {
+      "light": {
+        "type": "svg",
+        "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgOTYgMTAxLjc4Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuY2xzLTEsIC5jbHMtMiwgLmNscy0zIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjZWIwYThjOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgY2xpcC1wYXRoOiB1cmwoI2NsaXBwYXRoKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik04Ny40MSw2My43OGMwLDI1LjY5LTE3LjY1LDM2LjUyLTM5LjQxLDM2LjUyUzkuNTksODkuNDcsOS41OSw2My43OCwyNi4yMyw3LjI2LDQ4LDcuMjZzMzkuNDEsMzAuODMsMzkuNDEsNTYuNTJaIi8\u002BCiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBjbGFzcz0iY2xzLTQiPgogICAgPHJlY3QgY2xhc3M9ImNscy0xIiB5PSI1Ljc4IiB3aWR0aD0iOTYiIGhlaWdodD0iOTYiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMzcuNDQiIHdpZHRoPSIyMS4xMSIgaGVpZ2h0PSI2My4zMyIgcng9IjkiIHJ5PSI5Ii8\u002BCiAgPC9nPgo8L3N2Zz4="
+      },
+      "dark": {
+        "type": "svg",
+        "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgOTYgMTAxLjc4Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjMjMxZjIwOwogICAgICB9CgogICAgICAuY2xzLTEsIC5jbHMtMiwgLmNscy0zIHsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjZWIwYThjOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgY2xpcC1wYXRoOiB1cmwoI2NsaXBwYXRoKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik04Ny40MSw2My43OGMwLDI1LjY5LTE3LjY1LDM2LjUyLTM5LjQxLDM2LjUyUzkuNTksODkuNDcsOS41OSw2My43OCwyNi4yMyw3LjI2LDQ4LDcuMjZzMzkuNDEsMzAuODMsMzkuNDEsNTYuNTJaIi8\u002BCiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBjbGFzcz0iY2xzLTQiPgogICAgPHJlY3QgY2xhc3M9ImNscy0xIiB5PSI1Ljc4IiB3aWR0aD0iOTYiIGhlaWdodD0iOTYiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMzcuNDQiIHdpZHRoPSIyMS4xMSIgaGVpZ2h0PSI2My4zMyIgcng9IjkiIHJ5PSI5Ii8\u002BCiAgPC9nPgo8L3N2Zz4="
+      }
+    }
+  },
+  "settings": {
+    "buildPath": "build/",
+    "buildTarget": {
+      "appName": "Rhino3D",
+      "appVersion": {
+        "major": 8
+      },
+      "title": "Rhino3D (8.*)",
+      "slug": "rh8"
+    },
+    "publishTarget": {
+      "title": "McNeel Yak Server"
+    }
+  },
+  "codes": [
+    {
+      "type": "components",
+      "id": "007616b5-d83b-44cb-8b56-18bd99c2a8ba",
+      "language": {
+        "id": "*.gh1.grasshopper",
+        "version": "1.*.*"
+      },
+      "title": "SVG Layout.gh",
+      "uri": "ghScripts/SVG Layout.gh",
+      "scripts": [
+        {
+          "id": "16627625-9da4-4ba3-96dc-87ab4574bb19",
+          "name": "SVG Layout",
+          "nickname": "SVGLayout",
+          "description": "Creates SVG Layout JSON object",
+          "subcat": "SVG",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQgMjQiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICM5ZTBmMTE7CiAgICAgIH0KCiAgICAgIC5jbHMtMSwgLmNscy0yLCAuY2xzLTMsIC5jbHMtNCwgLmNscy01IHsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiBub25lOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICNlZDFjMjQ7CiAgICAgIH0KCiAgICAgIC5jbHMtNiB7CiAgICAgICAgY2xpcC1wYXRoOiB1cmwoI2NsaXBwYXRoLTEpOwogICAgICB9CgogICAgICAuY2xzLTcgewogICAgICAgIGNsaXAtcGF0aDogdXJsKCNjbGlwcGF0aCk7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy01IHsKICAgICAgICBmaWxsOiAjYzQxYTFlOwogICAgICB9CiAgICA8L3N0eWxlPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwcGF0aCI\u002BCiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIyMy4xOCA0LjI3IDE2LjM5IDE5LjczIDguMTUgMTMuNzggMjMuMTggNC4yNyIvPgogICAgPC9jbGlwUGF0aD4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgtMSI\u002BCiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSI2LjQ5IDEyLjM2IC44MiA5LjM0IDIzLjE4IDQuMjcgNi40OSAxMi4zNiIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM\u002BCiAgPGcgY2xhc3M9ImNscy03Ij4KICAgIDxyZWN0IGNsYXNzPSJjbHMtMyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8\u002BCiAgICA8cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Ik0yMC45NCwxMi42MmwtMTAuMjUsNy4zOCw4LjYyLDMuMTljLjEyLS42MiwxLjYyLTEwLjU2LDEuNjItMTAuNTZaIi8\u002BCiAgPC9nPgogIDxwb2x5Z29uIGNsYXNzPSJjbHMtNSIgcG9pbnRzPSI4LjE1IDEzLjc4IDYuNTEgMTcuNjEgNi40OSAxMi4zNiAyMy4xOCA0LjI3IDguMTUgMTMuNzgiLz4KICA8ZyBjbGFzcz0iY2xzLTYiPgogICAgPHJlY3QgY2xhc3M9ImNscy0zIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTEwLjYyLDQuMjdMMi42OSwxMi43MVMtMy42OSw3LjU5LTMuMTksNy4zNHM5LjY3LTMuMDYsOS42Ny0zLjA2aDQuMTRaIi8\u002BCiAgPC9nPgogIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI2LjUxIDE3LjYxIDEwLjA5IDE1LjE4IDguMTUgMTMuNzggNi41MSAxNy42MSIvPgo8L3N2Zz4="
+            }
+          }
+        },
+        {
+          "id": "ada64091-825f-4874-b12d-3147898c222e",
+          "name": "Write File",
+          "nickname": "WriteFile",
+          "description": "Saves data to file",
+          "subcat": "Files",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI\u002BCiAgPGRlZnM\u002BCiAgICA8c3R5bGU\u002BCiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2VkMWMyNDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIgewogICAgICAgIHN0cm9rZS13aWR0aDogMHB4OwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KICAgIDwvc3R5bGU\u002BCiAgPC9kZWZzPgogIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyIDIyIDIgMiAxNiAyIDIyIDggMjIgMjIgMiAyMiIvPgogIDxjaXJjbGUgY2xhc3M9ImNscy0yIiBjeD0iMTIiIGN5PSIxMiIgcj0iMi41Ii8\u002BCiAgPHJlY3QgY2xhc3M9ImNscy0yIiB4PSI5IiB5PSIxNyIgd2lkdGg9IjYiIGhlaWdodD0iNSIvPgo8L3N2Zz4="
+            }
+          }
+        },
+        {
+          "id": "9a5dddd3-e4c4-4f2c-9ab9-451891e47355",
+          "name": "Relative Path",
+          "nickname": "RelPath",
+          "description": "Creates a relative path to Rhino/GH document",
+          "subcat": "Files",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI\u002BCiAgPGRlZnM\u002BCiAgICA8c3R5bGU\u002BCiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2VkMWMyNDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjYzQxYTFlOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cmVjdCBjbGFzcz0iY2xzLTMiIHg9IjMuMTEiIHk9IjMuNTMiIHdpZHRoPSIyMC44OSIgaGVpZ2h0PSIxNS42NiIgcng9IjIuNSIgcnk9IjIuNSIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTIxLjQ5LDQuNTVjLjgyLDAsMS40OS42NywxLjQ5LDEuNDl2My4wOGMtLjMtLjIzLS42NS0uMzgtMS4wMi0uNDV2LTIuNThjMC0uMjgtLjIzLS41MS0uNTEtLjUxaC0xMC4xMmwtLjQ4LTEuMDJoMTAuNjRaIi8\u002BCiAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMjAuOTQsOC42MmgtNi43MWMtLjU4LDAtMi4xLTEuMzMtMi4zNS0xLjg2bC0uMDgtLjE2aDkuMTN2Mi4wMloiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yLjUsMjIuNTFjLTEuMzgsMC0yLjUtMS4xMi0yLjUtMi41VjMuOTlDMCwyLjYxLDEuMTIsMS40OSwyLjUsMS40OWg2LjIyYzEuMzgsMCwyLjc4LDEuMDksMy4xMywyLjQybC4zMywxLjI3Yy4zNSwxLjMzLDEuNzUsMi40MiwzLjEzLDIuNDJoNi4yYzEuMzgsMCwyLjUsMS4xMiwyLjUsMi41djkuOTFjMCwxLjM4LTEuMTIsMi41LTIuNSwyLjVIMi41WiIvPgo8L3N2Zz4="
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
