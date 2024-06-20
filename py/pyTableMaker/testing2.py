@@ -1,6 +1,7 @@
 import sys
 sys.path.append("..") # Adds higher directory to python modules path.
 import pyTableMaker as tm
+from pyCSSParser import parseCSS
 import openpyxl
 
 
@@ -22,46 +23,38 @@ for row_index, row in enumerate(ws.iter_rows()):
 		dataOut.append(apDict)
 # print(dataOut)
 
-dataTable = [
-[{"value":"Code"},
-{"value":"Location"},
-{"value":"Product"},
-{"value":"Finish"},
-{"value":"Image"},
-{"value":"Supplier"},
-{"value":"Rev"}],
-]
-for row_index, row in enumerate(dataOut):
-	# if row_index > 7:
-		# break
-	rowData = [{"value":row["Code"]},{"value":row["Description"]},
-	{"value":row["Description"]},
-	{"value":row["Description"]},
-	{"image":r"C:/Users/Andrew.Butler/OneDrive%20-%20Cox%20Architecture%20Pty%20Ltd/RPG/BotCT/Icons/mod/ojo.png"},{"value":row["Comments"]},{"value":row["Revision"]}]
-	# print(rowData)
-	dataTable.append(rowData)
+dataTable = [[{"value":""}, {"value":"Precinct Area"}, {"value": "eGaming", "fill": "#B2DFDB"}, {"value": "Entertainment", "fill": "#B39DDB"}, {"value": "Hotel", "fill": "#FFCC80"}, {"value": "HQ", "fill": "#4CAF50"}, {"value": "Office", "fill": "#81C784"}, {"value": "Parking", "fill": "#90A4AE"}, {"value": "Plaza", "fill": "#F48FB1"}, {"value": "ProTeam", "fill": "#8BDA79"}, {"value": "Residential", "fill": "#FFF59D"}, {"value": "Retail", "fill": "#EF9A9A"}, {"value": "Services", "fill": "#BDBDBD"}, {"value": "Sports", "fill": "#E6EE9C"}, {"value": "Transport", "fill": "#9FA8DA"}, "GFA"], ["Alternate History\nCC-005", 65289, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 47818, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 6745, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 54563, "hAlignment": "Right"}], ["High Fantasy\nCC-006", 74924, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 17745, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 43027, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 1345, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 9947, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 72064, "hAlignment": "Right"}], ["Cyberpunk\nCC-010", 72850, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 30713, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 28742, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 50358, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 70934, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 5328, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 186075, "hAlignment": "Right"}], [{"displayTemplate": "{:,}", "value": "Total", "hAlignment": "Right"}, 213063, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 48458, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 71769, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 50358, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 1345, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 47818, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 70934, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 22020, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 312702, "hAlignment": "Right"}], [{"value": "Brief", "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 92422, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 101815, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 49116, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 93000, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 47501, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 54222, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 71317, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 27000, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, " "], [{"value": "Difference", "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -92422, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -101815, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -658, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -21231, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 2857, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 1345, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -6404, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -383, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": -4980, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"displayTemplate": "{:,}", "value": 0, "hAlignment": "Right"}, {"value": 0, "hAlignment": "Right"}, {"value":" "}]]
+
+# for row_index, row in enumerate(dataOut):
+# 	# if row_index > 7:
+# 		# break
+# 	rowData = [{"value":row["Code"]},{"value":row["Description"]},
+# 	{"value":row["Description"]},
+# 	{"value":row["Description"]},
+# 	{"image":r"C:/Users/Andrew.Butler/OneDrive%20-%20Cox%20Architecture%20Pty%20Ltd/RPG/BotCT/Icons/mod/ojo.png"},{"value":row["Comments"]},{"value":row["Revision"]}]
+# 	# print(rowData)
+# 	dataTable.append(rowData)
 
 
-css = [
-    {"filters": [{"eval": "True", "searchType": "eval"} ], "style": {
-    "paragraphStyle": "Generated%3aTable\%3a Body", "cellStyle": "Generated%3aNone",
-    
-    }},
-	# {"filters": [{"eval": "bord", "searchType": "eval"} ], "style": {"weight":"{line-thin}"} },
-    {"filters": [{"eval": "ob['yPos'] in [0]", "searchType": "eval"} ], "style": {"hAlignment": "CenterAlign", "paragraphStyle":"Generated%3aTable\%3a H1", "cellStyle": "Generated%3aHeader 1"} },
-    {"filters": [{"eval": "ob['xPos'] in [0]", "searchType": "eval"} ], "style": {"hAlignment": "CenterAlign"} },
-    {"filters": [{"eval": "ob['xPosRev'] in [-1]", "searchType": "eval"} ], "style": {"hAlignment": "CenterAlign"} },
+css = '''
+	*{weight:0.5;}
+	!{removeTableBorder}
 
-	{"filters": [{"eval": "bord['xPos'] in [0]", "searchType": "eval"} ], "style": {"weight":0} },
-	{"filters": [{"eval": "bord['xPosRev'] in [-1]", "searchType": "eval"} ], "style": {"weight":0} },
-	# {"filters": [{"eval": "bord['yPos'] in [0]", "searchType": "eval"} ], "style": {"weight":0} },
-	# {"filters": [{"eval": "bord['yPos'] in [1]", "searchType": "eval"} ], "style": {"weight":"{line-thick}"} },
-	]
+	border[yPos=1]{weight:1;}
+	border[yPosRev=-4]{weight:1;}
+	border[yPosRev=-2]{weight:1;}
+	border[xPos=1]{weight:1;}
+	border[xPos=2]{weight:1;}
+	border[xPosRev=-2]{weight:1;}
+	[value=0]{characterStyle: Hello; fill:#FF0000; borderRight:2; displayTemplate:HELLO;}
+
+	'''
+
+css = parseCSS(css)
+#print(css)
+
+table = tm.table(dataTable, {"css":css, "columnWidths": [20,15,15,20,15],"columnWidthsRev": [], "variables": {}})
 
 
-
-table = tm.table(dataTable, {"css":css, "columnWidths":[21.743,43.75,83.75,83.75,69.375,65.625,21.743],"headerCount":1})
-
-
-with open(r"C:\Users\Andrew.Butler\Cox Architecture Pty Ltd\223007.00 - Qiddiya (Neybor) [+dBA] - Documents\Design Technology (BIM)\Specifications Schedules\Finishes\testing.icml", "wb") as file:
+with open(r"testing.icml", "wb") as file:
 	file.write(str(table).encode("utf-8"))

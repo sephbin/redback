@@ -27,39 +27,39 @@ def checkValue(value):
 		}
 	for check in [value.isdigit, isfloat]:
 		try:	runCheck = check()
-		except:	runCheck = check(value)
-		# print(key, check.__name__, runCheck, value)
+		except:	runCheck = check(value.lstrip("-"))
+		#print(check.__name__, runCheck, value, list(value))
 		if runCheck:
 			value = lut[check.__name__](value)
 			break
 	return value
 
-def generateAllSelector(selector):
+def generateAllSelector(selector, objectType):
 	return "True"
-def generateClassSelector(selector):
+def generateClassSelector(selector, objectType):
 	selector = selector.lstrip(".")
-	template = r'''re.search("\\b{classText}\\b", ob["class"])'''.format(**{"classText":selector})
+	template = r'''re.search("\\b{classText}\\b", {objectType}["class"])'''.format(**{"classText":selector, "objectType":objectType})
 	return template
 
-def generateIDSelector(selector):
+def generateIDSelector(selector,objectType):
 	selector = selector.lstrip("#")
-	template = '''ob["id"] == {idText}'''.format(**{"idText":selector})
+	template = '''{objectType}["id"] == {idText}'''.format(**{"idText":selector, "objectType":objectType})
 	return template
 
-def generateSquareBracketSelector(selector):
+def generateSquareBracketSelector(selector, objectType):
 	try:
 		selector = selector.lstrip("[").rstrip("]")
 		lut = [
-		{"operator": "~=",	"description":"contains",					"convertToStr":True, "template":'''{value} in ob["{key}"]'''},
-		{"operator": "|=",	"description":"equal to or startswith",		"convertToStr":False, "template":'''ob["{key}"] == '{value}' or ob["{key}"].startswith('{value}')'''},
-		{"operator": "^=",	"description":"startswith",					"convertToStr":False, "template":'''ob["{key}"].startswith('{value}')'''},
-		{"operator": "$=",	"description":"endswith",					"convertToStr":False, "template":'''ob["{key}"].endswith('{value}')'''},
-		{"operator": "*=",	"description":"contains substring",			"convertToStr":False, "template":r'''re.search("\\b{value}\\b", ob["{key}"])'''},
-		{"operator": "=",	"description":"equals",						"convertToStr":True, "template":'''ob["{key}"] == {value}'''},
-		{"operator": ">=",	"description":"greater than or equal to",	"convertToStr":True, "template":'''ob["{key}"] >= {value}'''},
-		{"operator": ">",	"description":"greater than",				"convertToStr":True, "template":'''ob["{key}"] > {value}'''},
-		{"operator": "<",	"description":"less than or equal to",		"convertToStr":True, "template":'''ob["{key}"] <= {value}'''},
-		{"operator": "<",	"description":"less than",					"convertToStr":True, "template":'''ob["{key}"] < {value}'''},
+		{"operator": "~=",	"description":"contains",					"convertToStr":True, 	"template":'''{value} in {objectType}["{key}"]'''},
+		{"operator": "|=",	"description":"equal to or startswith",		"convertToStr":False,	"template":'''{objectType}["{key}"] == '{value}' or {objectType}["{key}"].startswith('{value}')'''},
+		{"operator": "^=",	"description":"startswith",					"convertToStr":False,	"template":'''{objectType}["{key}"].startswith('{value}')'''},
+		{"operator": "$=",	"description":"endswith",					"convertToStr":False,	"template":'''{objectType}["{key}"].endswith('{value}')'''},
+		{"operator": "*=",	"description":"contains substring",			"convertToStr":False,	"template":r'''re.search("\\b{value}\\b", {objectType}["{key}"])'''},
+		{"operator": "=",	"description":"equals",						"convertToStr":True,	"template":'''{objectType}["{key}"] == {value}'''},
+		{"operator": ">=",	"description":"greater than or equal to",	"convertToStr":True,	"template":'''{objectType}["{key}"] >= {value}'''},
+		{"operator": ">",	"description":"greater than",				"convertToStr":True,	"template":'''{objectType}["{key}"] > {value}'''},
+		{"operator": "<",	"description":"less than or equal to",		"convertToStr":True,	"template":'''{objectType}["{key}"] <= {value}'''},
+		{"operator": "<",	"description":"less than",					"convertToStr":True,	"template":'''{objectType}["{key}"] < {value}'''},
 		]
 
 		for check in lut:
@@ -72,8 +72,8 @@ def generateSquareBracketSelector(selector):
 						value = '"%s"'%(value)
 				#print("-"*10,key,value)
 				#print("-"*10,check["template"])
-				execute = check["template"].format(**{"key":key,"value":value})
-				print("+"*10,execute)
+				execute = check["template"].format(**{"key":key,"value":value, "objectType":objectType})
+				#print("+"*10,execute)
 				return execute
 				break
 	except Exception as e:
@@ -86,11 +86,16 @@ def equals(a,b):
 def parseSelector(selector):
 	try:
 		checks = [
-		{"searchFunction": "equals", "variables":["*"], "name": "class","runFunction":generateAllSelector},
-		{"searchFunction": "startswith", "variables":["."], "name": "class","runFunction":generateClassSelector},
-		{"searchFunction": "startswith", "variables":["#"], "name": "id", "runFunction":generateIDSelector},
-		{"searchFunction": "startswith", "variables":["["], "name": "id", "runFunction":generateSquareBracketSelector},
+		{"searchFunction": "equals",		"variables":["*"], "name": "class","runFunction":generateAllSelector},
+		{"searchFunction": "startswith",	"variables":["."], "name": "class","runFunction":generateClassSelector},
+		{"searchFunction": "startswith",	"variables":["#"], "name": "id", "runFunction":generateIDSelector},
+		{"searchFunction": "startswith",	"variables":["["], "name": "id", "runFunction":generateSquareBracketSelector},
 		]
+		obType = "ob"
+		for objectType in ["border"]:
+			if selector.startswith(objectType):
+				obType = objectType
+				selector = selector.replace(objectType, "", 1)
 		for check in checks:
 			#print(check)
 			try:	func  = getattr(selector, check["searchFunction"])
@@ -98,15 +103,17 @@ def parseSelector(selector):
 				func = globals()[check["searchFunction"]]
 				check["variables"] = [selector]+check["variables"]
 			
+			
 			runCheck = func(*check["variables"])
 			if runCheck:
-				selector = check["runFunction"](selector)
+				selector = check["runFunction"](selector, obType)
 		return selector
 	except Exception as e:
 		print("parseSelector",e)
 
 def parseSelectors(selectors):
 	selectors = strip(selectors)
+	#print(selectors)
 	selectors = {"eval":parseSelector(selectors), "searchType": "eval"}
 
 	return {"filters":[selectors]}
@@ -142,16 +149,34 @@ def parseStyles(styles):
 
 	except Exception as e:
 		print("error - parseStyles |",e,"|", styles)
+
+def superCSS(text):
+	outList = []
+	superLUT = {"removeTableBorder": ["border[yPos=0]{weight:0;}", "border[yPosRev=-1]{weight:0;}", "border[xPos=0]{weight:0;}", "border[xPosRev=-1]{weight:0;}"]}
+	if text.startswith("!"):
+		text = text.strip("!")
+		text = text.lstrip("{").rstrip("}")
+		print(text)
+		if text in superLUT:
+			outList = superLUT[text]
+
+	return outList
 def parseCSS(text):
 	text = text.replace("\n", "")
+	text = text.replace("\t", "")
 	text = text.replace("}", "}█")
 	text = text.lstrip().rstrip()
 
 	lines = text.split("█")
 	lines = list(filter(lambda x: x, lines))
 	outList = []
+
+	for index, line in enumerate(lines):
+		appendList = superCSS(line)
+		
+
 	for line in lines:
-		#print("#"*100)
+		#print("#"*100}
 		try:
 			line = line.replace("{", "█{")
 			selectors, styles = tuple(line.split("█"))

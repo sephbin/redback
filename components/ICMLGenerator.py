@@ -12,7 +12,7 @@ __var__ = {
 	"section":"Tables",
 
 	"inputs":[
-		{"name":"Data",		"nickname":"D",	"objectAccess":"item",	"description":"Table data formated as a JSON list of lists", },
+		{"name":"Data",		"nickname":"D",	"objectAccess":"item", "objectType":"String",	"description":"Table data formated as a JSON list of lists", },
 		{"name":"Options",	"nickname":"O",	"objectAccess":"list",	"description":"Table options as a JSON dictionary"},
 		{"name":"CSS",		"nickname":"C",	"objectAccess":"list",	"description":"CSS to apply styles to the table"}
 	],

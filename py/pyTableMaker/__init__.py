@@ -183,7 +183,7 @@ class borderParent(dict):
 		return unicode(repr(self.__dict__))
 	def applyCSS(self, css=[]):
 		def __eval__(self, search):
-			bord = self.__dict__
+			border = self.__dict__
 			try:
 				search = eval(search["eval"])
 				return search
@@ -358,10 +358,13 @@ class cell(parent):
 		try:    baseContext["borderRight"] = list(filter(lambda i: i["yPos"]==self.yPos+0.5 and i["xPos"]==self.xPos+1, self.parentTable.vBorders))[0].cssChanges["weight"]
 		except: pass
 		context = baseContext.copy()
-		context["content"] = context["displayTemplate"].format(self.value)
+		context["content"] = self.value
 		
 		#print("baseContext",baseContext)
 		context.update(self.cssChanges)
+		#print("\n"*2)
+		#print(context)
+		# context["content"] = context["displayTemplate"].format(context["content"])
 		#print(context)
 		# if context["content"] == "D0043":
 		#     print("-"*100)
@@ -370,25 +373,29 @@ class cell(parent):
 		context["paragraphStyle"] = context["paragraphStyle"].replace(":","%3a")
 		#print(context["displayTemplate"])
 		#print(self.value)
-		try:    context["content"] = context["displayTemplate"].format(self.value)
-		except: context["content"] = self.value
+		try:    context["content"] = context["displayTemplate"].format(context["content"])
+		except: context["content"] = context["content"]
 		#if self.value == "Total":
 			#print(context)
 
 		if context["hAlignment"]:
 			context["hAlignment"] = 'Justification="{hAlignment}"'.format(**context)
 		if context["fill"]:
-			cC = context["fill"]
-			if type(cC) == type(""):
-				if cC.startswith("#"):
-					cC = hexToRGB(cC)
-			cC = list(map(lambda x: x/255, cC))
+			# cC = context["fill"]
+			# if type(cC) == type(""):
+				# if cC.startswith("#"):
+					# cC = hexToRGB(cC)
+			# cC = list(map(lambda x: x/255, cC))
 			#print(cC)
 			#<tCellFillColor:COLOR\:RGB\:Process\:0.8901960784313725\,0.6431372549019608\,0.8509803921568627>
 			#text = "<tCellFillColor:R\\={0} G\\={1} B\\={2}>".format(*context["fill"])
 			#<tCellAttrLeftStrokeWeight:2><tCellAttrTopStrokeWeight:2>
-			text = "<tCellFillColor:COLOR\\:RGB\\:Process\\:{0}\\,{1}\\,{2}>".format(*cC)
-			context["fillString"] = text
+			# text = "<tCellFillColor:COLOR\\:RGB\\:Process\\:{0}\\,{1}\\,{2}>".format(*cC)
+			# context["fillString"] = text
+			#print(context["fill"])
+			if context["fill"] in self.parentTable.colourTable:
+				colourID = self.parentTable.colourTable[context["fill"]]["id"]
+				context["fillString"] = 'FillColor="Color/%s"'%(colourID)
 		if context["characterColour"]:
 			cC = context["characterColour"]
 			if type(cC) == type(""):
@@ -473,9 +480,9 @@ class cell(parent):
 		#LeftEdgeStrokeWeight="{borderLeft}" RightEdgeStrokeWeight="{borderRight}" TopEdgeStrokeWeight="{borderTop}" BottomEdgeStrokeWeight="{borderBottom}"
 		#TextTopInset="0" TextLeftInset="0" TextBottomInset="0" TextRightInset="0"
 		template = """<Cell Self="u34fi365i0" Name="{xPos}:{yPos}" RowSpan="{vMerge}" ColumnSpan="{hMerge}" CellType="{cellType}" ClipContentToTextCell="false"
-		AppliedCellStyle="CellStyle/{cellStyle}" AppliedCellStylePriority="2"
+		AppliedCellStyle="CellStyle/Generated%3a{cellStyle}" AppliedCellStylePriority="2"
 		{borderString}
-		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1">
+		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1" {fillString}>
 		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3a{paragraphStyle}" {hAlignment}>
 		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a{characterStyle}">
 		<Content>{content}</Content>
@@ -503,13 +510,40 @@ class cell(parent):
 class table:
 	def __init__(self, data=[], options={}):
 		#print("-"*10)
+		
 		defaultOptions = {"css":[], "variables":{},"columnWidths":[30],"columnWidthsRev":[]}
 		defaultOptions.update(options)
-
 		self.options = options = deepFormat(defaultOptions, defaultOptions["variables"])
 		try:    self.data = quickRemoveRows(data,[options["removeClass"]])
 		except: self.data = quickRemoveRows(data)
-		
+		self.flatData = []
+		#print(self.data)
+		#print("flatData")
+		for r in self.data:
+			for c in r["value"]:
+				if type(c) != type({}):
+					c = {"value":c}
+				self.flatData.append(c)
+		#print(self.flatData)
+		self.colourTable = {}
+
+		colourId = 0
+		for flatCell in self.flatData:
+			#print("flatCell", flatCell)
+			if "fill" in flatCell:
+				if flatCell["fill"] not in self.colourTable:
+					colourCode = hexToRGB(flatCell["fill"])
+					self.colourTable[flatCell["fill"]] =  {"id": "GenColour"+str(colourId), "code": colourCode, "codeString": " ".join(list(map(lambda i: str(i), colourCode)))}
+					colourId += 1
+		for style in self.options["css"]:
+			style = style["style"]
+			if "fill" in style:
+				if style["fill"] not in self.colourTable:
+					colourCode = hexToRGB(style["fill"])
+					self.colourTable[style["fill"]] =  {"id": "GenColour"+str(colourId), "code": colourCode, "codeString": " ".join(list(map(lambda i: str(i), colourCode)))}
+					colourId += 1
+		#print(self.colourTable)
+
 		buildColumnWidths = [self.options["columnWidths"][-1]]*self.tableWidth
 		for i, v in enumerate(self.options["columnWidths"]):
 			buildColumnWidths[i] = v
@@ -553,6 +587,7 @@ class table:
 			#row_instance = row(cells, row_index, self)
 			#rows.append(str(row_instance))
 		self.cellsString = "\n".join(list(map(lambda x: str(x), self.cells)))
+		
 		
 		
 	#@property
@@ -616,11 +651,22 @@ class table:
 		parastyles = "\n".join(parastyles)
 		charastyles = "\n".join(charastyles)
 
+		colours = []
+		for colourKey, colour in self.colourTable.items():
+			template = '''\t\t<Color Self="Color/{id}" Model="Process" Space="RGB" ColorValue="{codeString}" ColorOverride="Normal" ConvertToHsb="false" AlternateSpace="NoAlternateColor" AlternateColorValue="" Name="$ID/" ColorEditable="true" ColorRemovable="true" Visible="false" SwatchCreatorID="7937" SwatchColorGroupReference="n" />'''
+			colours.append(template.format(**colour))
+		colours = "\n".join(colours)
+
+
 		fullDocString = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 		<?aid style="50" type="snippet" readerVersion="6.0" featureSet="257" product="18.4(56)" ?>
 		<?aid SnippetType="InCopyInterchange"?>
 		<Document DOMVersion="18.0" Self="d">
-		<Ink Self="Ink/$ID/Process Cyan" Name="$ID/Process Cyan" Angle="75" ConvertToProcess="false" Frequency="70" NeutralDensity="0.61" PrintInk="true" TrapOrder="1" InkType="Normal" /> <Ink Self="Ink/$ID/Process Magenta" Name="$ID/Process Magenta" Angle="15" ConvertToProcess="false" Frequency="70" NeutralDensity="0.76" PrintInk="true" TrapOrder="2" InkType="Normal" /> <Ink Self="Ink/$ID/Process Yellow" Name="$ID/Process Yellow" Angle="0" ConvertToProcess="false" Frequency="70" NeutralDensity="0.16" PrintInk="true" TrapOrder="3" InkType="Normal" /> <Ink Self="Ink/$ID/Process Black" Name="$ID/Process Black" Angle="45" ConvertToProcess="false" Frequency="70" NeutralDensity="1.7" PrintInk="true" TrapOrder="4" InkType="Normal" /> <Swatch Self="Swatch/None" Name="None" ColorEditable="false" ColorRemovable="false" Visible="true" SwatchCreatorID="7937" SwatchColorGroupReference="u18ColorGroupSwatch0" />
+{colours}
+		<Ink Self="Ink/$ID/Process Cyan" Name="$ID/Process Cyan" Angle="75" ConvertToProcess="false" Frequency="70" NeutralDensity="0.61" PrintInk="true" TrapOrder="1" InkType="Normal" /> 
+		<Ink Self="Ink/$ID/Process Magenta" Name="$ID/Process Magenta" Angle="15" ConvertToProcess="false" Frequency="70" NeutralDensity="0.76" PrintInk="true" TrapOrder="2" InkType="Normal" /> 
+		<Ink Self="Ink/$ID/Process Yellow" Name="$ID/Process Yellow" Angle="0" ConvertToProcess="false" Frequency="70" NeutralDensity="0.16" PrintInk="true" TrapOrder="3" InkType="Normal" /> 
+		<Ink Self="Ink/$ID/Process Black" Name="$ID/Process Black" Angle="45" ConvertToProcess="false" Frequency="70" NeutralDensity="1.7" PrintInk="true" TrapOrder="4" InkType="Normal" /> <Swatch Self="Swatch/None" Name="None" ColorEditable="false" ColorRemovable="false" Visible="true" SwatchCreatorID="7937" SwatchColorGroupReference="u18ColorGroupSwatch0" />
 		<StrokeStyle Self="StrokeStyle/$ID/Solid" Name="$ID/Solid" />
 		<CompositeFont Self="CompositeFont/$ID/[No composite font]" Name="$ID/[No composite font]"> <CompositeFontEntry Self="uae" Name="$ID/Alphabetic" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿıŒœŠšŸŽžƒ" Locked="true" ScaleOption="false" BaselineShift="0"> <Properties> <AppliedFont type="string">Arial</AppliedFont> </Properties> </CompositeFontEntry> </CompositeFont>
 		<RootCharacterStyleGroup Self="u7f"> <CharacterStyle Self="CharacterStyle/$ID/[No character style]" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="$ID/" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" Name="$ID/[No character style]" />
@@ -642,6 +688,9 @@ class table:
 		<CellStyleGroup Self="CellStyleGroup/$ID/Generated" Name="$ID/Generated">
 			<CellStyle Self="CellStyle/Generated%3aHeader 1" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Header 1"  TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
 			<CellStyle Self="CellStyle/Generated%3aNone" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:None" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
+			<CellStyle Self="CellStyle/Generated%3aOption0" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Option0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
+			<CellStyle Self="CellStyle/Generated%3aOption1" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Option1" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
+			<CellStyle Self="CellStyle/Generated%3aOption2" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Option2" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
 		</CellStyleGroup>
 		</RootCellStyleGroup>
 		<RootTableStyleGroup Self="u90">
@@ -673,7 +722,7 @@ class table:
 		<ColorGroup Self="ColorGroup/[Root Color Group]" Name="[Root Color Group]" IsRootColorGroup="true"> <ColorGroupSwatch Self="u18ColorGroupSwatch0" SwatchItemRef="Swatch/None" /></ColorGroup>
 		</Document>"""
 		#string = """<ASCII-WIN>\r\n<Version:17.3><FeatureSet:InDesign-Roman><ColorTable:=<Black:COLOR:RGB:Process:0,0,0><Paper:COLOR:CMYK:Process:0,0,0,0><C\\=75 M\\=5 Y\\=100 K\\=0:COLOR:CMYK:Process:0.75,0.05,1,0>><ParaStyle:NormalParagraphStyle><TableStyle:Generated\\\\\\: White Fill>%s%s%s<TableEnd:>"""%(self.tableStartString, self.colsString, self.rowsString)
-		context = {"tableStartString":self.tableStartString, "cells":self.cellsString, "columns":self.colsString, "rows":self.rowsString, "parastyles":parastyles,"charastyles":charastyles}
+		context = {"tableStartString":self.tableStartString, "cells":self.cellsString, "columns":self.colsString, "rows":self.rowsString, "parastyles":parastyles,"charastyles":charastyles, "colours":colours}
 		string = fullDocString.format(**context)
 		return string
 	def __str__(self):
