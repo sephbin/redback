@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #71090a;
+      }
+
+      .cls-4, .cls-2 {
+        opacity: .2;
+      }
+
+      .cls-5 {
+        fill: #ed1c24;
+      }
+    </style>
+  </defs>
+  <rect class="cls-5" x="10" y="7" width="4" height="14"/>
+  <rect class="cls-5" x="4" y="3" width="16" height="4"/>
+  <rect x="3" y="2" width="1" height="6"/>
+  <rect x="4" y="7" width="6" height="1"/>
+  <rect x="9" y="8" width="1" height="14"/>
+  <rect x="10" y="21" width="4" height="1"/>
+  <rect x="14" y="8" width="1" height="14"/>
+  <rect x="14" y="7" width="7" height="1"/>
+  <rect x="20" y="2" width="1" height="5"/>
+  <rect x="4" y="2" width="16" height="1"/>
+  <rect class="cls-4" x="10" y="6" width="1" height="15"/>
+  <rect class="cls-4" x="5" y="6" width="5" height="1"/>
+  <rect class="cls-2" x="5" y="3" width="14" height="1"/>
+  <rect class="cls-4" x="16" y="6" width="3" height="1"/>
+  <g>
+    <rect class="cls-1" x="8.5" y="20.5" width="2" height="2"/>
+    <path class="cls-3" d="m10,21v1h-1v-1h1m1-1h-3v3h3v-3h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="2.5" y="6.5" width="2" height="2"/>
+    <path class="cls-3" d="m4,7v1h-1v-1h1m1-1h-3v3h3v-3h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="8.5" y="6.5" width="2" height="2"/>
+    <path class="cls-3" d="m10,7v1h-1v-1h1m1-1h-3v3h3v-3h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="2.5" y="1.5" width="2" height="2"/>
+    <path class="cls-3" d="m4,2v1h-1v-1h1m1-1h-3v3h3V1h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="19.5" y="1.5" width="2" height="2"/>
+    <path class="cls-3" d="m21,2v1h-1v-1h1m1-1h-3v3h3V1h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="19.5" y="6.5" width="2" height="2"/>
+    <path class="cls-3" d="m21,7v1h-1v-1h1m1-1h-3v3h3v-3h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="13.5" y="6.5" width="2" height="2"/>
+    <path class="cls-3" d="m15,7v1h-1v-1h1m1-1h-3v3h3v-3h0Z"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="13.5" y="20.5" width="2" height="2"/>
+    <path class="cls-3" d="m15,21v1h-1v-1h1m1-1h-3v3h3v-3h0Z"/>
+  </g>
+</svg>

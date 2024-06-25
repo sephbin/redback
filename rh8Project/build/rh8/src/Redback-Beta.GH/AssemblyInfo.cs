@@ -15,7 +15,7 @@ using Rhino.PlugIns;
 [assembly: PlugInDescription(DescriptionType.Icon, "Redback-Beta.GH.Resources.projectIcon.ico")]
 
 [assembly: AssemblyTitle("Redback-Beta")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Contains components for managing Data, SVG and ICML.")]
 [assembly: AssemblyCompany("Stranger Collective")]
 [assembly: AssemblyProduct("Redback-Beta")]
 [assembly: AssemblyCopyright("Copyright © 2024 ")]
@@ -25,8 +25,8 @@ using Rhino.PlugIns;
 
 [assembly: ComVisible(false)]
 [assembly: Guid("7d142de6-7a37-4b73-961b-a5ef3f7bfbc8")]
-[assembly: AssemblyVersion("0.3.1.8938")]
-[assembly: AssemblyFileVersion("0.3.1.8938")]
-[assembly: AssemblyInformationalVersion("0.3.1.8938")]
+[assembly: AssemblyVersion("0.3.4.8943")]
+[assembly: AssemblyFileVersion("0.3.4.8943")]
+[assembly: AssemblyInformationalVersion("0.3.4.8943")]
 
 [assembly: TargetFramework(".NETFramework,Version=v4.8", FrameworkDisplayName = ".NET Framework 4.8")]
