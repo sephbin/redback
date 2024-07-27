@@ -1,109 +1,109 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-		<?aid style="50" type="snippet" readerVersion="6.0" featureSet="257" product="18.4(56)" ?>
-		<?aid SnippetType="InCopyInterchange"?>
-		<Document DOMVersion="18.0" Self="d">
-
-		<Ink Self="Ink/$ID/Process Cyan" Name="$ID/Process Cyan" Angle="75" ConvertToProcess="false" Frequency="70" NeutralDensity="0.61" PrintInk="true" TrapOrder="1" InkType="Normal" /> 
-		<Ink Self="Ink/$ID/Process Magenta" Name="$ID/Process Magenta" Angle="15" ConvertToProcess="false" Frequency="70" NeutralDensity="0.76" PrintInk="true" TrapOrder="2" InkType="Normal" /> 
-		<Ink Self="Ink/$ID/Process Yellow" Name="$ID/Process Yellow" Angle="0" ConvertToProcess="false" Frequency="70" NeutralDensity="0.16" PrintInk="true" TrapOrder="3" InkType="Normal" /> 
-		<Ink Self="Ink/$ID/Process Black" Name="$ID/Process Black" Angle="45" ConvertToProcess="false" Frequency="70" NeutralDensity="1.7" PrintInk="true" TrapOrder="4" InkType="Normal" /> <Swatch Self="Swatch/None" Name="None" ColorEditable="false" ColorRemovable="false" Visible="true" SwatchCreatorID="7937" SwatchColorGroupReference="u18ColorGroupSwatch0" />
-		<StrokeStyle Self="StrokeStyle/$ID/Solid" Name="$ID/Solid" />
-		<CompositeFont Self="CompositeFont/$ID/[No composite font]" Name="$ID/[No composite font]"> <CompositeFontEntry Self="uae" Name="$ID/Alphabetic" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿıŒœŠšŸŽžƒ" Locked="true" ScaleOption="false" BaselineShift="0"> <Properties> <AppliedFont type="string">Arial</AppliedFont> </Properties> </CompositeFontEntry> </CompositeFont>
-		<RootCharacterStyleGroup Self="u7f"> <CharacterStyle Self="CharacterStyle/$ID/[No character style]" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="$ID/" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" Name="$ID/[No character style]" />
-			<CharacterStyleGroup Self="CharacterStyleGroup/$ID/Generated" Name="$ID/Generated"> <CharacterStyle Self="CharacterStyle/Generated%3aBold" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="6a8c751b-7b81-4452-9747-cff8e210c306" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Bold"> <Properties> <BasedOn type="string">$ID/[No character style]</BasedOn> <PreviewColor type="enumeration">Nothing</PreviewColor> </Properties> </CharacterStyle> </CharacterStyleGroup>
-		</RootCharacterStyleGroup>
-		<RootParagraphStyleGroup Self="u7e">
-		<ParagraphStyle Self="ParagraphStyle/$ID/[No paragraph style]" Name="$ID/[No paragraph style]" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="$ID/" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" EmptyNestedStyles="true" EmptyLineStyles="true" EmptyGrepStyles="true" FillColor="Color/Black" FontStyle="Regular" PointSize="12" HorizontalScale="100" KerningMethod="$ID/Metrics" Ligatures="true" PageNumberType="AutoPageNumber" StrokeWeight="1" Tracking="0" Composer="HL Composer" DropCapCharacters="0" DropCapLines="0" BaselineShift="0" Capitalization="Normal" StrokeColor="Swatch/None" HyphenateLadderLimit="3" VerticalScale="100" LeftIndent="0" RightIndent="0" FirstLineIndent="0" AutoLeading="120" AppliedLanguage="$ID/English: USA" Hyphenation="true" HyphenateAfterFirst="2" HyphenateBeforeLast="2" HyphenateCapitalizedWords="true" HyphenateWordsLongerThan="5" NoBreak="false" HyphenationZone="36" SpaceBefore="0" SpaceAfter="0" Underline="false" OTFFigureStyle="Default" DesiredWordSpacing="100" MaximumWordSpacing="133" MinimumWordSpacing="80" DesiredLetterSpacing="0" MaximumLetterSpacing="0" MinimumLetterSpacing="0" DesiredGlyphScaling="100" MaximumGlyphScaling="100" MinimumGlyphScaling="100" StartParagraph="Anywhere" KeepAllLinesTogether="false" KeepWithNext="0" KeepFirstLines="2" KeepLastLines="2" Position="Normal" StrikeThru="false" CharacterAlignment="AlignEmCenter" KeepLinesTogether="false" StrokeTint="-1" FillTint="-1" OverprintStroke="false" OverprintFill="false" GradientStrokeAngle="0" GradientFillAngle="0" GradientStrokeLength="-1" GradientFillLength="-1" GradientStrokeStart="0 0" GradientFillStart="0 0" Skew="0" RuleAboveLineWeight="1" RuleAboveTint="-1" RuleAboveOffset="0" RuleAboveLeftIndent="0" RuleAboveRightIndent="0" RuleAboveWidth="ColumnWidth" RuleBelowLineWeight="1" RuleBelowTint="-1" RuleBelowOffset="0" RuleBelowLeftIndent="0" RuleBelowRightIndent="0" RuleBelowWidth="ColumnWidth" RuleAboveOverprint="false" RuleBelowOverprint="false" RuleAbove="false" RuleBelow="false" LastLineIndent="0" HyphenateLastWord="true" ParagraphBreakType="Anywhere" SingleWordJustification="FullyJustified" OTFOrdinal="false" OTFFraction="false" OTFDiscretionaryLigature="false" OTFTitling="false" RuleAboveGapTint="-1" RuleAboveGapOverprint="false" RuleBelowGapTint="-1" RuleBelowGapOverprint="false" Justification="LeftAlign" DropcapDetail="1" PositionalForm="None" OTFMark="true" HyphenWeight="5" OTFLocale="true" HyphenateAcrossColumns="true" KeepRuleAboveInFrame="false" IgnoreEdgeAlignment="false" OTFSlashedZero="false" OTFStylisticSets="0" OTFHistorical="false" OTFContextualAlternate="true" UnderlineGapOverprint="false" UnderlineGapTint="-1" UnderlineOffset="-9999" UnderlineOverprint="false" UnderlineTint="-1" UnderlineWeight="-9999" StrikeThroughGapOverprint="false" StrikeThroughGapTint="-1" StrikeThroughOffset="-9999" StrikeThroughOverprint="false" StrikeThroughTint="-1" StrikeThroughWeight="-9999" MiterLimit="4" StrokeAlignment="OutsideAlignment" EndJoin="MiterEndJoin" SpanColumnType="SingleColumn" SplitColumnInsideGutter="6" SplitColumnOutsideGutter="0" KeepWithPrevious="false" SpanColumnMinSpaceBefore="0" SpanColumnMinSpaceAfter="0" OTFSwash="false" ParagraphShadingTint="20" ParagraphShadingOverprint="false" ParagraphShadingWidth="ColumnWidth" ParagraphShadingOn="false" ParagraphShadingClipToFrame="false" ParagraphShadingSuppressPrinting="false" ParagraphShadingLeftOffset="0" ParagraphShadingRightOffset="0" ParagraphShadingTopOffset="0" ParagraphShadingBottomOffset="0" ParagraphShadingTopOrigin="AscentTopOrigin" ParagraphShadingBottomOrigin="DescentBottomOrigin" ParagraphBorderTint="-1" ParagraphBorderOverprint="false" ParagraphBorderOn="false" ParagraphBorderGapTint="-1" ParagraphBorderGapOverprint="false" Tsume="0" LeadingAki="-1" TrailingAki="-1" KinsokuType="KinsokuPushInFirst" KinsokuHangType="None" BunriKinshi="true" RubyOpenTypePro="true" RubyFontSize="-1" RubyAlignment="RubyJIS" RubyType="PerCharacterRuby" RubyParentSpacing="RubyParent121Aki" RubyXScale="100" RubyYScale="100" RubyXOffset="0" RubyYOffset="0" RubyPosition="AboveRight" RubyAutoAlign="true" RubyParentOverhangAmount="RubyOverhangOneRuby" RubyOverhang="false" RubyAutoScaling="false" RubyParentScalingPercent="66" RubyTint="-1" RubyOverprintFill="Auto" RubyStrokeTint="-1" RubyOverprintStroke="Auto" RubyWeight="-1" KentenKind="None" KentenFontSize="-1" KentenXScale="100" KentenYScale="100" KentenPlacement="0" KentenAlignment="AlignKentenCenter" KentenPosition="AboveRight" KentenCustomCharacter="" KentenCharacterSet="CharacterInput" KentenTint="-1" KentenOverprintFill="Auto" KentenStrokeTint="-1" KentenOverprintStroke="Auto" KentenWeight="-1" Tatechuyoko="false" TatechuyokoXOffset="0" TatechuyokoYOffset="0" AutoTcy="0" AutoTcyIncludeRoman="false" Jidori="0" GridGyoudori="0" GridAlignFirstLineOnly="false" GridAlignment="None" CharacterRotation="0" RotateSingleByteCharacters="false" Rensuuji="true" ShataiMagnification="0" ShataiDegreeAngle="4500" ShataiAdjustTsume="true" ShataiAdjustRotation="false" Warichu="false" WarichuLines="2" WarichuSize="50" WarichuLineSpacing="0" WarichuAlignment="Auto" WarichuCharsBeforeBreak="2" WarichuCharsAfterBreak="2" OTFHVKana="false" OTFProportionalMetrics="false" OTFRomanItalics="false" LeadingModel="LeadingModelAkiBelow" ScaleAffectsLineHeight="false" ParagraphGyoudori="false" CjkGridTracking="false" GlyphForm="None" RubyAutoTcyDigits="0" RubyAutoTcyIncludeRoman="false" RubyAutoTcyAutoScale="true" TreatIdeographicSpaceAsSpace="true" AllowArbitraryHyphenation="false" BulletsAndNumberingListType="NoList" NumberingStartAt="1" NumberingLevel="1" NumberingContinue="true" NumberingApplyRestartPolicy="true" BulletsAlignment="LeftAlign" NumberingAlignment="LeftAlign" NumberingExpression="^#.^t" BulletsTextAfter="^t" ParagraphBorderLeftOffset="0" ParagraphBorderRightOffset="0" ParagraphBorderTopOffset="0" ParagraphBorderBottomOffset="0" ParagraphBorderStrokeEndJoin="MiterEndJoin" ParagraphBorderTopLeftCornerOption="None" ParagraphBorderTopRightCornerOption="None" ParagraphBorderBottomLeftCornerOption="None" ParagraphBorderBottomRightCornerOption="None" ParagraphBorderTopLeftCornerRadius="12" ParagraphBorderTopRightCornerRadius="12" ParagraphBorderBottomLeftCornerRadius="12" ParagraphBorderBottomRightCornerRadius="12" ParagraphShadingTopLeftCornerOption="None" ParagraphShadingTopRightCornerOption="None" ParagraphShadingBottomLeftCornerOption="None" ParagraphShadingBottomRightCornerOption="None" ParagraphShadingTopLeftCornerRadius="12" ParagraphShadingTopRightCornerRadius="12" ParagraphShadingBottomLeftCornerRadius="12" ParagraphShadingBottomRightCornerRadius="12" ParagraphBorderStrokeEndCap="ButtEndCap" ParagraphBorderWidth="ColumnWidth" ParagraphBorderTopOrigin="AscentTopOrigin" ParagraphBorderBottomOrigin="DescentBottomOrigin" ParagraphBorderTopLineWeight="1" ParagraphBorderBottomLineWeight="1" ParagraphBorderLeftLineWeight="1" ParagraphBorderRightLineWeight="1" ParagraphBorderDisplayIfSplits="false" MergeConsecutiveParaBorders="true" ProviderHyphenationStyle="HyphAll" DigitsType="DefaultDigits" Kashidas="DefaultKashidas" DiacriticPosition="OpentypePositionFromBaseline" CharacterDirection="DefaultDirection" ParagraphDirection="LeftToRightDirection" ParagraphJustification="DefaultJustification" ParagraphKashidaWidth="2" XOffsetDiacritic="0" YOffsetDiacritic="0" OTFOverlapSwash="false" OTFStylisticAlternate="false" OTFJustificationAlternate="false" OTFStretchedAlternate="false" KeyboardDirection="DefaultDirection"> <Properties> <Leading type="enumeration">Auto</Leading> <TabList type="list"> </TabList> <AppliedFont type="string">Arial</AppliedFont> <RuleAboveColor type="string">Text Color</RuleAboveColor> <RuleBelowColor type="string">Text Color</RuleBelowColor> <RuleAboveType type="object">StrokeStyle/$ID/Solid</RuleAboveType> <RuleBelowType type="object">StrokeStyle/$ID/Solid</RuleBelowType> <BalanceRaggedLines type="enumeration">NoBalancing</BalanceRaggedLines> <RuleAboveGapColor type="object">Swatch/None</RuleAboveGapColor> <RuleBelowGapColor type="object">Swatch/None</RuleBelowGapColor> <UnderlineColor type="string">Text Color</UnderlineColor> <UnderlineGapColor type="object">Swatch/None</UnderlineGapColor> <UnderlineType type="object">StrokeStyle/$ID/Solid</UnderlineType> <StrikeThroughColor type="string">Text Color</StrikeThroughColor> <StrikeThroughGapColor type="object">Swatch/None</StrikeThroughGapColor> <StrikeThroughType type="object">StrokeStyle/$ID/Solid</StrikeThroughType> <SpanSplitColumnCount type="enumeration">All</SpanSplitColumnCount> <ParagraphShadingColor type="object">Color/Black</ParagraphShadingColor> <ParagraphBorderColor type="object">Color/Black</ParagraphBorderColor> <ParagraphBorderGapColor type="object">Swatch/None</ParagraphBorderGapColor> <ParagraphBorderType type="object">StrokeStyle/$ID/Solid</ParagraphBorderType> <Mojikumi type="enumeration">Nothing</Mojikumi> <KinsokuSet type="enumeration">Nothing</KinsokuSet> <RubyFont type="string">$ID/</RubyFont> <RubyFontStyle type="enumeration">Nothing</RubyFontStyle> <RubyFill type="string">Text Color</RubyFill> <RubyStroke type="string">Text Color</RubyStroke> <KentenFont type="string">$ID/</KentenFont> <KentenFontStyle type="enumeration">Nothing</KentenFontStyle> <KentenFillColor type="string">Text Color</KentenFillColor> <KentenStrokeColor type="string">Text Color</KentenStrokeColor> <BulletChar BulletCharacterType="UnicodeOnly" BulletCharacterValue="8226" /> <NumberingFormat type="string">1, 2, 3, 4...</NumberingFormat> <BulletsFont type="string">$ID/</BulletsFont> <BulletsFontStyle type="enumeration">Nothing</BulletsFontStyle> <AppliedNumberingList type="object">NumberingList/$ID/[Default]</AppliedNumberingList> <NumberingRestartPolicies RestartPolicy="AnyPreviousLevel" LowerLevel="0" UpperLevel="0" /> <BulletsCharacterStyle type="object">CharacterStyle/$ID/[No character style]</BulletsCharacterStyle> <NumberingCharacterStyle type="object">CharacterStyle/$ID/[No character style]</NumberingCharacterStyle> <SameParaStyleSpacing type="enumeration">SetIgnore</SameParaStyleSpacing> </Properties> </ParagraphStyle>
-		<ParagraphStyle Self="ParagraphStyle/$ID/NormalParagraphStyle" Name="$ID/NormalParagraphStyle" Imported="false" NextStyle="ParagraphStyle/$ID/NormalParagraphStyle" SplitDocument="false" EmitCss="true" StyleUniqueId="771888e2-944e-42ec-89d5-874cd945e62b" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" EmptyNestedStyles="true" EmptyLineStyles="true" EmptyGrepStyles="true" KeyboardShortcut="0 0">
-			<Properties>
-				<BasedOn type="string">$ID/[No paragraph style]</BasedOn>
-				<AppliedFont type="string">Arial</AppliedFont>
-				<PreviewColor type="enumeration">Nothing</PreviewColor>
-			</Properties>
-		</ParagraphStyle>
-		<ParagraphStyleGroup Self="ParagraphStyleGroup/$ID/Generated" Name="$ID/Generated"> <ParagraphStyle Self="ParagraphStyle/Generated%3aTable - Small" Name="Generated:Table - Small" Imported="false" NextStyle="ParagraphStyle/Generated%3aTable - Small" SplitDocument="false" EmitCss="true" StyleUniqueId="8ad5365e-a91f-4f93-b49a-3810b988a0b0" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" EmptyNestedStyles="true" EmptyLineStyles="true" EmptyGrepStyles="true" KeyboardShortcut="0 0" AppliedLanguage="$ID/English: UK"> <Properties><BasedOn type="object">ParagraphStyle/$ID/NormalParagraphStyle</BasedOn><PreviewColor type="enumeration">Nothing</PreviewColor> </Properties> </ParagraphStyle> </ParagraphStyleGroup>
-		</RootParagraphStyleGroup>
-		<RootCellStyleGroup Self="u8e">
-		<CellStyle Self="CellStyle/$ID/[None]" AppliedParagraphStyle="ParagraphStyle/$ID/[No paragraph style]" Name="$ID/[None]" />
-		<CellStyleGroup Self="CellStyleGroup/$ID/Generated" Name="$ID/Generated">
-			<CellStyle Self="CellStyle/Generated%3aHeader 1" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Header 1"  TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
-			<CellStyle Self="CellStyle/Generated%3aNone" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:None" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
-			<CellStyle Self="CellStyle/Generated%3aOption0" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Option0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
-			<CellStyle Self="CellStyle/Generated%3aOption1" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Option1" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
-			<CellStyle Self="CellStyle/Generated%3aOption2" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="Generated:Option2" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" TopInset="4" LeftInset="4" BottomInset="4" RightInset="4"></CellStyle>
-		</CellStyleGroup>
-		</RootCellStyleGroup>
-		<RootTableStyleGroup Self="u90">
-		<TableStyleGroup Self="TableStyleGroup/$ID/Generated" Name="$ID/Generated">
-			<TableStyle Self="TableStyle/Generated%3aBasic Table" ExtendedKeyboardShortcut="0 0 0" Name="Generated:Basic Table" KeyboardShortcut="0 0"> <Properties> <BasedOn type="string">$ID/[No table style]</BasedOn> </Properties> </TableStyle>
-		</TableStyleGroup>
-		</RootTableStyleGroup>
-		<RootObjectStyleGroup Self="u99"> <ObjectStyle Self="ObjectStyle/$ID/[None]" EmitCss="true" IncludeClass="true" Name="$ID/[None]" AppliedParagraphStyle="ParagraphStyle/$ID/[No paragraph style]" CornerRadius="12" FillColor="Swatch/None" FillTint="-1" StrokeWeight="0" MiterLimit="4" EndCap="ButtEndCap" EndJoin="MiterEndJoin" StrokeType="StrokeStyle/$ID/Solid" LeftLineEnd="None" RightLineEnd="None" StrokeColor="Swatch/None" StrokeTint="-1" GapColor="Swatch/None" GapTint="-1" StrokeAlignment="CenterAlignment" Nonprinting="false" GradientFillAngle="0" GradientStrokeAngle="0" AppliedNamedGrid="n" TopLeftCornerOption="None" TopRightCornerOption="None" BottomLeftCornerOption="None" BottomRightCornerOption="None" TopLeftCornerRadius="12" TopRightCornerRadius="12" BottomLeftCornerRadius="12" BottomRightCornerRadius="12" CornerOption="None" ArrowHeadAlignment="InsidePath" LeftArrowHeadScale="100" RightArrowHeadScale="100"> <TransformAttributeOption TransformAttrLeftReference="PageEdgeReference" TransformAttrTopReference="PageEdgeReference" TransformAttrRefAnchorPoint="TopLeftAnchor" /> <ObjectExportOption EpubType="$ID/" SizeType="DefaultSize" CustomSize="$ID/" PreserveAppearanceFromLayout="PreserveAppearanceDefault" AltTextSourceType="SourceXMLStructure" ActualTextSourceType="SourceXMLStructure" CustomAltText="$ID/" CustomActualText="$ID/" ApplyTagType="TagFromStructure" ImageConversionType="JPEG" ImageExportResolution="Ppi300" GIFOptionsPalette="AdaptivePalette" GIFOptionsInterlaced="true" JPEGOptionsQuality="High" JPEGOptionsFormat="BaselineEncoding" ImageAlignment="AlignLeft" ImageSpaceBefore="0" ImageSpaceAfter="0" UseImagePageBreak="false" ImagePageBreak="PageBreakBefore" CustomImageAlignment="false" SpaceUnit="CssPixel" CustomLayout="false" CustomLayoutType="AlignmentAndSpacing"> <Properties> <AltMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" /> <ActualMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" /> </Properties> </ObjectExportOption> <TextFramePreference TextColumnCount="1" TextColumnGutter="12" TextColumnFixedWidth="144" UseFixedColumnWidth="false" FirstBaselineOffset="AscentOffset" MinimumFirstBaselineOffset="0" VerticalJustification="TopAlign" VerticalThreshold="0" IgnoreWrap="false" UseFlexibleColumnWidth="false" TextColumnMaxWidth="0" AutoSizingType="Off" AutoSizingReferencePoint="CenterPoint" UseMinimumHeightForAutoSizing="false" MinimumHeightForAutoSizing="0" UseMinimumWidthForAutoSizing="false" MinimumWidthForAutoSizing="0" UseNoLineBreaksForAutoSizing="false" ColumnRuleOverride="false" ColumnRuleOffset="0" ColumnRuleTopInset="0" ColumnRuleInsetChainOverride="true" ColumnRuleBottomInset="0" ColumnRuleStrokeWidth="1" ColumnRuleStrokeColor="Color/Black" ColumnRuleStrokeType="StrokeStyle/$ID/Solid" ColumnRuleStrokeTint="100" ColumnRuleOverprintOverride="false" FootnotesEnableOverrides="false" FootnotesSpanAcrossColumns="false" FootnotesMinimumSpacing="12" FootnotesSpaceBetween="6" VerticalBalanceColumns="false"> <Properties> <InsetSpacing type="list"> <ListItem type="unit">0</ListItem> <ListItem type="unit">0</ListItem> <ListItem type="unit">0</ListItem> <ListItem type="unit">0</ListItem> </InsetSpacing> </Properties> </TextFramePreference> <BaselineFrameGridOption UseCustomBaselineFrameGrid="false" StartingOffsetForBaselineFrameGrid="0" BaselineFrameGridRelativeOption="TopOfInset" BaselineFrameGridIncrement="12"> <Properties> <BaselineFrameGridColor type="enumeration">LightBlue</BaselineFrameGridColor> </Properties> </BaselineFrameGridOption> <AnchoredObjectSetting AnchoredPosition="InlinePosition" SpineRelative="false" LockPosition="false" PinPosition="true" AnchorPoint="BottomRightAnchor" HorizontalAlignment="LeftAlign" HorizontalReferencePoint="TextFrame" VerticalAlignment="BottomAlign" VerticalReferencePoint="LineBaseline" AnchorXoffset="0" AnchorYoffset="0" AnchorSpaceAbove="0" /> <TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None"> <Properties> <TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" /> </Properties> <ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" /> </TextWrapPreference> <StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" /> <FrameFittingOption AutoFit="false" LeftCrop="0" TopCrop="0" RightCrop="0" BottomCrop="0" FittingOnEmptyFrame="None" FittingAlignment="CenterAnchor" /> <TextFrameFootnoteOptionsObject EnableOverrides="false" SpanFootnotesAcross="false" MinimumSpacingOption="12" SpaceBetweenFootnotes="6" /> </ObjectStyle> </RootObjectStyleGroup>
-		<Story Self="u34f" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="Masterplan Areas per Typology-Precinct and Lot Lables" AppliedNamedGrid="n">
-		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
-		<MetadataPacketPreference>
-		<Properties></Properties>
-		</MetadataPacketPreference>
-		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
-		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
-		<Table Self="u34fi365" HeaderRowCount="0" FooterRowCount="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="1" ColumnCount="4" AppliedTableStyle="TableStyle/Generated%3aBasic Table" TableDirection="LeftToRightDirection">
-		<!-- DEFINE ROWS -->
-		<Row Self="u34fi365Row0" Name="0" ClipContentToTextCell="false" SingleRowHeight="14.1732283465" MinimumHeight="14.1732283465" />
-		<!-- DEFINE COLUMNS -->
-		<Column Self="u570i5a61Column0" Name="0" ClipContentToTextCell="false" SingleColumnWidth="28.3464566929" />
-<Column Self="u570i5a61Column1" Name="1" ClipContentToTextCell="false" SingleColumnWidth="56.6929133858" />
-<Column Self="u570i5a61Column2" Name="2" ClipContentToTextCell="false" SingleColumnWidth="56.6929133858" />
-<Column Self="u570i5a61Column3" Name="3" ClipContentToTextCell="false" SingleColumnWidth="28.3464566929" />
-		<!-- DEFINE CELLS -->
-		<Cell Self="u34fi365i0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" ClipContentToTextCell="false"
-		AppliedCellStyle="CellStyle/Generated%3a[None]" AppliedCellStylePriority="2"
-		
-		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1" >
-		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
-		<Content>A</Content>
-		</CharacterStyleRange>
-		</ParagraphStyleRange>
-		
-		</Cell>
-<Cell Self="u34fi365i0" Name="1:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" ClipContentToTextCell="false"
-		AppliedCellStyle="CellStyle/Generated%3a[None]" AppliedCellStylePriority="2"
-		
-		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1" >
-		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
-		<Content>B</Content>
-		</CharacterStyleRange>
-		</ParagraphStyleRange>
-		
-		</Cell>
-<Cell Self="u34fi365i0" Name="2:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" ClipContentToTextCell="false"
-		AppliedCellStyle="CellStyle/Generated%3a[None]" AppliedCellStylePriority="2"
-		
-		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1" >
-		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
-		<Content>C</Content>
-		</CharacterStyleRange>
-		</ParagraphStyleRange>
-		
-		</Cell>
-<Cell Self="u34fi365i0" Name="3:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" ClipContentToTextCell="false"
-		AppliedCellStyle="CellStyle/Generated%3a[None]" AppliedCellStylePriority="2"
-		
-		LeftEdgeStrokePriority="1" RightEdgeStrokePriority="1" TopEdgeStrokePriority="1" BottomEdgeStrokePriority="1" >
-		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/Generated%3aTable - Small" >
-		<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/Generated%3a$ID/[No character style]">
-		<Content>D</Content>
-		</CharacterStyleRange>
-		</ParagraphStyleRange>
-		
-		</Cell>
-		<!-- END TABLE -->
-		</Table>
-		</CharacterStyleRange>
-		</ParagraphStyleRange>
-		</Story>
-		<ColorGroup Self="ColorGroup/[Root Color Group]" Name="[Root Color Group]" IsRootColorGroup="true"> <ColorGroupSwatch Self="u18ColorGroupSwatch0" SwatchItemRef="Swatch/None" /></ColorGroup>
-		</Document>
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Generator: Grasshopper 1.0.0, Redback Plugin. SVG Version: 6.00 Build 0) Made by Andrew Butler at Cox Architecture -->
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="420mm" height="297mm" viewBox="0 0 420 297" xml:space="preserve">
+    <style type="text/css">
+    
+    </style>
+    <text  transform="matrix(-0.346658177513 0.937991528727 -0.937991528727 -0.346658177513 -76.4114611986 86.0492686639)">A</text>
+<text  transform="matrix(-0.596108038264 -0.802904232594 0.802904232594 -0.596108038264 169.435097488 -79.4149579425)">A</text>
+<text  transform="matrix(-0.42831028399 -0.903631728432 0.903631728432 -0.42831028399 -100.700332153 -104.944144392)">A</text>
+<text  transform="matrix(-0.371622669651 0.928383859942 -0.928383859942 -0.371622669651 144.154356990 97.8149768792)">A</text>
+<text  transform="matrix(0.712499757564 -0.701672356211 0.701672356211 0.712499757564 34.8389682933 11.9858522629)">A</text>
+<text  transform="matrix(0.413966605194 -0.910292068396 0.910292068396 0.413966605194 39.7041531335 -103.267639082)">A</text>
+<text  transform="matrix(0.427417970394 0.904054134764 -0.904054134764 0.427417970394 -117.400908349 -6.19238232038)">A</text>
+<text  transform="matrix(0.936842879296 -0.349750510382 0.349750510382 0.936842879296 -25.4935256659 -41.0008500055)">A</text>
+<text  transform="matrix(0.404645188089 -0.91447376767 0.91447376767 0.404645188089 138.513481663 6.14313940022)">A</text>
+<text  transform="matrix(-0.999465570573 -0.0326890385211 0.0326890385211 -0.999465570573 12.0548663537 105.614528151)">A</text>
+<text  transform="matrix(-0.014778796143 0.999890787629 -0.999890787629 -0.014778796143 80.0977384865 78.6997580458)">A</text>
+<text  transform="matrix(0.696332193883 0.717719635904 -0.717719635904 0.696332193883 102.370328989 -72.8473512133)">A</text>
+<text  transform="matrix(-0.990232680473 -0.139424669706 0.139424669706 -0.990232680473 -157.592498768 89.9097649233)">A</text>
+<text  transform="matrix(0.853146435739 0.521671505054 -0.521671505054 0.853146435739 -151.104583891 -59.8517253274)">A</text>
+<text  transform="matrix(-0.879670441321 -0.475583761988 0.475583761988 -0.879670441321 -38.7396391380 30.2183562714)">A</text>
+<text  transform="matrix(-0.260445720673 0.965488491171 -0.965488491171 -0.260445720673 -93.3843285984 33.3282771340)">A</text>
+<text  transform="matrix(-0.109908064841 -0.99394175749 0.99394175749 -0.109908064841 167.650012668 50.9852415181)">A</text>
+<text  transform="matrix(-0.957367572577 0.288872516828 -0.288872516828 -0.957367572577 32.4260779107 -49.4048054441)">A</text>
+<text  transform="matrix(-0.0205176684593 -0.999789490483 0.999789490483 -0.0205176684593 -21.6574399460 -96.5652415553)">A</text>
+<text  transform="matrix(-0.807068836473 0.590457359336 -0.590457359336 -0.807068836473 -74.4577783399 -50.0567225623)">A</text>
+<text  transform="matrix(-0.988854518644 0.148884992382 -0.148884992382 -0.988854518644 92.7789178067 -17.8360057046)">A</text>
+<text  transform="matrix(0.523416458856 0.852076998046 -0.852076998046 0.523416458856 10.4943644396 57.5010866806)">A</text>
+<text  transform="matrix(0.774667382685 -0.632368916223 0.632368916223 0.774667382685 103.193792715 42.7524202799)">A</text>
+<text  transform="matrix(0.385343272757 0.92277329943 -0.92277329943 0.385343272757 134.936335632 -47.4403425493)">A</text>
+<text  transform="matrix(-0.202522516487 -0.979277606359 0.979277606359 -0.202522516487 -36.2676626597 72.2334838252)">A</text>
+<text  transform="matrix(-0.754578441207 -0.656209856727 0.656209856727 -0.754578441207 52.5609453902 49.9907464191)">A</text>
+<text  transform="matrix(-0.241056103991 -0.970511182176 0.970511182176 -0.241056103991 -145.142556337 -106.174373858)">A</text>
+<text  transform="matrix(0.939931763751 -0.341362387343 0.341362387343 0.939931763751 -155.401768341 43.2986479109)">A</text>
+<text  transform="matrix(-0.125353396017 -0.992112153996 0.992112153996 -0.125353396017 105.341576857 107.664388149)">A</text>
+<text  transform="matrix(-0.601969888906 -0.798518786786 0.798518786786 -0.601969888906 -5.47228365979 -6.32874488470)">A</text>
+<text  transform="matrix(0.211312581579 0.977418535156 -0.977418535156 0.211312581579 -113.548415113 -49.7433561679)">A</text>
+<text  transform="matrix(0.63960112779 0.768706964538 -0.768706964538 0.63960112779 -66.2619825455 -92.5889767393)">A</text>
+<text  transform="matrix(0.438459259473 0.898751065525 -0.898751065525 0.438459259473 68.3260607763 -65.1038092177)">A</text>
+<text  transform="matrix(0.142313060632 -0.989821697465 0.989821697465 0.142313060632 83.4617324300 -99.7581749306)">A</text>
+<text  transform="matrix(0.676640189886 -0.736313828086 0.736313828086 0.676640189886 83.5761978453 13.5563231574)">A</text>
+<text  transform="matrix(-0.225165302032 -0.974320576998 0.974320576998 -0.225165302032 45.8872290223 99.9451369913)">A</text>
+<text  transform="matrix(-0.791672618967 -0.610945549438 0.610945549438 -0.791672618967 -38.1035667870 -2.50348926378)">A</text>
+<text  transform="matrix(-0.0571560415105 0.998365257268 -0.998365257268 -0.0571560415105 -108.072056842 77.9767700994)">A</text>
+<text  transform="matrix(0.677137453205 0.735856554953 -0.735856554953 0.677137453205 128.329970162 -103.739801802)">A</text>
+<text  transform="matrix(0.925354707504 -0.379102446972 0.379102446972 0.925354707504 9.55636424633 -84.2668363820)">A</text>
+<text  transform="matrix(0.814388255987 -0.580320401598 0.580320401598 0.814388255987 -70.2769378290 -2.55919691586)">A</text>
+<text  transform="matrix(0.982514704802 -0.186185001674 0.186185001674 0.982514704802 -155.098474925 -13.7219865243)">A</text>
+<text  transform="matrix(-0.521911474749 -0.852999655642 0.852999655642 -0.521911474749 134.993682711 59.8563646058)">A</text>
+<text  transform="matrix(0.366699513023 0.930339436522 -0.930339436522 0.366699513023 151.648966834 -20.0553603587)">A</text>
+<text  transform="matrix(-0.930742315152 -0.365675734478 0.365675734478 -0.930742315152 -50.3361821759 108.937367931)">A</text>
+<text  transform="matrix(-0.471435287793 -0.881900657344 0.881900657344 -0.471435287793 -18.7573854381 105.766983730)">A</text>
+<text  transform="matrix(-0.940267151319 0.340437489344 -0.340437489344 -0.940267151319 62.5091445197 -31.2786375761)">A</text>
+<text  transform="matrix(-0.242397955285 0.970176907205 -0.970176907205 -0.242397955285 -93.4764503690 -71.3900874396)">A</text>
+<text  transform="matrix(0.758737648035 -0.651396332085 0.651396332085 0.758737648035 -4.08748086130 28.0055423725)">A</text>
+<text  transform="matrix(0.250098545508 0.968220386862 -0.968220386862 0.250098545508 -31.7325798503 -69.9513873778)">A</text>
+<text  transform="matrix(0.272501642937 -0.962155317294 0.962155317294 0.272501642937 -122.622762869 41.7909783167)">A</text>
+<text  transform="matrix(0.606868862721 0.794801977513 -0.794801977513 0.606868862721 104.492094645 -41.3851520764)">A</text>
+<text  transform="matrix(0.783311571556 0.621629296177 -0.621629296177 0.783311571556 -71.5310120925 47.3190752870)">A</text>
+<text  transform="matrix(-0.441932433356 0.897048340029 -0.897048340029 -0.441932433356 -120.552336194 104.325272466)">A</text>
+<text  transform="matrix(0.842554159426 -0.53861163043 0.53861163043 0.842554159426 147.270007469 31.1169459755)">A</text>
+<text  transform="matrix(0.260252808671 -0.965540509548 0.965540509548 0.260252808671 56.2082807316 -3.74808790692)">A</text>
+<text  transform="matrix(-0.82780353141 0.561018104329 -0.561018104329 -0.82780353141 12.7349153211 -30.8730587902)">A</text>
+<text  transform="matrix(0.635472115151 0.772123818351 -0.772123818351 0.635472115151 -119.547715793 -90.2127626975)">A</text>
+<text  transform="matrix(0.0568575150284 0.998382303021 -0.998382303021 0.0568575150284 -7.91573481496 75.5574610142)">A</text>
+<text  transform="matrix(-0.752565441073 -0.658517468942 0.658517468942 -0.752565441073 -138.198698356 66.8130797486)">A</text>
+<text  transform="matrix(-0.96665744088 0.256073020818 -0.256073020818 -0.96665744088 -83.7030353885 109.860150785)">A</text>
+<text  transform="matrix(0.741933748845 -0.670473200303 0.670473200303 0.741933748845 -48.9088259407 -36.6509038015)">A</text>
+<text  transform="matrix(0.642378674094 -0.766387394905 0.766387394905 0.642378674094 40.0435425038 72.9573192389)">A</text>
+<text  transform="matrix(-0.991123677363 -0.132943056119 0.132943056119 -0.991123677363 164.623596345 -45.4742271186)">A</text>
+<text  transform="matrix(-0.631593020307 -0.775300107507 0.775300107507 -0.631593020307 -88.2062159937 -23.7963248639)">A</text>
+<text  transform="matrix(0.0671304959387 -0.99774420395 0.99774420395 0.0671304959387 108.315168983 79.3403196066)">A</text>
+<text  transform="matrix(-0.319485841277 0.947591049569 -0.947591049569 -0.319485841277 155.060804611 -103.626694786)">A</text>
+<text  transform="matrix(-0.799403230707 0.600794869099 -0.600794869099 -0.799403230707 60.7582396947 21.3102248987)">A</text>
+<text  transform="matrix(0.670466785869 -0.741939545412 0.741939545412 0.670466785869 32.8646717920 -12.6083279644)">A</text>
+<text  transform="matrix(0.205014504558 0.97875893504 -0.97875893504 0.205014504558 -90.9979097536 56.1648334738)">A</text>
+<text  transform="matrix(0.969452648762 0.245278539234 -0.245278539234 0.969452648762 165.447730252 96.2528340246)">A</text>
+<text  transform="matrix(0.456680085616 -0.889630990581 0.889630990581 0.456680085616 117.275735715 3.70764766874)">A</text>
+<text  transform="matrix(-0.460361287151 -0.887731651623 0.887731651623 -0.460361287151 137.696338511 -79.7820457030)">A</text>
+<text  transform="matrix(-0.962893387141 0.269882057572 -0.269882057572 -0.962893387141 71.3618704823 100.663324134)">A</text>
+<text  transform="matrix(0.588396456203 -0.808572575795 0.808572575795 0.588396456203 51.2631091945 -79.9382424248)">A</text>
+<text  transform="matrix(0.628337876886 -0.777940558443 0.777940558443 0.628337876886 -98.8934502551 5.03545359603)">A</text>
+<text  transform="matrix(0.597044864622 -0.8022078469 0.8022078469 0.597044864622 28.1602697272 -72.8588358798)">A</text>
+<text  transform="matrix(0.945252417911 0.326340108528 -0.326340108528 0.945252417911 -154.106599728 11.7861282542)">A</text>
+<text  transform="matrix(0.991773041142 -0.12800872964 0.12800872964 0.991773041142 123.687214969 -24.8610713210)">A</text>
+<text  transform="matrix(-0.347208854431 -0.937787828565 0.937787828565 -0.347208854431 165.706194580 9.93719865944)">A</text>
+<text  transform="matrix(0.409211217666 -0.912439685314 0.912439685314 0.409211217666 -43.8602243603 -89.9229155080)">A</text>
+<text  transform="matrix(0.904355964016 0.426778971305 -0.426778971305 0.904355964016 20.0192331897 34.8948439388)">A</text>
+<text  transform="matrix(-0.842891722572 0.538083212914 -0.538083212914 -0.842891722572 -9.20108174637 -52.5087414659)">A</text>
+<text  transform="matrix(0.695183817703 -0.718832010698 0.718832010698 0.695183817703 -138.333329098 -86.4507426346)">A</text>
+<text  transform="matrix(-0.999973639951 -0.00726081280755 0.00726081280755 -0.999973639951 162.565697287 73.1881330591)">A</text>
+<text  transform="matrix(-0.201001455712 -0.979590942589 0.979590942589 -0.201001455712 21.5193738917 81.1075819610)">A</text>
+<text  transform="matrix(-0.749676838999 0.661804077555 -0.661804077555 -0.749676838999 -141.967173418 -38.1470828881)">A</text>
+<text  transform="matrix(0.266787149074 0.963755475776 -0.963755475776 0.266787149074 73.5704768340 48.1449170539)">A</text>
+<text  transform="matrix(-0.997550390446 -0.0699515440986 0.0699515440986 -0.997550390446 -34.0022209568 49.9502691079)">A</text>
+<text  transform="matrix(-0.900745809962 0.434346619459 -0.434346619459 -0.900745809962 -120.571754482 -28.5739828982)">A</text>
+<text  transform="matrix(0.962946115418 -0.26969386126 0.26969386126 0.962946115418 -20.7338779816 -21.0650024113)">A</text>
+<text  transform="matrix(0.76206716086 0.647497986359 -0.647497986359 0.76206716086 -49.3897298483 -59.8746853952)">A</text>
+<text  transform="matrix(-0.50337662973 -0.864067108876 0.864067108876 -0.50337662973 -10.0629444287 52.8763275473)">A</text>
+<text  transform="matrix(0.681390875962 -0.731919718381 0.731919718381 0.681390875962 -112.462153497 20.2353856759)">A</text>
+<text  transform="matrix(0.4896680588 -0.871908935722 0.871908935722 0.4896680588 -21.0788488319 8.23682891328)">A</text>
+<text  transform="matrix(-0.501951156379 -0.864895968663 0.864895968663 -0.501951156379 -63.6063067996 21.2726497221)">A</text>
+<text  transform="matrix(-0.970548695874 0.240905020575 -0.240905020575 -0.970548695874 118.452257081 30.7699660998)">A</text>
+<text  transform="matrix(0.244293096546 -0.969701440125 0.969701440125 0.244293096546 -38.2736095506 93.9375852551)">A</text>
+<text  transform="matrix(0.813255440506 -0.581906855508 0.581906855508 0.813255440506 -94.5885000487 92.4972052645)">A</text>
+<text  transform="matrix(0.582695114236 0.812690841492 -0.812690841492 0.582695114236 -53.5171193762 55.3075310845)">A</text>
+    </svg>

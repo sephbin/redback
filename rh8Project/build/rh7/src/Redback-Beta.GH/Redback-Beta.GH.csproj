@@ -3,13 +3,14 @@
     <TargetFramework>net48</TargetFramework>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <AssemblyName>Redback-Beta.GH</AssemblyName>
-    <AssemblyVersion>0.3.9.8959</AssemblyVersion>
+    <AssemblyVersion>0.3.8.8959</AssemblyVersion>
     <TargetName>[[TARGET-NAME]]</TargetName>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" />
-    <PackageReference Include="RhinoCommon" Version="8.*" />
-    <PackageReference Include="Grasshopper" Version="8.*" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="RhinoCommon" Version="7.*" />
+    <PackageReference Include="Grasshopper" Version="7.*" />
   </ItemGroup>
 </Project>
