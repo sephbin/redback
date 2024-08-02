@@ -2,7 +2,7 @@
   "id": "7d142de6-7a37-4b73-961b-a5ef3f7bfbc8",
   "identity": {
     "name": "Redback-Beta",
-    "version": "0.3.9",
+    "version": "0.3.11",
     "publisher": {
       "email": "andrew.butler@strangercollective.com",
       "name": "Andrew Butler",
@@ -274,8 +274,8 @@
         },
         {
           "id": "dfb7e3c1-c7db-4cd1-bdfe-6f61b73b66fe",
-          "name": "Image Objet",
-          "nickname": "Image Objet",
+          "name": "Image Object",
+          "nickname": "Image Object",
           "subcat": "ArchJSON",
           "image": {
             "light": {
