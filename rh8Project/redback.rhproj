@@ -2,7 +2,7 @@
   "id": "7d142de6-7a37-4b73-961b-a5ef3f7bfbc8",
   "identity": {
     "name": "Redback-Beta",
-    "version": "0.3.15",
+    "version": "0.3.17",
     "publisher": {
       "email": "andrew.butler@strangercollective.com",
       "name": "Andrew Butler",
@@ -381,6 +381,99 @@
               "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjQgMjQiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU\u002BDQogICAgICAuY2xzLTEgew0KICAgICAgICBmaWxsOiAjOWUwZjExOw0KICAgICAgfQ0KDQogICAgICAuY2xzLTEsIC5jbHMtMiwgLmNscy0zLCAuY2xzLTQsIC5jbHMtNSB7DQogICAgICAgIHN0cm9rZS13aWR0aDogMHB4Ow0KICAgICAgfQ0KDQogICAgICAuY2xzLTIgew0KICAgICAgICBmaWxsOiBub25lOw0KICAgICAgfQ0KDQogICAgICAuY2xzLTMgew0KICAgICAgICBmaWxsOiAjZWQxYzI0Ow0KICAgICAgfQ0KDQogICAgICAuY2xzLTYgew0KICAgICAgICBjbGlwLXBhdGg6IHVybCgjY2xpcHBhdGgtMSk7DQogICAgICB9DQoNCiAgICAgIC5jbHMtNyB7DQogICAgICAgIGNsaXAtcGF0aDogdXJsKCNjbGlwcGF0aCk7DQogICAgICB9DQoNCiAgICAgIC5jbHMtNCB7DQogICAgICAgIGZpbGw6ICNmZmY7DQogICAgICB9DQoNCiAgICAgIC5jbHMtNSB7DQogICAgICAgIGZpbGw6ICNjNDFhMWU7DQogICAgICB9DQogICAgPC9zdHlsZT4NCiAgICA8Y2xpcFBhdGggaWQ9ImNsaXBwYXRoIj4NCiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIyMy4xOCA0LjI3IDE2LjM5IDE5LjczIDguMTUgMTMuNzggMjMuMTggNC4yNyIvPg0KICAgIDwvY2xpcFBhdGg\u002BDQogICAgPGNsaXBQYXRoIGlkPSJjbGlwcGF0aC0xIj4NCiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSI2LjQ5IDEyLjM2IC44MiA5LjM0IDIzLjE4IDQuMjcgNi40OSAxMi4zNiIvPg0KICAgIDwvY2xpcFBhdGg\u002BDQogIDwvZGVmcz4NCiAgPGcgY2xhc3M9ImNscy03Ij4NCiAgICA8cmVjdCBjbGFzcz0iY2xzLTMiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIvPg0KICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTIwLjk0LDEyLjYybC0xMC4yNSw3LjM4LDguNjIsMy4xOWMuMTItLjYyLDEuNjItMTAuNTYsMS42Mi0xMC41NloiLz4NCiAgPC9nPg0KICA8cG9seWdvbiBjbGFzcz0iY2xzLTUiIHBvaW50cz0iOC4xNSAxMy43OCA2LjUxIDE3LjYxIDYuNDkgMTIuMzYgMjMuMTggNC4yNyA4LjE1IDEzLjc4Ii8\u002BDQogIDxnIGNsYXNzPSJjbHMtNiI\u002BDQogICAgPHJlY3QgY2xhc3M9ImNscy0zIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiLz4NCiAgICA8cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Ik0xMC42Miw0LjI3TDIuNjksMTIuNzFTLTMuNjksNy41OS0zLjE5LDcuMzRzOS42Ny0zLjA2LDkuNjctMy4wNmg0LjE0WiIvPg0KICA8L2c\u002BDQogIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI2LjUxIDE3LjYxIDEwLjA5IDE1LjE4IDguMTUgMTMuNzggNi41MSAxNy42MSIvPg0KPC9zdmc\u002B"
             }
           }
+        },
+        {
+          "id": "0d7e9383-771a-4e12-9bb5-f044b388dbd1",
+          "name": "Deserialize Geometry JSON",
+          "nickname": "Deserialize Geometry JSON",
+          "subcat": "Data",
+          "exposure": "level2",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI\u002BCiAgPGRlZnM\u002BCiAgICA8c3R5bGU\u002BCiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzAwMDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00IHsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjYzEwMDc0OwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIG9wYWNpdHk6IC41OwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICNlYjBhOGM7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy02IHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZTogI2MxMDA3NDsKICAgICAgICBzdHJva2UtbWl0ZXJsaW1pdDogMTA7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAycHg7CiAgICAgIH0KICAgIDwvc3R5bGU\u002BCiAgPC9kZWZzPgogIDxnPgogICAgPHJlY3QgY2xhc3M9ImNscy0xIiB4PSIxIiB5PSIxIiB3aWR0aD0iMTMiIGhlaWdodD0iMTIiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iMiIgeT0iMSIgd2lkdGg9IjEiIGhlaWdodD0iMTIiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iNSIgeT0iMSIgd2lkdGg9IjEiIGhlaWdodD0iMTIiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iNyIgeT0iMSIgd2lkdGg9IjIiIGhlaWdodD0iMTIiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iMTEiIHk9IjEiIHdpZHRoPSIyIiBoZWlnaHQ9IjEyIi8\u002BCiAgPC9nPgogIDxnPgogICAgPGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSIxNiIgY3k9IjE2IiByPSI2LjUiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTE2LDEwYzMuMzEsMCw2LDIuNjksNiw2cy0yLjY5LDYtNiw2LTYtMi42OS02LTYsMi42OS02LDYtNk0xNiw5Yy0zLjg3LDAtNywzLjEzLTcsN3MzLjEzLDcsNyw3LDctMy4xMyw3LTctMy4xMy03LTctN2gwWiIvPgogIDwvZz4KICA8ZyBjbGFzcz0iY2xzLTUiPgogICAgPGVsbGlwc2UgY2xhc3M9ImNscy00IiBjeD0iMTMuMDYiIGN5PSIxMi45NCIgcng9IjIuNSIgcnk9IjEuNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTUuMzIgMTMuMDMpIHJvdGF0ZSgtNDUpIi8\u002BCiAgPC9nPgogIDxwYXRoIGNsYXNzPSJjbHMtNiIgZD0iTTksMTlzLTQsMC02LTIsMi02LDItNiIvPgogIDxwb2x5bGluZSBjbGFzcz0iY2xzLTYiIHBvaW50cz0iNC41IDE2IDkgMTkgNC41IDIyIi8\u002BCjwvc3ZnPg=="
+            }
+          }
+        },
+        {
+          "id": "b465cd09-8473-452a-8f75-a1c9092adbc4",
+          "name": "Deserialize Model Object JSON",
+          "nickname": "Deserialize Model Object JSON",
+          "subcat": "Data",
+          "exposure": "level2",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI\u002BCiAgPGRlZnM\u002BCiAgICA8c3R5bGU\u002BCiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzAwMDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00LCAuY2xzLTUgewogICAgICAgIHN0cm9rZS13aWR0aDogMHB4OwogICAgICB9CgogICAgICAuY2xzLTYgewogICAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMDsKICAgICAgICBzdHJva2Utd2lkdGg6IDJweDsKICAgICAgfQoKICAgICAgLmNscy02LCAuY2xzLTcgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgICAgc3Ryb2tlOiAjNGYxODBiOwogICAgICB9CgogICAgICAuY2xzLTcgewogICAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsKICAgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOwogICAgICAgIHN0cm9rZS13aWR0aDogLjc1cHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2VkNmIwMDsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjZmZkYTYzOwogICAgICB9CgogICAgICAuY2xzLTQgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtNSB7CiAgICAgICAgZmlsbDogI2ZmYzIwMDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM\u002BCiAgPGc\u002BCiAgICA8cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjEiIHk9IjEiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiIvPgogICAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIyIiB5PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxMiIvPgogICAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSI1IiB5PSIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxMiIvPgogICAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSI3IiB5PSIxIiB3aWR0aD0iMiIgaGVpZ2h0PSIxMiIvPgogICAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIxMSIgeT0iMSIgd2lkdGg9IjIiIGhlaWdodD0iMTIiLz4KICA8L2c\u002BCiAgPGc\u002BCiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTUiIHBvaW50cz0iMTUuNDIgMjIuMTEgMTUuNDIgMTQuNDIgOC44NSAxMS4yMSA4Ljg1IDE4LjkxIDE1LjQyIDIyLjExIi8\u002BCiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTUuNDIgMjIuMTEgMTUuNDIgMTQuNDIgMjIgMTEuMjEgMjIgMTguOTEgMTUuNDIgMjIuMTEiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSI4Ljg1IDExLjIxIDE1LjQyIDggMjIgMTEuMjEgMTUuNDIgMTQuNDIgOC44NSAxMS4yMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy03IiBwb2ludHM9IjE1LjQyIDggMjIgMTEuMjEgMjIgMTguOTEgMTUuNDIgMjIuMTEgOC44NSAxOC45MSA4Ljg1IDExLjIxIDE1LjQyIDgiLz4KICA8L2c\u002BCiAgPHBhdGggY2xhc3M9ImNscy02IiBkPSJNOSwxOXMtNCwwLTYtMiwyLTYsMi02Ii8\u002BCiAgPHBvbHlsaW5lIGNsYXNzPSJjbHMtNiIgcG9pbnRzPSI0LjUgMTYgOSAxOSA0LjUgMjIiLz4KPC9zdmc\u002B"
+            }
+          }
+        },
+        {
+          "id": "dba33b97-43c6-4628-a4d8-0bae9cd64851",
+          "name": "Serialize Geometry",
+          "nickname": "Serialize Geometry",
+          "subcat": "Data",
+          "exposure": "level2",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI\u002BCiAgPGRlZnM\u002BCiAgICA8c3R5bGU\u002BCiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzAwMDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00IHsKICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjYzEwMDc0OwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIG9wYWNpdHk6IC41OwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICNlYjBhOGM7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy02IHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZTogI2MxMDA3NDsKICAgICAgICBzdHJva2UtbWl0ZXJsaW1pdDogMTA7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAycHg7CiAgICAgIH0KICAgIDwvc3R5bGU\u002BCiAgPC9kZWZzPgogIDxnPgogICAgPGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSI4IiBjeT0iOCIgcj0iNi41Ii8\u002BCiAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik04LDJjMy4zMSwwLDYsMi42OSw2LDZzLTIuNjksNi02LDYtNi0yLjY5LTYtNiwyLjY5LTYsNi02TTgsMWMtMy44NywwLTcsMy4xMy03LDdzMy4xMyw3LDcsNyw3LTMuMTMsNy03UzExLjg3LDEsOCwxaDBaIi8\u002BCiAgPC9nPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iMTAiIHk9IjExIiB3aWR0aD0iMTMiIGhlaWdodD0iMTIiLz4KICA8ZyBjbGFzcz0iY2xzLTUiPgogICAgPGVsbGlwc2UgY2xhc3M9ImNscy00IiBjeD0iNS4wNiIgY3k9IjQuOTQiIHJ4PSIyLjUiIHJ5PSIxLjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yLjAxIDUuMDMpIHJvdGF0ZSgtNDUpIi8\u002BCiAgPC9nPgogIDxwYXRoIGNsYXNzPSJjbHMtNiIgZD0iTTksMTlzLTQsMC02LTIsMi02LDItNiIvPgogIDxwb2x5bGluZSBjbGFzcz0iY2xzLTYiIHBvaW50cz0iNC41IDE2IDkgMTkgNC41IDIyIi8\u002BCiAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIxMSIgeT0iMTEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEyIi8\u002BCiAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIxNCIgeT0iMTEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEyIi8\u002BCiAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIxNiIgeT0iMTEiIHdpZHRoPSIyIiBoZWlnaHQ9IjEyIi8\u002BCiAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIyMCIgeT0iMTEiIHdpZHRoPSIyIiBoZWlnaHQ9IjEyIi8\u002BCjwvc3ZnPg=="
+            }
+          }
+        },
+        {
+          "id": "20dc8abf-ea08-46ad-82fa-cd1efd8023e1",
+          "name": "Serialize Model Object",
+          "nickname": "Serialize Model Object",
+          "subcat": "Data",
+          "exposure": "level2",
+          "image": {
+            "light": {
+              "type": "svg",
+              "data": "PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI\u002BCiAgPGRlZnM\u002BCiAgICA8c3R5bGU\u002BCiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzAwMDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00LCAuY2xzLTUgewogICAgICAgIHN0cm9rZS13aWR0aDogMHB4OwogICAgICB9CgogICAgICAuY2xzLTYgewogICAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMDsKICAgICAgICBzdHJva2Utd2lkdGg6IDJweDsKICAgICAgfQoKICAgICAgLmNscy02LCAuY2xzLTcgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgICAgc3Ryb2tlOiAjNGYxODBiOwogICAgICB9CgogICAgICAuY2xzLTcgewogICAgICAgIHN0cm9rZS1saW5lY2FwOiByb3VuZDsKICAgICAgICBzdHJva2UtbGluZWpvaW46IHJvdW5kOwogICAgICAgIHN0cm9rZS13aWR0aDogLjc1cHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2VkNmIwMDsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjZmZkYTYzOwogICAgICB9CgogICAgICAuY2xzLTQgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtNSB7CiAgICAgICAgZmlsbDogI2ZmYzIwMDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM\u002BCiAgPGc\u002BCiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTUiIHBvaW50cz0iNy41OCAxNS4xMSA3LjU4IDcuNDIgMSA0LjIxIDEgMTEuOTEgNy41OCAxNS4xMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjcuNTggMTUuMTEgNy41OCA3LjQyIDE0LjE1IDQuMjEgMTQuMTUgMTEuOTEgNy41OCAxNS4xMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0zIiBwb2ludHM9IjEgNC4yMSA3LjU4IDEgMTQuMTUgNC4yMSA3LjU4IDcuNDIgMSA0LjIxIi8\u002BCiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTciIHBvaW50cz0iNy41OCAxIDE0LjE1IDQuMjEgMTQuMTUgMTEuOTEgNy41OCAxNS4xMSAxIDExLjkxIDEgNC4yMSA3LjU4IDEiLz4KICA8L2c\u002BCiAgPGc\u002BCiAgICA8cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjEwIiB5PSIxMSIgd2lkdGg9IjEzIiBoZWlnaHQ9IjEyIi8\u002BCiAgICA8cmVjdCBjbGFzcz0iY2xzLTQiIHg9IjExIiB5PSIxMSIgd2lkdGg9IjEiIGhlaWdodD0iMTIiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtNCIgeD0iMTQiIHk9IjExIiB3aWR0aD0iMSIgaGVpZ2h0PSIxMiIvPgogICAgPHJlY3QgY2xhc3M9ImNscy00IiB4PSIxNiIgeT0iMTEiIHdpZHRoPSIyIiBoZWlnaHQ9IjEyIi8\u002BCiAgICA8cmVjdCBjbGFzcz0iY2xzLTQiIHg9IjIwIiB5PSIxMSIgd2lkdGg9IjIiIGhlaWdodD0iMTIiLz4KICA8L2c\u002BCiAgPHBhdGggY2xhc3M9ImNscy02IiBkPSJNOSwxOXMtNCwwLTYtMiwyLTYsMi02Ii8\u002BCiAgPHBvbHlsaW5lIGNsYXNzPSJjbHMtNiIgcG9pbnRzPSI0LjUgMTYgOSAxOSA0LjUgMjIiLz4KPC9zdmc\u002B"
+            }
+          }
+        },
+        {
+          "id": "4337018e-7eaf-4fc5-89ca-9bfadc1e14c4",
+          "name": "Layer Path",
+          "nickname": "Layer Path",
+          "subcat": "Rhino"
+        },
+        {
+          "id": "185a2f88-c725-4035-a2e1-41f33174b800",
+          "name": "IPy2",
+          "nickname": "IPy2",
+          "subcat": "Default",
+          "exposure": "excluded"
+        },
+        {
+          "id": "fe65c009-c664-44e1-9b70-ab8488509afa",
+          "name": "IPy2",
+          "nickname": "IPy2",
+          "subcat": "Default",
+          "exposure": "excluded"
+        },
+        {
+          "id": "0740bead-c5b8-4b40-844c-38d5e32dcbfc",
+          "name": "SolarSamplePoint",
+          "nickname": "SolarSamplePoint",
+          "subcat": "Default",
+          "exposure": "excluded"
+        },
+        {
+          "id": "c0917a97-8c27-4758-a974-c2b78daaa052",
+          "name": "SolarSampleRay",
+          "nickname": "SolarSampleRay",
+          "subcat": "Default",
+          "exposure": "excluded"
+        },
+        {
+          "id": "378b4bc0-a638-43ac-9280-ad1ad2f5053c",
+          "name": "SolarWindows",
+          "nickname": "SolarWindows",
+          "subcat": "Default",
+          "exposure": "excluded"
         }
       ]
     }
