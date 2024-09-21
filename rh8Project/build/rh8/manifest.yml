@@ -1,6 +1,6 @@
 ---
 name: Redback-Beta
-version: 0.3.17.9028
+version: 0.3.18.9031
 authors:
 - Andrew Butler
 description: Contains components for managing Data, SVG and ICML.

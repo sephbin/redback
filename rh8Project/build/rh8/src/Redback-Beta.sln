@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{7d142de6-7a37-4b73-961b-a5ef3f7bfbc8}") = "Redback-Beta.GH", "Redback-Beta.GH\Redback-Beta.GH.csproj", "{ceb77295-0591-4674-89f7-449a637e436e}"
+Project("{7d142de6-7a37-4b73-961b-a5ef3f7bfbc8}") = "Redback-Beta.GH", "Redback-Beta.GH\Redback-Beta.GH.csproj", "{67d0fc55-92a7-4794-8523-f987d7105751}"
 EndProject
 
 Global
@@ -10,8 +10,8 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ceb77295-0591-4674-89f7-449a637e436e}.Debug|Any CPU.Build.0 = Debug|Any CPU
-{ceb77295-0591-4674-89f7-449a637e436e}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67d0fc55-92a7-4794-8523-f987d7105751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{67d0fc55-92a7-4794-8523-f987d7105751}.Release|Any CPU.Build.0 = Release|Any CPU
 
 	EndGlobalSection
 EndGlobal
