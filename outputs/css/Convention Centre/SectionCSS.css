@@ -1,0 +1,21 @@
+*{
+	stroke: black;
+	stroke-width:0.15mm;
+}
+
+
+.ground{
+	stroke: black;
+	fill: None;
+	stroke-width:0.3mm;
+}
+
+.buildingTxt{
+	stroke: None;
+	fill: black;
+	stroke-width:0.3mm;
+}
+
+.sections{
+	stroke: 5mm;
+}

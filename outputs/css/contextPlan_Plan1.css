@@ -1,0 +1,73 @@
+*{fill:none;
+	stroke: black;
+	stroke-width:0.1mm;
+	display: none;
+}
+
+.GUIDE, .text, .GUIDE__Lane, .BOUNDARY, .CONTEXT__road, .Default, .Footprint, .Carpark_Level, .Temp, .Default, .BOUNDARY, .BOUNDARY__curve, .EXISTING, .CONTEXT, .CONTEXT__outline
+{
+	display: initial;
+}
+
+.BOUNDARY__curve{
+	stroke: Red;
+	stroke-width: 0.2mm;
+}
+
+.CONTEXT__outline{
+	stroke: rgba(193, 193, 193);
+	fill: None;
+}
+
+.CONTEXT__road{
+	fill: rgb(236, 236, 236);
+	stroke: None;
+}
+
+.Road__building_road{
+	fill: rgb(236, 236, 236);
+	stroke: rgba(193, 193, 193);
+}
+
+.Building_footprint{
+	fill: rgb(249, 231, 255);
+	stroke: rgb(181, 148, 192);
+}
+
+.Carparks{
+	fill: rgb(229, 229, 229);
+	stroke: rgb(193, 193, 193);
+}
+
+.EXISTING__rail{
+	stroke: rgb(255, 137, 69);
+	stroke-dasharray: 5 2;
+	stroke-width: 0.05mm;
+}
+
+.EXISTING__water{
+	stroke: rgb(101, 102, 236);
+	stroke-dasharray: 5 2;
+	stroke-width: 0.05mm;
+}
+
+.ZONES__vegetation{
+	stroke: rgb(143, 184, 152);
+	stroke-dasharray: 3 1;
+	fill: rgba(187, 228, 196, 0.6);
+}
+
+.ZONES__building_setback{
+	stroke: rgb(234, 215, 31);
+	stroke-dasharray: 3 1;
+	fill: rgba(248, 255, 163,0.6);
+}
+
+.text{
+	fill: Black;
+	stroke: None;
+}
+
+.vegetation{
+	img: opacity: 0.5;
+}

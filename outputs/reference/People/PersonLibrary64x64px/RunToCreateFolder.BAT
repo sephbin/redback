@@ -1,0 +1,1 @@
+for /l %%w in (1,1,27) do md %%w

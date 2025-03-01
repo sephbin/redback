@@ -1,0 +1,138 @@
+
+
+
+.skyImage{
+	opacity:1;
+}
+
+.line{
+	fill:none;
+	stroke:black;
+	stroke-width:0.1mm;
+}
+
+.buildingBackFacade{
+	stroke: Black;
+	fill: None;
+	stroke-width:0.01mm;
+}
+
+.vechiles{
+	fill:none;
+	stroke:rgb(137, 137, 137);
+	stroke-width:0.03mm;
+}
+
+.floors{
+	fill: rgb(249, 243, 240);
+	stroke: Black;
+	stroke-width:0.08mm;
+}
+
+.buildingBack{
+	fill: rgb(184, 201, 231);
+	stroke:rgb(168, 168, 168);
+	stroke-width:0.01mm;
+}
+
+.contextBuildings{
+	fill: rgb(224, 224, 224);
+	stroke:rgb(20, 20, 20);
+	stroke-width:0.04mm;
+}
+
+.sky{
+	fill: rgb(243, 248, 251);
+	opacity: 1;
+}
+
+.people{
+	fill: rgb(109, 109, 109);
+}
+
+.text{
+	position: relative;
+	z-index: -1;
+}
+
+.ground{
+	fill: rgb(240, 229, 222);
+}
+
+.vegetation{
+	opacity: 0.6;
+}
+
+.boundaryCrv{
+	stroke: Red;
+	stroke-dasharray: 2 1;
+	stroke-width: 0.05mm;
+}
+
+.boundaryTxt{
+	fill: rgb(240, 229, 222);
+	stroke: None;
+}
+
+.basement{
+	fill: White;
+	stroke: Black;
+	stroke-width:0.08mm;
+}
+
+.shadow{
+	fill: Black;
+	stroke: None;
+	opacity: 0.2;
+}
+
+.lvlLine{
+	stroke: Black;
+	stroke-dasharray: 2 1 5 1;
+	stroke-width:0.06mm;
+}
+
+.core{
+	fill: White;
+	stroke: Black;
+	stroke-width:0.08mm;
+}
+
+.tunnel{
+	fill: rgb(255, 204, 143);
+	stroke: rgb(255, 137, 69);
+	stroke-dasharray: 5 2;
+	stroke-width: 0.05mm;
+	opacity: 0.5;
+}
+
+.MaxHeightLine{
+	stroke: Red;
+	stroke-dasharray: 2 1 5 1;
+	stroke-width: 0.05mm;	
+}
+
+.MaxHeightTxt{
+	fill: None;
+	stroke: rgb(240, 229, 222);
+}
+
+.dimArrow{
+	fill: None;
+	stroke: black;
+	stroke-width: 0.05mm;
+}
+
+
+.slab, .raft{
+	fill: rgb(104, 104, 104);
+	stroke: black;
+	opacity: 1;
+	stroke-width:0.08mm;
+}
+
+.basementFloors{
+	fill: rgb(253, 251, 250);
+	stroke: Black;
+	stroke-width:0.08mm;
+}

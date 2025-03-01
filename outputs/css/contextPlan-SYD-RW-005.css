@@ -1,0 +1,16 @@
+*{fill:none;
+	stroke: black;
+	stroke-width:0.1mm;
+	display: none;
+}
+
+.BOUNDARY_AREA,
+.Updated_DWG__R-PERI,
+{
+	display: initial;
+}
+
+.BOUNDARY_AREA{
+	stroke: Red;
+	stroke-width: 0.2mm;
+}

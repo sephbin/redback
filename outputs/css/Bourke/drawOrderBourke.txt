@@ -1,0 +1,12 @@
+text
+GUIDE__Site
+-----
+floorWalls
+groundWalls
+floorArea
+GUIDE00Lane
+CONTEXT00outline
+CONTEXT__Lot
+Road
+CONTEXT00road
+vegetation

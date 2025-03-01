@@ -1,0 +1,68 @@
+*{fill:none;
+	stroke: black;
+	stroke-width:0.1mm;
+}
+
+
+.GUIDE__Site{
+	stroke: Red;
+	stroke-width: 0.2mm;
+}
+
+.CONTEXT__Lot{
+	stroke: rgb(193, 193, 193);
+	fill: None;
+}
+
+.Road{
+	fill: rgb(236, 236, 236);
+	stroke: None;
+}
+
+.Lane{
+	stroke: rgb(226, 226, 226);
+	fill: rgb(246, 246, 246);
+}
+
+.ZONES__flooding{
+	fill: rgb(212, 234, 253);
+	opacity: 0.7;
+	stroke: None;
+}
+
+.EXISTING__rail{
+	stroke: rgb(255, 137, 69);
+	stroke-dasharray: 5 2;
+	stroke-width: 0.05mm;
+}
+
+.Storm_Drain{
+	stroke: rgb(101, 102, 236);
+	stroke-dasharray: 5 2;
+	stroke-width: 0.05mm;
+}
+
+.ZONES__vegetation{
+	stroke: rgb(44, 191, 86);
+	stroke-dasharray: 3 1;
+	fill: rgb(195, 230, 68);
+	opacity: 0.4;
+}
+
+.ZONES__building_setback{
+	stroke: rgb(211, 199, 76);
+	stroke-dasharray: 3 1;
+	fill: rgb(243, 255, 47);
+	opacity: 0.4;
+}
+
+.text{
+	fill: Black;
+	stroke: None;
+}
+
+.siteLinks{
+	stroke: rgb(249, 138, 236);
+	stroke-width: 0.4mm;
+	stroke-dasharray: 3 1;
+}

@@ -1,0 +1,106 @@
+*{fill:none;
+	stroke: black;
+	stroke-width:0.1mm;
+
+}
+
+.GUIDE__Site{
+	stroke: Red;
+	stroke-width: 0.2mm;
+}
+
+.CONTEXT__Lot{
+	stroke: rgb(193, 193, 193);
+	fill: None;
+}
+
+.Road{
+	fill: rgb(236, 236, 236);
+	stroke: None;
+}
+
+.ammenBound{
+	stroke: Black;
+	fill: rgb(255, 231, 253);
+}
+
+.floorArea{
+	fill: rgb(216, 245, 249);
+	stroke: rgb(143, 209, 219);
+}
+
+.floorWalls, .groundWalls{
+	fill: rgb(115, 115, 115);
+	stroke-width: 0.02mm;
+}
+
+.Lane{
+	stroke: rgb(226, 226, 226);
+	fill: rgb(246, 246, 246);
+}
+
+.columns{
+	fill: rgb(181, 181, 181);
+	stroke:  None;
+}
+
+.coreBound{
+	stroke: Black;
+	stroke-width: 0.1mm;
+	fill: rgb(239, 239, 239);	
+}
+
+.GUIDE__2_Building_Atrium__ENTRY{
+	fill: rgb(236, 236, 236);
+	stroke: None;
+}
+
+.BOUNDARY__curve{
+	stroke: Red;
+	stroke-width: 0.2mm;
+}
+
+.CONTEXT__outline{
+	stroke: rgba(193, 193, 193);
+	fill: None;
+}
+
+.CONTEXT__road{
+	fill: rgb(236, 236, 236);
+	stroke: None;
+}
+
+.Building_footprint{
+	fill: rgb(249, 231, 255);
+	stroke: rgb(181, 148, 192);
+}
+
+.Carparks{
+	fill: rgb(229, 229, 229);
+	stroke: rgb(193, 193, 193);
+}
+
+.text{
+	fill: Black;
+	stroke: None;
+}
+
+.siteLinkPaths{
+	fill: rgb(250, 242, 232);
+	stroke: rgb(169, 153, 132);
+}
+
+.vegetation{
+	stroke: None;
+	fill: rgb(195, 230, 68);
+	opacity: 0.5;
+}
+
+.SectionArrows{
+	fill: Black;
+}
+
+.CarparkEntryRamp{
+	fill: rgb(236, 236, 236);
+	stroke: None;
+}
