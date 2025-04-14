@@ -3,7 +3,7 @@
     <TargetFramework>net48</TargetFramework>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <AssemblyName>Redback-Beta.GH</AssemblyName>
-    <AssemblyVersion>0.4.9.9177</AssemblyVersion>
+    <AssemblyVersion>0.4.10.9236</AssemblyVersion>
     <TargetName>[[TARGET-NAME]]</TargetName>
   </PropertyGroup>
 
