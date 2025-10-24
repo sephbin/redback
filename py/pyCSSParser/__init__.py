@@ -52,6 +52,7 @@ def generateSquareBracketSelector(selector, objectType):
 		lut = [
 		{"operator": "~=",	"description":"contains",					"convertToStr":True, 	"template":'''{value} in {objectType}["{key}"]'''},
 		{"operator": "|=",	"description":"equal to or startswith",		"convertToStr":False,	"template":'''{objectType}["{key}"] == '{value}' or {objectType}["{key}"].startswith('{value}')'''},
+		{"operator": "!=",	"description":"not equal to",				"convertToStr":False,	"template":'''{objectType}["{key}"] != '{value}' '''},
 		{"operator": "^=",	"description":"startswith",					"convertToStr":False,	"template":'''{objectType}["{key}"].startswith('{value}')'''},
 		{"operator": "$=",	"description":"endswith",					"convertToStr":False,	"template":'''{objectType}["{key}"].endswith('{value}')'''},
 		{"operator": "*=",	"description":"contains substring",			"convertToStr":False,	"template":r'''re.search("\\b{value}\\b", {objectType}["{key}"])'''},

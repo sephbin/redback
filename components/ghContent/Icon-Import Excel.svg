@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Generator: Grasshopper 1.0.0, Redback Plugin. SVG Version: 6.00 Build 0) Made by Andrew Butler at Cox Architecture -->
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="24mm" height="24mm" viewBox="0 0 24 24" xml:space="preserve">
+    <style type="text/css">
+    .line{fill:none; stroke:#000000; stroke-width:0.5px; stroke-linecap: round;}
+.fill-white{fill:white;}
+.fill-red{fill:#ed1c24;}
+.Magenta{fill:#ec008c;}
+.White{fill:#ffffff;}
+.Black{fill:#000000;}
+.Grey{fill:#bbbbbb;}
+.Shade{opacity:0.2;}
+.Highlight{fill: #ffffff; opacity:0.2;}
+.Outline{fill:none; stroke: #000; stroke-width: 0.2mm;}
+.Edge{fill:none; stroke: #000; stroke-width: 0.1mm;}
+.Hidden{opacity:0;}
+    </style>
+    <path spline_1deg="" d=" M12.00,2.00 L3.34,7.00 L3.34,17.00 L12.00,22.00 L20.66,17.00 L20.66,7.00Z" class="Other" z-index="0.0" fill="#158249"/>
+<path spline_1deg="" d=" M-42.98,34.80 L-36.35,34.80 L-36.35,31.49 L-42.98,31.49Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-42.98,38.12 L-36.35,38.12 L-36.35,34.80 L-42.98,34.80Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-42.98,41.43 L-36.35,41.43 L-36.35,38.12 L-42.98,38.12Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-36.35,34.80 L-29.72,34.80 L-29.72,31.49 L-36.35,31.49Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-36.35,38.12 L-29.72,38.12 L-29.72,34.80 L-36.35,34.80Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-36.35,41.43 L-29.72,41.43 L-29.72,38.12 L-36.35,38.12Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-42.98,44.75 L-36.35,44.75 L-36.35,41.43 L-42.98,41.43Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M-36.35,44.75 L-29.72,44.75 L-29.72,41.43 L-36.35,41.43Z" class="White" z-index="0.0"/>
+<path spline_1deg="" d=" M12.00,14.50 L7.67,12.00 L7.67,9.50 L12.00,12.00Z" class="Other" z-index="2.58444984501" fill="#33c481"/>
+<path spline_1deg="" d=" M12.00,17.00 L7.67,14.50 L7.67,12.00 L12.00,14.50Z" class="Other" z-index="2.58444984501" fill="#21a365"/>
+<path spline_1deg="" d=" M7.67,12.00 L3.34,9.50 L3.34,7.00 L7.67,9.50Z" class="Other" z-index="2.58444984501" fill="#21a365"/>
+<path spline_1deg="" d=" M7.67,14.50 L3.34,12.00 L3.34,9.50 L7.67,12.00Z" class="Other" z-index="2.58444984501" fill="#107c41"/>
+<path spline_1deg="" d=" M7.67,17.00 L3.34,14.50 L3.34,12.00 L7.67,14.50Z" class="Other" z-index="2.58444984501" fill="#185c37"/>
+<path spline_1deg="" d=" M12.00,22.00 L7.67,19.50 L7.67,17.00 L12.00,19.50Z" class="Other" z-index="2.58444984501" fill="#185c37"/>
+<path spline_1deg="" d=" M7.67,19.50 L3.34,17.00 L3.34,14.50 L7.67,17.00Z" class="Other" z-index="2.58444984501" fill="#185c37"/>
+<path spline_1deg="" d=" M12.00,19.50 L7.67,17.00 L7.67,14.50 L12.00,17.00Z" class="Other" z-index="2.58444984501" fill="#107c41"/>
+<path spline_1deg="" d=" M12.00,12.00 L20.66,7.00 L20.66,17.00 L12.00,22.00Z" class="Shade" z-index="5.02137230415"/>
+<line x1="8.0" y1="4.30940107676" x2="16.3301270189" y2="9.5" class="line Shade" z-index="5.76255557565"/>
+<path spline_1deg="" d=" M1.00,8.00 L8.00,8.00 L8.00,1.00 L1.00,1.00Z" class="Black" z-index="6.40284577475"/>
+<path spline_1deg="" d=" M2.00,5.00 L7.00,5.00 L7.00,4.00 L2.00,4.00Z" class="White" z-index="8.72325517520"/>
+<path spline_1deg="" d=" M5.00,6.00 L6.00,6.00 L6.00,5.00 L5.00,5.00Z" class="White" z-index="8.72325517520"/>
+<path spline_1deg="" d=" M5.00,4.00 L6.00,4.00 L6.00,3.00 L5.00,3.00Z" class="White" z-index="8.72325517520"/>
+    </svg>
