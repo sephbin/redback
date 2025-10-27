@@ -5,7 +5,7 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <AssemblyName>Redback.Components</AssemblyName>
-    <AssemblyVersion>0.5.41.9421</AssemblyVersion>
+    <AssemblyVersion>0.5.43.9432</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
