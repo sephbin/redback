@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{7d142de6-7a37-4b73-961b-a5ef3f7bfbc8}") = "Redback.Components", "Redback.Components\Redback.Components.csproj", "{9f19150e-8271-4d68-a53c-05e6018d3719}"
+Project("{7d142de6-7a37-4b73-961b-a5ef3f7bfbc8}") = "Redback.Components", "Redback.Components\Redback.Components.csproj", "{e2a6e957-81c0-49ac-870c-53cb6b96d16b}"
 EndProject
 
 Global
@@ -10,9 +10,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9f19150e-8271-4d68-a53c-05e6018d3719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9f19150e-8271-4d68-a53c-05e6018d3719}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9f19150e-8271-4d68-a53c-05e6018d3719}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9f19150e-8271-4d68-a53c-05e6018d3719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{e2a6e957-81c0-49ac-870c-53cb6b96d16b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e2a6e957-81c0-49ac-870c-53cb6b96d16b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e2a6e957-81c0-49ac-870c-53cb6b96d16b}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{e2a6e957-81c0-49ac-870c-53cb6b96d16b}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -657,11 +657,11 @@ class table:
 					tablestyles.append('<TableStyle Self="TableStyle/Generated%3a{name}" ExtendedKeyboardShortcut="0 0 0" Name="Generated:{name}" KeyboardShortcut="0 0"> <Properties> <BasedOn type="string">$ID/[No table style]</BasedOn> </Properties> </TableStyle>'.format(name=v))
 		print("#"*100)
 		
-		for row in self.data:
-			for cells in row["value"]:
-				print(cells)
-				if cells["paragraphStyle"]:
-					pass
+		# for row in self.data:
+		# 	for cells in row["value"]:
+		# 		print(cells)
+		# 		if cells["paragraphStyle"]:
+		# 			pass
 
 		parastyles = "\n".join(parastyles)
 		charastyles = "\n".join(charastyles)

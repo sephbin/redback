@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='utf-8'?>
+<?aid style="50" type="snippet" readerVersion="6.0" featureSet="257" product="20.4(4)" ?>
+<?aid SnippetType="InCopyInterchange"?>
+<Document DOMVersion="20.4" Self="d" uuid="0" parent="">
+	<Color Self="Color/Black" Model="Process" Space="CMYK" ColorValue="0 0 0 100" ColorOverride="Specialblack" ConvertToHsb="false" AlternateSpace="NoAlternateColor" AlternateColorValue="" Name="Black" ColorEditable="false" ColorRemovable="false" Visible="true" SwatchCreatorID="7937" SwatchColorGroupReference="u18ColorGroupSwatch3" uuid="1" parent="0" />
+	<Ink Self="Ink/$ID/Process Cyan" Name="$ID/Process Cyan" Angle="71.5651" ConvertToProcess="false" Frequency="63.2456" NeutralDensity="0.61" PrintInk="true" TrapOrder="1" InkType="Normal" uuid="2" parent="0" />
+	<Ink Self="Ink/$ID/Process Magenta" Name="$ID/Process Magenta" Angle="18.4349" ConvertToProcess="false" Frequency="63.2456" NeutralDensity="0.76" PrintInk="true" TrapOrder="2" InkType="Normal" uuid="3" parent="0" />
+	<Ink Self="Ink/$ID/Process Yellow" Name="$ID/Process Yellow" Angle="0" ConvertToProcess="false" Frequency="66.6667" NeutralDensity="0.16" PrintInk="true" TrapOrder="3" InkType="Normal" uuid="4" parent="0" />
+	<Ink Self="Ink/$ID/Process Black" Name="$ID/Process Black" Angle="45" ConvertToProcess="false" Frequency="70.7107" NeutralDensity="1.7" PrintInk="true" TrapOrder="4" InkType="Normal" uuid="5" parent="0" />
+	<Swatch Self="Swatch/None" Name="None" ColorEditable="false" ColorRemovable="false" Visible="true" SwatchCreatorID="7937" SwatchColorGroupReference="u18ColorGroupSwatch0" uuid="6" parent="0" />
+	<StrokeStyle Self="StrokeStyle/$ID/Solid" Name="$ID/Solid" uuid="7" parent="0" />
+	<FontFamily Self="di3f" Name="Minion Pro" uuid="8" parent="0">
+		<Font Self="di3fFontnMinion Pro Regular" FontFamily="Minion Pro" Name="Minion Pro Regular" PostScriptName="MinionPro-Regular" Status="Installed" FontStyleName="Regular" FontType="OpenTypeCFF" WritingScript="0" FullName="Minion Pro" FullNameNative="Minion Pro" FontStyleNameNative="Regular" PlatformName="$ID/" Version="Version 2.112;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.5900" TypekitID="$ID/" uuid="9" parent="8" />
+	</FontFamily>
+	<FontFamily Self="di9e" Name="Myriad Pro" uuid="10" parent="0">
+		<Font Self="di9eFontnMyriad Pro Regular" FontFamily="Myriad Pro" Name="Myriad Pro Regular" PostScriptName="MyriadPro-Regular" Status="Installed" FontStyleName="Regular" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro" FullNameNative="Myriad Pro" FontStyleNameNative="Regular" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" uuid="11" parent="10" />
+		<Font Self="di9eFontnMyriad Pro Italic" FontFamily="Myriad Pro" Name="Myriad Pro Italic" PostScriptName="MyriadPro-It" Status="Installed" FontStyleName="Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Italic" FullNameNative="Myriad Pro Italic" FontStyleNameNative="Italic" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" uuid="12" parent="10" />
+		<Font Self="di9eFontnMyriad Pro Bold" FontFamily="Myriad Pro" Name="Myriad Pro Bold" PostScriptName="MyriadPro-Bold" Status="Installed" FontStyleName="Bold" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Bold" FullNameNative="Myriad Pro Bold" FontStyleNameNative="Bold" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" uuid="13" parent="10" />
+		<Font Self="di9eFontnMyriad Pro Bold Italic" FontFamily="Myriad Pro" Name="Myriad Pro Bold Italic" PostScriptName="MyriadPro-BoldIt" Status="Installed" FontStyleName="Bold Italic" FontType="OpenTypeCFF" WritingScript="0" FullName="Myriad Pro Bold Italic" FullNameNative="Myriad Pro Bold Italic" FontStyleNameNative="Bold Italic" PlatformName="$ID/" Version="Version 2.106;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.58329" TypekitID="$ID/" uuid="14" parent="10" />
+	</FontFamily>
+	<FontFamily Self="diab" Name="Kozuka Mincho Pr6N" uuid="15" parent="0">
+		<Font Self="diabFontnKozuka Mincho Pr6N R" FontFamily="Kozuka Mincho Pr6N" Name="Kozuka Mincho Pr6N R" PostScriptName="KozMinPr6N-Regular" Status="Installed" FontStyleName="R" FontType="OpenTypeCID" WritingScript="1" FullName="KozMinPr6N-Regular" FullNameNative="小塚明朝 Pr6N R" FontStyleNameNative="R" PlatformName="$ID/" Version="Version 7.001;hotconv 1.0.107;makeotfexe 2.5.65593" TypekitID="$ID/" uuid="16" parent="15" />
+	</FontFamily>
+	<CompositeFont Self="CompositeFont/$ID/[No composite font]" Name="$ID/[No composite font]" uuid="17" parent="0">
+		<CompositeFontEntry Self="uaa" Name="$ID/Kanji" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" Locked="true" ScaleOption="true" BaselineShift="0" uuid="18" parent="17">
+			<Properties uuid="19" parent="18">
+				<AppliedFont type="string" uuid="20" parent="19">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uac" Name="$ID/Kana" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖゝゞァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺーヽヾ" Locked="true" ScaleOption="true" BaselineShift="0" uuid="21" parent="17">
+			<Properties uuid="22" parent="21">
+				<AppliedFont type="string" uuid="23" parent="22">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uad" Name="$ID/Punctuation" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="—―‖‘’“”‥…′″∥、。〈〉《》「」『』【】〔〕〜・！（），．／：；？［］｛｝～" Locked="true" ScaleOption="true" BaselineShift="0" uuid="24" parent="17">
+			<Properties uuid="25" parent="24">
+				<AppliedFont type="string" uuid="26" parent="25">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uae" Name="$ID/Symbols" FontStyle="$ID/R" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="¢£§¨¬°±´¶×÷ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё‐†‡‰※℃Å←↑→↓⇒⇔∀∂∃∇∈∋−√∝∞∠∧∨∩∪∫∬∴∵∽≒≠≡≦≧≪≫⊂⊃⊆⊇⊥⌒■□▲△▼▽◆◇○◎●◯★☆♀♂♪♭♯〃〆〇〒〓゛゜＃＄％＆＊＋－０１２３４５６７８９＜＝＞＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ＼＾＿｀ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ｜￠￡￢￣￥" Locked="true" ScaleOption="true" BaselineShift="0" uuid="27" parent="17">
+			<Properties uuid="28" parent="27">
+				<AppliedFont type="string" uuid="29" parent="28">Kozuka Mincho Pr6N</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="uaf" Name="$ID/Alphabetic" FontStyle="$ID/Regular" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters=" !&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¤¥¦©ª«­®¯²³µ·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿıŒœŠšŸŽžƒˆˇ˘˙˚˛˜˝–‚„•‹›⁄€™∆∏∑≈≤≥◊ﬀﬁﬂﬃﬄﬅﬆ" Locked="true" ScaleOption="false" BaselineShift="0" uuid="30" parent="17">
+			<Properties uuid="31" parent="30">
+				<AppliedFont type="string" uuid="32" parent="31">Minion Pro</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+		<CompositeFontEntry Self="ub0" Name="$ID/Numbers" FontStyle="$ID/Regular" RelativeSize="100" HorizontalScale="100" VerticalScale="100" CustomCharacters="0123456789" Locked="true" ScaleOption="false" BaselineShift="0" uuid="33" parent="17">
+			<Properties uuid="34" parent="33">
+				<AppliedFont type="string" uuid="35" parent="34">Minion Pro</AppliedFont>
+			</Properties>
+		</CompositeFontEntry>
+	</CompositeFont>
+	<RootCharacterStyleGroup Self="u80" uuid="36" parent="0">
+		<CharacterStyle Self="CharacterStyle/$ID/[No character style]" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="$ID/" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" Name="$ID/[No character style]" uuid="37" parent="36" />
+	<CharacterStyle Self="CharacterStyle/CHANGE" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="b7777f5a-b2e2-41dd-923b-a36b7a2ff1cc" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" KeyboardShortcut="0 0" Name="CHANGE" FillColor="Color/C=15 M=100 Y=100 K=0" AppliedLanguage="$ID/English: USA"><Properties><BasedOn type="string">$ID/[No character style]</BasedOn><PreviewColor type="enumeration">Nothing</PreviewColor></Properties></CharacterStyle></RootCharacterStyleGroup>
+	<NumberingList Self="NumberingList/$ID/[Default]" Name="$ID/[Default]" ContinueNumbersAcrossStories="false" ContinueNumbersAcrossDocuments="false" uuid="38" parent="0" />
+	<RootParagraphStyleGroup Self="u7f" uuid="39" parent="0">
+		<ParagraphStyle Self="ParagraphStyle/$ID/NormalParagraphStyle" Name="$ID/NormalParagraphStyle" Imported="false" NextStyle="ParagraphStyle/$ID/NormalParagraphStyle" SplitDocument="false" EmitCss="true" StyleUniqueId="771888e2-944e-42ec-89d5-874cd945e62b" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" EmptyNestedStyles="true" EmptyLineStyles="true" EmptyGrepStyles="true" KeyboardShortcut="0 0" uuid="40" parent="39">
+			<Properties uuid="41" parent="40">
+				<BasedOn type="string" uuid="42" parent="41">$ID/[No paragraph style]</BasedOn>
+				<PreviewColor type="enumeration" uuid="43" parent="41">Nothing</PreviewColor>
+			</Properties>
+		</ParagraphStyle>
+		<ParagraphStyle Self="ParagraphStyle/$ID/[No paragraph style]" Name="$ID/[No paragraph style]" Imported="false" SplitDocument="false" EmitCss="true" StyleUniqueId="$ID/" IncludeClass="true" ExtendedKeyboardShortcut="0 0 0" EmptyNestedStyles="true" EmptyLineStyles="true" EmptyGrepStyles="true" FillColor="Color/Black" FontStyle="Regular" PointSize="12" HorizontalScale="100" KerningMethod="$ID/Metrics" Ligatures="true" PageNumberType="AutoPageNumber" StrokeWeight="1" Tracking="0" Composer="HL Composer" DropCapCharacters="0" DropCapLines="0" BaselineShift="0" Capitalization="Normal" StrokeColor="Swatch/None" HyphenateLadderLimit="3" VerticalScale="100" LeftIndent="0" RightIndent="0" FirstLineIndent="0" AutoLeading="120" AppliedLanguage="$ID/English: USA" Hyphenation="true" HyphenateAfterFirst="2" HyphenateBeforeLast="2" HyphenateCapitalizedWords="true" HyphenateWordsLongerThan="5" NoBreak="false" HyphenationZone="36" SpaceBefore="0" SpaceAfter="0" Underline="false" OTFFigureStyle="Default" DesiredWordSpacing="100" MaximumWordSpacing="133" MinimumWordSpacing="80" DesiredLetterSpacing="0" MaximumLetterSpacing="0" MinimumLetterSpacing="0" DesiredGlyphScaling="100" MaximumGlyphScaling="100" MinimumGlyphScaling="100" StartParagraph="Anywhere" KeepAllLinesTogether="false" KeepWithNext="0" KeepFirstLines="2" KeepLastLines="2" Position="Normal" StrikeThru="false" CharacterAlignment="AlignEmCenter" KeepLinesTogether="false" StrokeTint="-1" FillTint="-1" OverprintStroke="false" OverprintFill="false" GradientStrokeAngle="0" GradientFillAngle="0" GradientStrokeLength="-1" GradientFillLength="-1" GradientStrokeStart="0 0" GradientFillStart="0 0" Skew="0" RuleAboveLineWeight="1" RuleAboveTint="-1" RuleAboveOffset="0" RuleAboveLeftIndent="0" RuleAboveRightIndent="0" RuleAboveWidth="ColumnWidth" RuleBelowLineWeight="1" RuleBelowTint="-1" RuleBelowOffset="0" RuleBelowLeftIndent="0" RuleBelowRightIndent="0" RuleBelowWidth="ColumnWidth" RuleAboveOverprint="false" RuleBelowOverprint="false" RuleAbove="false" RuleBelow="false" LastLineIndent="0" HyphenateLastWord="true" ParagraphBreakType="Anywhere" SingleWordJustification="FullyJustified" OTFOrdinal="false" OTFFraction="false" OTFDiscretionaryLigature="false" OTFTitling="false" RuleAboveGapTint="-1" RuleAboveGapOverprint="false" RuleBelowGapTint="-1" RuleBelowGapOverprint="false" Justification="LeftAlign" DropcapDetail="1" PositionalForm="None" OTFMark="true" HyphenWeight="5" OTFLocale="true" HyphenateAcrossColumns="true" KeepRuleAboveInFrame="false" IgnoreEdgeAlignment="false" OTFSlashedZero="false" OTFStylisticSets="0" OTFHistorical="false" OTFContextualAlternate="true" UnderlineGapOverprint="false" UnderlineGapTint="-1" UnderlineOffset="-9999" UnderlineOverprint="false" UnderlineTint="-1" UnderlineWeight="-9999" StrikeThroughGapOverprint="false" StrikeThroughGapTint="-1" StrikeThroughOffset="-9999" StrikeThroughOverprint="false" StrikeThroughTint="-1" StrikeThroughWeight="-9999" MiterLimit="4" StrokeAlignment="OutsideAlignment" EndJoin="MiterEndJoin" SpanColumnType="SingleColumn" SplitColumnInsideGutter="6" SplitColumnOutsideGutter="0" KeepWithPrevious="false" SpanColumnMinSpaceBefore="0" SpanColumnMinSpaceAfter="0" OTFSwash="false" ParagraphShadingTint="20" ParagraphShadingOverprint="false" ParagraphShadingWidth="ColumnWidth" ParagraphShadingOn="false" ParagraphShadingClipToFrame="false" ParagraphShadingSuppressPrinting="false" ParagraphShadingLeftOffset="0" ParagraphShadingRightOffset="0" ParagraphShadingTopOffset="0" ParagraphShadingBottomOffset="0" ParagraphShadingTopOrigin="AscentTopOrigin" ParagraphShadingBottomOrigin="DescentBottomOrigin" ParagraphBorderTint="-1" ParagraphBorderOverprint="false" ParagraphBorderOn="false" ParagraphBorderGapTint="-1" ParagraphBorderGapOverprint="false" Tsume="0" LeadingAki="-1" TrailingAki="-1" KinsokuType="KinsokuPushInFirst" KinsokuHangType="None" BunriKinshi="true" RubyOpenTypePro="true" RubyFontSize="-1" RubyAlignment="RubyJIS" RubyType="PerCharacterRuby" RubyParentSpacing="RubyParent121Aki" RubyXScale="100" RubyYScale="100" RubyXOffset="0" RubyYOffset="0" RubyPosition="AboveRight" RubyAutoAlign="true" RubyParentOverhangAmount="RubyOverhangOneRuby" RubyOverhang="false" RubyAutoScaling="false" RubyParentScalingPercent="66" RubyTint="-1" RubyOverprintFill="Auto" RubyStrokeTint="-1" RubyOverprintStroke="Auto" RubyWeight="-1" KentenKind="None" KentenFontSize="-1" KentenXScale="100" KentenYScale="100" KentenPlacement="0" KentenAlignment="AlignKentenCenter" KentenPosition="AboveRight" KentenCustomCharacter="" KentenCharacterSet="CharacterInput" KentenTint="-1" KentenOverprintFill="Auto" KentenStrokeTint="-1" KentenOverprintStroke="Auto" KentenWeight="-1" Tatechuyoko="false" TatechuyokoXOffset="0" TatechuyokoYOffset="0" AutoTcy="0" AutoTcyIncludeRoman="false" Jidori="0" GridGyoudori="0" GridAlignFirstLineOnly="false" GridAlignment="None" CharacterRotation="0" RotateSingleByteCharacters="false" Rensuuji="true" ShataiMagnification="0" ShataiDegreeAngle="4500" ShataiAdjustTsume="true" ShataiAdjustRotation="false" Warichu="false" WarichuLines="2" WarichuSize="50" WarichuLineSpacing="0" WarichuAlignment="Auto" WarichuCharsBeforeBreak="2" WarichuCharsAfterBreak="2" OTFHVKana="false" OTFProportionalMetrics="false" OTFRomanItalics="false" LeadingModel="LeadingModelAkiBelow" ScaleAffectsLineHeight="false" ParagraphGyoudori="false" CjkGridTracking="false" GlyphForm="None" RubyAutoTcyDigits="0" RubyAutoTcyIncludeRoman="false" RubyAutoTcyAutoScale="true" TreatIdeographicSpaceAsSpace="true" AllowArbitraryHyphenation="false" BulletsAndNumberingListType="NoList" NumberingStartAt="1" NumberingLevel="1" NumberingContinue="true" NumberingApplyRestartPolicy="true" BulletsAlignment="LeftAlign" NumberingAlignment="LeftAlign" NumberingExpression="^#.^t" BulletsTextAfter="^t" ParagraphBorderLeftOffset="0" ParagraphBorderRightOffset="0" ParagraphBorderTopOffset="0" ParagraphBorderBottomOffset="0" ParagraphBorderStrokeEndJoin="MiterEndJoin" ParagraphBorderTopLeftCornerOption="None" ParagraphBorderTopRightCornerOption="None" ParagraphBorderBottomLeftCornerOption="None" ParagraphBorderBottomRightCornerOption="None" ParagraphBorderTopLeftCornerRadius="12" ParagraphBorderTopRightCornerRadius="12" ParagraphBorderBottomLeftCornerRadius="12" ParagraphBorderBottomRightCornerRadius="12" ParagraphShadingTopLeftCornerOption="None" ParagraphShadingTopRightCornerOption="None" ParagraphShadingBottomLeftCornerOption="None" ParagraphShadingBottomRightCornerOption="None" ParagraphShadingTopLeftCornerRadius="12" ParagraphShadingTopRightCornerRadius="12" ParagraphShadingBottomLeftCornerRadius="12" ParagraphShadingBottomRightCornerRadius="12" ParagraphBorderStrokeEndCap="ButtEndCap" ParagraphBorderWidth="ColumnWidth" ParagraphBorderTopOrigin="AscentTopOrigin" ParagraphBorderBottomOrigin="DescentBottomOrigin" ParagraphBorderTopLineWeight="1" ParagraphBorderBottomLineWeight="1" ParagraphBorderLeftLineWeight="1" ParagraphBorderRightLineWeight="1" ParagraphBorderDisplayIfSplits="false" MergeConsecutiveParaBorders="true" ProviderHyphenationStyle="HyphAll" DigitsType="DefaultDigits" Kashidas="DefaultKashidas" DiacriticPosition="OpentypePositionFromBaseline" CharacterDirection="DefaultDirection" ParagraphDirection="LeftToRightDirection" ParagraphJustification="DefaultJustification" ParagraphKashidaWidth="2" XOffsetDiacritic="0" YOffsetDiacritic="0" OTFOverlapSwash="false" OTFStylisticAlternate="false" OTFJustificationAlternate="false" OTFStretchedAlternate="false" KeyboardDirection="DefaultDirection" uuid="44" parent="39">
+			<Properties uuid="45" parent="44">
+				<Leading type="enumeration" uuid="46" parent="45">Auto</Leading>
+				<TabList type="list" uuid="47" parent="45">
+				</TabList>
+				<AppliedFont type="string" uuid="48" parent="45">Minion Pro</AppliedFont>
+				<RuleAboveColor type="string" uuid="49" parent="45">Text Color</RuleAboveColor>
+				<RuleBelowColor type="string" uuid="50" parent="45">Text Color</RuleBelowColor>
+				<RuleAboveType type="object" uuid="51" parent="45">StrokeStyle/$ID/Solid</RuleAboveType>
+				<RuleBelowType type="object" uuid="52" parent="45">StrokeStyle/$ID/Solid</RuleBelowType>
+				<BalanceRaggedLines type="enumeration" uuid="53" parent="45">NoBalancing</BalanceRaggedLines>
+				<RuleAboveGapColor type="object" uuid="54" parent="45">Swatch/None</RuleAboveGapColor>
+				<RuleBelowGapColor type="object" uuid="55" parent="45">Swatch/None</RuleBelowGapColor>
+				<UnderlineColor type="string" uuid="56" parent="45">Text Color</UnderlineColor>
+				<UnderlineGapColor type="object" uuid="57" parent="45">Swatch/None</UnderlineGapColor>
+				<UnderlineType type="object" uuid="58" parent="45">StrokeStyle/$ID/Solid</UnderlineType>
+				<StrikeThroughColor type="string" uuid="59" parent="45">Text Color</StrikeThroughColor>
+				<StrikeThroughGapColor type="object" uuid="60" parent="45">Swatch/None</StrikeThroughGapColor>
+				<StrikeThroughType type="object" uuid="61" parent="45">StrokeStyle/$ID/Solid</StrikeThroughType>
+				<SpanSplitColumnCount type="enumeration" uuid="62" parent="45">All</SpanSplitColumnCount>
+				<ParagraphShadingColor type="object" uuid="63" parent="45">Color/Black</ParagraphShadingColor>
+				<ParagraphBorderColor type="object" uuid="64" parent="45">Color/Black</ParagraphBorderColor>
+				<ParagraphBorderGapColor type="object" uuid="65" parent="45">Swatch/None</ParagraphBorderGapColor>
+				<ParagraphBorderType type="object" uuid="66" parent="45">StrokeStyle/$ID/Solid</ParagraphBorderType>
+				<Mojikumi type="enumeration" uuid="67" parent="45">Nothing</Mojikumi>
+				<KinsokuSet type="enumeration" uuid="68" parent="45">Nothing</KinsokuSet>
+				<RubyFont type="string" uuid="69" parent="45">$ID/</RubyFont>
+				<RubyFontStyle type="enumeration" uuid="70" parent="45">Nothing</RubyFontStyle>
+				<RubyFill type="string" uuid="71" parent="45">Text Color</RubyFill>
+				<RubyStroke type="string" uuid="72" parent="45">Text Color</RubyStroke>
+				<KentenFont type="string" uuid="73" parent="45">$ID/</KentenFont>
+				<KentenFontStyle type="enumeration" uuid="74" parent="45">Nothing</KentenFontStyle>
+				<KentenFillColor type="string" uuid="75" parent="45">Text Color</KentenFillColor>
+				<KentenStrokeColor type="string" uuid="76" parent="45">Text Color</KentenStrokeColor>
+				<BulletChar BulletCharacterType="UnicodeOnly" BulletCharacterValue="8226" uuid="77" parent="45" />
+				<NumberingFormat type="string" uuid="78" parent="45">1, 2, 3, 4...</NumberingFormat>
+				<BulletsFont type="string" uuid="79" parent="45">$ID/</BulletsFont>
+				<BulletsFontStyle type="enumeration" uuid="80" parent="45">Nothing</BulletsFontStyle>
+				<AppliedNumberingList type="object" uuid="81" parent="45">NumberingList/$ID/[Default]</AppliedNumberingList>
+				<NumberingRestartPolicies RestartPolicy="AnyPreviousLevel" LowerLevel="0" UpperLevel="0" uuid="82" parent="45" />
+				<BulletsCharacterStyle type="object" uuid="83" parent="45">CharacterStyle/$ID/[No character style]</BulletsCharacterStyle>
+				<NumberingCharacterStyle type="object" uuid="84" parent="45">CharacterStyle/$ID/[No character style]</NumberingCharacterStyle>
+				<SameParaStyleSpacing type="enumeration" uuid="85" parent="45">SetIgnore</SameParaStyleSpacing>
+			</Properties>
+		</ParagraphStyle>
+	</RootParagraphStyleGroup>
+	<RootCellStyleGroup Self="u8f" uuid="86" parent="0">
+		<CellStyle Self="CellStyle/$ID/[None]" AppliedParagraphStyle="ParagraphStyle/$ID/[No paragraph style]" Name="$ID/[None]" uuid="87" parent="86" />
+	</RootCellStyleGroup>
+	<RootTableStyleGroup Self="u91" uuid="88" parent="0">
+		<TableStyle Self="TableStyle/$ID/[Basic Table]" ExtendedKeyboardShortcut="0 0 0" Name="$ID/[Basic Table]" KeyboardShortcut="0 0" uuid="89" parent="88">
+			<Properties uuid="90" parent="89">
+				<BasedOn type="string" uuid="91" parent="90">$ID/[No table style]</BasedOn>
+			</Properties>
+		</TableStyle>
+	</RootTableStyleGroup>
+	<TinDocumentDataObject uuid="92" parent="0">
+		<Properties uuid="93" parent="92">
+			<GaijiRefMaps uuid="94" parent="93">/////wAAAAAAAAAA</GaijiRefMaps>
+		</Properties>
+	</TinDocumentDataObject>
+	<CrossReferenceFormat Self="u9f" Name="Full Paragraph &amp; Page Number" AppliedCharacterStyle="n" uuid="95" parent="0">
+		<BuildingBlock Self="u9fBuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="96" parent="95" />
+		<BuildingBlock Self="u9fBuildingBlock1" BlockType="FullParagraphBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="97" parent="95" />
+		<BuildingBlock Self="u9fBuildingBlock2" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot; on page " AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="98" parent="95" />
+		<BuildingBlock Self="u9fBuildingBlock3" BlockType="PageNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="99" parent="95" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua0" Name="Full Paragraph" AppliedCharacterStyle="n" uuid="100" parent="0">
+		<BuildingBlock Self="ua0BuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="101" parent="100" />
+		<BuildingBlock Self="ua0BuildingBlock1" BlockType="FullParagraphBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="102" parent="100" />
+		<BuildingBlock Self="ua0BuildingBlock2" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="103" parent="100" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua1" Name="Paragraph Text &amp; Page Number" AppliedCharacterStyle="n" uuid="104" parent="0">
+		<BuildingBlock Self="ua1BuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="105" parent="104" />
+		<BuildingBlock Self="ua1BuildingBlock1" BlockType="ParagraphTextBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="106" parent="104" />
+		<BuildingBlock Self="ua1BuildingBlock2" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot; on page " AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="107" parent="104" />
+		<BuildingBlock Self="ua1BuildingBlock3" BlockType="PageNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="108" parent="104" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua2" Name="Paragraph Text" AppliedCharacterStyle="n" uuid="109" parent="0">
+		<BuildingBlock Self="ua2BuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="110" parent="109" />
+		<BuildingBlock Self="ua2BuildingBlock1" BlockType="ParagraphTextBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="111" parent="109" />
+		<BuildingBlock Self="ua2BuildingBlock2" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="112" parent="109" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua3" Name="Paragraph Number &amp; Page Number" AppliedCharacterStyle="n" uuid="113" parent="0">
+		<BuildingBlock Self="ua3BuildingBlock0" BlockType="ParagraphNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="114" parent="113" />
+		<BuildingBlock Self="ua3BuildingBlock1" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText=" on page " AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="115" parent="113" />
+		<BuildingBlock Self="ua3BuildingBlock2" BlockType="PageNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="116" parent="113" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua4" Name="Paragraph Number" AppliedCharacterStyle="n" uuid="117" parent="0">
+		<BuildingBlock Self="ua4BuildingBlock0" BlockType="ParagraphNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="118" parent="117" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua5" Name="Text Anchor Name &amp; Page Number" AppliedCharacterStyle="n" uuid="119" parent="0">
+		<BuildingBlock Self="ua5BuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="120" parent="119" />
+		<BuildingBlock Self="ua5BuildingBlock1" BlockType="BookmarkNameBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="121" parent="119" />
+		<BuildingBlock Self="ua5BuildingBlock2" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot; on page " AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="122" parent="119" />
+		<BuildingBlock Self="ua5BuildingBlock3" BlockType="PageNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="123" parent="119" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua6" Name="Text Anchor Name" AppliedCharacterStyle="n" uuid="124" parent="0">
+		<BuildingBlock Self="ua6BuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="125" parent="124" />
+		<BuildingBlock Self="ua6BuildingBlock1" BlockType="BookmarkNameBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="126" parent="124" />
+		<BuildingBlock Self="ua6BuildingBlock2" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="&quot;" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="127" parent="124" />
+	</CrossReferenceFormat>
+	<CrossReferenceFormat Self="ua7" Name="Page Number" AppliedCharacterStyle="n" uuid="128" parent="0">
+		<BuildingBlock Self="ua7BuildingBlock0" BlockType="CustomStringBuildingBlock" AppliedCharacterStyle="n" CustomText="page " AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="129" parent="128" />
+		<BuildingBlock Self="ua7BuildingBlock1" BlockType="PageNumberBuildingBlock" AppliedCharacterStyle="n" CustomText="$ID/" AppliedDelimiter="$ID/" IncludeDelimiter="false" uuid="130" parent="128" />
+	</CrossReferenceFormat>
+	<Story Self="u24d" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="demo" AppliedNamedGrid="n" uuid="131" parent="0">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" uuid="132" parent="131" />
+		<MetadataPacketPreference uuid="133" parent="131">
+			<Properties uuid="134" parent="133">
+				<Contents uuid="135" parent="134">&lt;?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?&gt;
+&lt;x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 9.1-c003 79.9690a87, 2025/03/06-19:12:03        "&gt;
+   &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+      &lt;rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/"
+            xmlns:xmpGImg="http://ns.adobe.com/xap/1.0/g/img/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+            xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:xmpG="http://ns.adobe.com/xap/1.0/g/"
+            xmlns:stFnt="http://ns.adobe.com/xap/1.0/sType/Font#"&gt;
+         &lt;xmp:CreateDate&gt;2025-12-10T15:26:32+11:00&lt;/xmp:CreateDate&gt;
+         &lt;xmp:MetadataDate&gt;2025-12-10T15:26:32+11:00&lt;/xmp:MetadataDate&gt;
+         &lt;xmp:ModifyDate&gt;2025-12-10T15:26:32+11:00&lt;/xmp:ModifyDate&gt;
+         &lt;xmp:CreatorTool&gt;Adobe InDesign 20.4 (Windows)&lt;/xmp:CreatorTool&gt;
+         &lt;xmp:PageInfo&gt;
+            &lt;rdf:Seq&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;xmpTPg:PageNumber&gt;1&lt;/xmpTPg:PageNumber&gt;
+                  &lt;xmpGImg:format&gt;JPEG&lt;/xmpGImg:format&gt;
+                  &lt;xmpGImg:width&gt;512&lt;/xmpGImg:width&gt;
+                  &lt;xmpGImg:height&gt;512&lt;/xmpGImg:height&gt;
+                  &lt;xmpGImg:image&gt;/9j/4AAQSkZJRgABAgEASABIAAD/7QAsUGhvdG9zaG9wIDMuMAA4QklNA+0AAAAAABAASAAAAAEA&amp;#xA;AQBIAAAAAQAB/+4AE0Fkb2JlAGQAAAAAAQUAAklE/9sAhAAKBwcHBwcKBwcKDgkJCQ4RDAsLDBEU&amp;#xA;EBAQEBAUEQ8RERERDxERFxoaGhcRHyEhISEfKy0tLSsyMjIyMjIyMjIyAQsJCQ4MDh8XFx8rIx0j&amp;#xA;KzIrKysrMjIyMjIyMjIyMjIyMjIyMjI+Pj4+PjJAQEBAQEBAQEBAQEBAQEBAQEBAQED/wAARCAFq&amp;#xA;AgADAREAAhEBAxEB/8QBogAAAAcBAQEBAQAAAAAAAAAABAUDAgYBAAcICQoLAQACAgMBAQEBAQAA&amp;#xA;AAAAAAABAAIDBAUGBwgJCgsQAAIBAwMCBAIGBwMEAgYCcwECAxEEAAUhEjFBUQYTYSJxgRQykaEH&amp;#xA;FbFCI8FS0eEzFmLwJHKC8SVDNFOSorJjc8I1RCeTo7M2F1RkdMPS4ggmgwkKGBmElEVGpLRW01Uo&amp;#xA;GvLj88TU5PRldYWVpbXF1eX1ZnaGlqa2xtbm9jdHV2d3h5ent8fX5/c4SFhoeIiYqLjI2Oj4KTlJ&amp;#xA;WWl5iZmpucnZ6fkqOkpaanqKmqq6ytrq+hEAAgIBAgMFBQQFBgQIAwNtAQACEQMEIRIxQQVRE2Ei&amp;#xA;BnGBkTKhsfAUwdHhI0IVUmJy8TMkNEOCFpJTJaJjssIHc9I14kSDF1STCAkKGBkmNkUaJ2R0VTfy&amp;#xA;o7PDKCnT4/OElKS0xNTk9GV1hZWltcXV5fVGVmZ2hpamtsbW5vZHV2d3h5ent8fX5/c4SFhoeIiY&amp;#xA;qLjI2Oj4OUlZaXmJmam5ydnp+So6SlpqeoqaqrrK2ur6/9oADAMBAAIRAxEAPwDs2KuxV2KuxV2K&amp;#xA;uxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Ku&amp;#xA;xV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KrJ&amp;#xA;ZY4InmlYJHGpd2PQKoqTiqX/AOJNDCzs17GhtWKSpJVHDb7BHAZq8TSg3OwxVUGtaUQxFyp4FldR&amp;#xA;XkhXkSHWnJfsN18MVbk1rSoZ3tp7uKGWNgjCVuA5MhlChnoCeCk7dgfA4qpnzDoQ4kahbsHX1AUk&amp;#xA;Vxx+OjEoSAD6bAeJBAxVEWWo2eoJzs5PUUANXiy7EsoPxAd0OKorFXYq7FXYq7FXYq7FXYqhLrVd&amp;#xA;NsjILq6iiMPp+qGYVjEzFImk/lVmUgE7Yqi8VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVUrq3ivLaa0nHKK4RopB4q4KsPuOKpPN5M8vXRV723a6dJGmVpJHHF2HHkqxsiCi7bDFVWXy&amp;#xA;to8nqkRMpnZ2lPIvyMiSxN/e86fDM/TxxVu98raLqRuhqNut3FeFTJDKAUBQMFK0AYEc2Na9ScVb&amp;#xA;byvojCnoOnxrJVJpkIZCxQgpKpHHmQPAbdAMVV9M0ay0nn9TDDmqx/GeRCRtIyLypyPH1T9ok4qj&amp;#xA;8VdirsVdirsVdirsVdiqXXOhaVeT3FxcQl5btIYp2Eki8kt3aWIUVwBxZz0613xVMMVbxV2KuxV2&amp;#xA;KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2K&amp;#xA;uxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Ku&amp;#xA;xV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Kux&amp;#xA;V2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV&amp;#xA;2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2&amp;#xA;KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2K&amp;#xA;uxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Ku&amp;#xA;xV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Kux&amp;#xA;V2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV&amp;#xA;2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2&amp;#xA;KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2K&amp;#xA;uxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Ku&amp;#xA;xV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Kux&amp;#xA;V2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV&amp;#xA;2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2&amp;#xA;KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2K&amp;#xA;uxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Ku&amp;#xA;xV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2Kux&amp;#xA;V2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV&amp;#xA;2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2&amp;#xA;KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2KuxV2K&amp;#xA;sNXyZqUF9dzWuqSQC+ZpjLGJVEbfWIJ+JT638bOqFS222xqPhxVp/I+rvC9o2usbQiBYrcwylEWJ&amp;#xA;vUY0+ubsx6fsgbcTRaKuh8na40UvLXJoJ3HoG4VZPVeNCQjsVu6cm6+3YKDxxVN9B0PVNLmkl1DV&amp;#xA;n1L1Q9VZZFUM7+oOIkuZwoWpAA7GldhiqeYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq&amp;#xA;7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7&amp;#xA;FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FUkn826PayFbtpIIlSSRrhkrEqxMyHkyFqV41BIpQjuQMV&amp;#xA;U7Tzpod7ateRPIsaguOcZUlFj9YseyjiD9qh2OKox9esEjt3JYm6AKoOPJSzQxhX+KgPK4QfTiqD&amp;#xA;tvO/lm+QvY3ZuaFEpHDMT6khCpEf3Yo9W3U7jqaAHFVWDzVpdxLHFGJQJRHxd1CKTK6xIo5MKnm1&amp;#xA;Nq9DiqdYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7F&amp;#xA;XYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FX&amp;#xA;YqwjUH0+3IN5aG8Jto7iRpRAVpNKPUVPrELKvxXFd2APSvw7KpfY+YvK1zJc2ljaPFaWXqRc44rW&amp;#xA;FqgRqyooiTirBuNSwrsADUYqyXS7O21K3XeaEW4jCAFCfijhkFW9FCSCijf+UHFUedCsmf1CAXry&amp;#xA;5GG3rU8N6+h/xWv3DwxVSi8saZBKJrZfq7ggkwRwxciGWQchHCoajLUVxVH/AFab/lrm+6L/AKo4&amp;#xA;q76tN/y1zfdF/wBUcVd9Wm/5a5vui/6o4q76tN/y1zfdF/1RxV31ab/lrm+6L/qjiqD1CS5slaQX&amp;#xA;E0gSCWXhSIFmQxhRy9E0Hx7nFUlHnC3W6is511KOWVI5Q/ow+j6cqxMrCVkQHeUJxHxctgp2qqti&amp;#xA;84RzXcVmjzrJNKiqryW3L05BzSQIkbsarU0A26Eg4qyKyE93aQ3X1mZDKgcrSI0JHSvoCvzxVW+r&amp;#xA;Tf8ALXN90X/VHFXfVpv+Wub7ov8Aqjirvq03/LXN90X/AFRxV31ab/lrm+6L/qjirvq03/LXN90X&amp;#xA;/VHFXfVpv+Wub7ov+qOKu+rTf8tc33Rf9UcVX2cjy2kEshq8kaMx6VJUE4qrYq7FXYq7FXYq7FXY&amp;#xA;q7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq&amp;#xA;7FXYq7FXYq7FUrsdMs2t7a5Kv6xgjHqCSQNTj0BD9PiO2Kov6jD/ADTf8j5f+qmKrItKsrdeMCvE&amp;#xA;ppUJLIo+EBB0fsqgYqv+ow/zTf8AI+X/AKqYq76jD/NN/wAj5f8AqpirvqMP803/ACPl/wCqmKu+&amp;#xA;ow/zTf8AI+X/AKqYq76jD/NN/wAj5f8AqpirvqMP803/ACPl/wCqmKu+ow/zTf8AI+X/AKqYqlmt&amp;#xA;WhSGY2weWZbO6aOORp5ldh6RCGNJVZgenEHfFUr03UdTkvINOk0e6gg9aaGS6MlzFHwiZFSVIh6n&amp;#xA;FZC5K1ftv7KsmfTrWReMnqutQ1GmlIqpDKd5OxFRiro9OtYkWOL1URAFVVmlAAGwAAkxVv6jD/NN&amp;#xA;/wAj5f8AqpirvqMP803/ACPl/wCqmKu+ow/zTf8AI+X/AKqYq76jD/NN/wAj5f8AqpirvqMP803/&amp;#xA;ACPl/wCqmKu+ow/zTf8AI+X/AKqYq76jD/NN/wAj5f8AqpirtO20+1H/ABTH/wARGKonFXYq7FXY&amp;#xA;q7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq7FXYq&amp;#xA;7FXYq7FXYq7FXYq7FXYqhhYWigKsYAGwAJAA+/FW/qNr/J+J/rirvqNr/J+J/rirvqNr/J+J/rir&amp;#xA;vqNr/J+J/rirvqNr/J+J/rirvqNr/J+J/rirvqNr/J+J/rirvqNr/J+J/rirvqNr/J+J/rirX6Ps&amp;#xA;ywf0xyAIBqagGle/tirf1G1/k/E/1xV31G1/k/E/1xV31G1/k/E/1xV31G1/k/E/1xV31G1/k/E/&amp;#xA;1xV31G1/k/E/1xV31G1/k/E/1xV31G1/k/E/1xV31G1/k/E/1xV31G1/k/E/1xVWREjRY4wFRAFV&amp;#xA;R0AGwGKrsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdi&amp;#xA;rsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdir&amp;#xA;sVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirs&amp;#xA;VdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsV&amp;#xA;dirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVd&amp;#xA;irsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVdirsVf/Z&lt;/xmpGImg:image&gt;
+               &lt;/rdf:li&gt;
+            &lt;/rdf:Seq&gt;
+         &lt;/xmp:PageInfo&gt;
+         &lt;xmpMM:InstanceID&gt;xmp.iid:0cb6bb0d-7c6d-e04c-9696-30e46fbd8d4a&lt;/xmpMM:InstanceID&gt;
+         &lt;xmpMM:DocumentID&gt;xmp.did:daf83189-8eb5-2741-8863-96a593f41204&lt;/xmpMM:DocumentID&gt;
+         &lt;xmpMM:OriginalDocumentID&gt;xmp.did:daf83189-8eb5-2741-8863-96a593f41204&lt;/xmpMM:OriginalDocumentID&gt;
+         &lt;xmpMM:History&gt;
+            &lt;rdf:Seq&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;stEvt:action&gt;created&lt;/stEvt:action&gt;
+                  &lt;stEvt:instanceID&gt;xmp.iid:daf83189-8eb5-2741-8863-96a593f41204&lt;/stEvt:instanceID&gt;
+                  &lt;stEvt:when&gt;2025-12-10T15:26:32+11:00&lt;/stEvt:when&gt;
+                  &lt;stEvt:softwareAgent&gt;Adobe InDesign 20.4 (Windows)&lt;/stEvt:softwareAgent&gt;
+               &lt;/rdf:li&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;stEvt:action&gt;saved&lt;/stEvt:action&gt;
+                  &lt;stEvt:instanceID&gt;xmp.iid:0cb6bb0d-7c6d-e04c-9696-30e46fbd8d4a&lt;/stEvt:instanceID&gt;
+                  &lt;stEvt:when&gt;2025-12-10T15:26:32+11:00&lt;/stEvt:when&gt;
+                  &lt;stEvt:softwareAgent&gt;Adobe InDesign 20.4 (Windows)&lt;/stEvt:softwareAgent&gt;
+                  &lt;stEvt:changed&gt;/&lt;/stEvt:changed&gt;
+               &lt;/rdf:li&gt;
+            &lt;/rdf:Seq&gt;
+         &lt;/xmpMM:History&gt;
+         &lt;dc:format&gt;application/x-indesign&lt;/dc:format&gt;
+         &lt;dc:title&gt;
+            &lt;rdf:Alt&gt;
+               &lt;rdf:li xml:lang="x-default"&gt;demo&lt;/rdf:li&gt;
+            &lt;/rdf:Alt&gt;
+         &lt;/dc:title&gt;
+         &lt;xmpTPg:Colorants&gt;
+            &lt;rdf:Seq&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;xmpG:swatchName&gt;Black&lt;/xmpG:swatchName&gt;
+                  &lt;xmpG:mode&gt;CMYK&lt;/xmpG:mode&gt;
+                  &lt;xmpG:type&gt;Process&lt;/xmpG:type&gt;
+                  &lt;xmpG:cyan&gt;0&lt;/xmpG:cyan&gt;
+                  &lt;xmpG:magenta&gt;0&lt;/xmpG:magenta&gt;
+                  &lt;xmpG:yellow&gt;0&lt;/xmpG:yellow&gt;
+                  &lt;xmpG:black&gt;100&lt;/xmpG:black&gt;
+               &lt;/rdf:li&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;xmpG:swatchName&gt;Paper&lt;/xmpG:swatchName&gt;
+                  &lt;xmpG:mode&gt;CMYK&lt;/xmpG:mode&gt;
+                  &lt;xmpG:type&gt;Process&lt;/xmpG:type&gt;
+                  &lt;xmpG:cyan&gt;0&lt;/xmpG:cyan&gt;
+                  &lt;xmpG:magenta&gt;0&lt;/xmpG:magenta&gt;
+                  &lt;xmpG:yellow&gt;0&lt;/xmpG:yellow&gt;
+                  &lt;xmpG:black&gt;0&lt;/xmpG:black&gt;
+               &lt;/rdf:li&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;xmpG:swatchName&gt;Registration&lt;/xmpG:swatchName&gt;
+                  &lt;xmpG:mode&gt;CMYK&lt;/xmpG:mode&gt;
+                  &lt;xmpG:type&gt;Process&lt;/xmpG:type&gt;
+                  &lt;xmpG:cyan&gt;100&lt;/xmpG:cyan&gt;
+                  &lt;xmpG:magenta&gt;100&lt;/xmpG:magenta&gt;
+                  &lt;xmpG:yellow&gt;100&lt;/xmpG:yellow&gt;
+                  &lt;xmpG:black&gt;100&lt;/xmpG:black&gt;
+               &lt;/rdf:li&gt;
+            &lt;/rdf:Seq&gt;
+         &lt;/xmpTPg:Colorants&gt;
+         &lt;xmpTPg:Fonts&gt;
+            &lt;rdf:Bag&gt;
+               &lt;rdf:li rdf:parseType="Resource"&gt;
+                  &lt;stFnt:fontName&gt;MinionPro-Regular&lt;/stFnt:fontName&gt;
+                  &lt;stFnt:fontFamily&gt;Minion Pro&lt;/stFnt:fontFamily&gt;
+                  &lt;stFnt:fontFace&gt;Regular&lt;/stFnt:fontFace&gt;
+                  &lt;stFnt:fontType&gt;OpenTypeCFF&lt;/stFnt:fontType&gt;
+                  &lt;stFnt:versionString&gt;MinionPro-RegularVersion 2.112;PS 2.000;hotconv 1.0.70;makeotf.lib2.5.5900&lt;/stFnt:versionString&gt;
+                  &lt;stFnt:composite&gt;false&lt;/stFnt:composite&gt;
+                  &lt;stFnt:fontFileName&gt;MinionPro-Regular.otf&lt;/stFnt:fontFileName&gt;
+               &lt;/rdf:li&gt;
+            &lt;/rdf:Bag&gt;
+         &lt;/xmpTPg:Fonts&gt;
+      &lt;/rdf:Description&gt;
+   &lt;/rdf:RDF&gt;
+&lt;/x:xmpmeta&gt;
+&lt;?xpacket end="r"?&gt;</Contents>
+			</Properties>
+		</MetadataPacketPreference>
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" uuid="136" parent="131" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" uuid="137" parent="131">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" uuid="138" parent="137">
+				<Content uuid="139" parent="138">fkjahsdkjhasn</Content>
+				<Br uuid="140" parent="138" />
+				<Br uuid="141" parent="138" />
+				<Content uuid="142" parent="138">a: b</Content>
+				<Br uuid="143" parent="138" />
+				<Table Self="u24di26a" HeaderRowCount="0" FooterRowCount="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" BodyRowCount="2" ColumnCount="2" AppliedTableStyle="TableStyle/$ID/[Basic Table]" TableDirection="LeftToRightDirection" uuid="144" parent="138">
+					<Row Self="u24di26aRow0" Name="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="16.723876953125" uuid="145" parent="144" />
+					<Row Self="u24di26aRow1" Name="1" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleRowHeight="16.723876953125" uuid="146" parent="144" />
+					<Column Self="u24di26aColumn0" Name="0" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleColumnWidth="195.23622047244095" uuid="147" parent="144" />
+					<Column Self="u24di26aColumn1" Name="1" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" SingleColumnWidth="195.23622047244095" uuid="148" parent="144" />
+					<Cell Self="u24di26ai0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" uuid="149" parent="144">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" uuid="150" parent="149">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" uuid="151" parent="150">
+								<Content uuid="152" parent="151">a</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u24di26ai1" Name="1:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" uuid="153" parent="144">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" uuid="154" parent="153">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" uuid="155" parent="154">
+								<Content uuid="156" parent="155">b</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u24di26ai2" Name="0:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" uuid="157" parent="144">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" uuid="158" parent="157">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" uuid="159" parent="158" />
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u24di26ai3" Name="1:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="4" TextLeftInset="4" TextBottomInset="4" TextRightInset="4" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" uuid="160" parent="144">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" uuid="161" parent="160">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" uuid="162" parent="161">
+								<Content uuid="163" parent="162">Test</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+	<ColorGroup Self="ColorGroup/[Root Color Group]" Name="[Root Color Group]" IsRootColorGroup="true" uuid="164" parent="0">
+		<ColorGroupSwatch Self="u18ColorGroupSwatch3" SwatchItemRef="Color/Black" uuid="165" parent="164" />
+		<ColorGroupSwatch Self="u18ColorGroupSwatch0" SwatchItemRef="Swatch/None" uuid="166" parent="164" />
+	</ColorGroup>
+</Document>
