@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Auto-incrementing build counter. Gitignored; auto-created on first build. -->
+  <Import Project="BuildVersion.props" Condition="Exists('BuildVersion.props')" />
+  <PropertyGroup Condition="'$(BuildCounter)' == ''">
+    <BuildCounter>0</BuildCounter>
+    <Version>0.5.44</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetExt>.gha</TargetExt>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <AssemblyName>Redback.Components</AssemblyName>
+    <AssemblyVersion>$(Version).$(BuildCounter)</AssemblyVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="all" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+    <PackageReference Include="RhinoCommon" Version="8.*" ExcludeAssets="runtime" />
+    <PackageReference Include="Grasshopper" Version="8.*" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="..\manifest.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Kill any processes that lock the .gha before we try to copy it. -->
+  <Target Name="KillGHLockers" BeforeTargets="CopyToGHLibraries">
+    <Exec Command="powershell -NonInteractive -Command &quot;Get-Process Rhino,compute.geometry -ErrorAction SilentlyContinue | Stop-Process -Force&quot;"
+          IgnoreExitCode="true" />
+  </Target>
+
+  <!-- Copy the built .gha to Grasshopper's Libraries folder so GH discovers the components on next launch. -->
+  <Target Name="CopyToGHLibraries" AfterTargets="Build">
+    <PropertyGroup>
+      <GHLibDir>$(APPDATA)\Grasshopper\Libraries\Redback\</GHLibDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(GHLibDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(GHLibDir)Redback.Components.gha" />
+    <Message Importance="high" Text="--- Copied to $(GHLibDir)Redback.Components.gha ---" />
+  </Target>
+
+  <!-- Increment build counter after each build. -->
+  <Target Name="IncrementBuildVersion" AfterTargets="Build">
+    <PropertyGroup>
+      <NextCounter>$([MSBuild]::Add($(BuildCounter), 1))</NextCounter>
+    </PropertyGroup>
+    <ItemGroup>
+      <_VLines Include="&lt;Project&gt;" />
+      <_VLines Include="  &lt;PropertyGroup&gt;" />
+      <_VLines Include="    &lt;BuildCounter&gt;$(NextCounter)&lt;/BuildCounter&gt;" />
+      <_VLines Include="    &lt;Version&gt;0.5.44&lt;/Version&gt;" />
+      <_VLines Include="  &lt;/PropertyGroup&gt;" />
+      <_VLines Include="&lt;/Project&gt;" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(MSBuildProjectDirectory)\BuildVersion.props"
+                      Lines="@(_VLines)"
+                      Overwrite="true" />
+    <Message Importance="high" Text="--- Build complete. Next build counter: $(NextCounter) ---" />
+  </Target>
+
+</Project>

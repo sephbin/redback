@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\\(Get-ChildItem -Path \"E:\\\\mydev\\\\Cuttlefish\\\\Cuttlefish\" -Force\\).Count; \\(Get-ChildItem -Path \"E:\\\\mydev\\\\Cuttlefish\" -Force\\).Count)",
+      "Bash(grep -E \"\\\\.cs$|^d\")",
+      "Bash(powershell *)",
+      "PowerShell(powershell -File \"C:\\\\Users\\\\Andrew.Butler\\\\.claude\\\\tmp_fields.ps1\")",
+      "Bash(dotnet build *)",
+      "Bash(git mv *)",
+      "Bash(python3 *)",
+      "Bash(Get-ChildItem *)"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\obj\Debug\net48\Redback.Components.csproj.AssemblyReference.cache
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\obj\Debug\net48\Redback.Components.GeneratedMSBuildEditorConfig.editorconfig
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\obj\Debug\net48\Redback.Components.csproj.CoreCompileInputs.cache
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\obj\Debug\net48\Redback.Components.sourcelink.json
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\bin\Debug\net48\Redback.Components.gha
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\bin\Debug\net48\Redback.Components.pdb
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\obj\Debug\net48\Redback.Components.gha
+E:\mydev\redback\rh8Project\build\rh8\src\Redback.Components\obj\Debug\net48\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\bin\Debug\net48\Redback.Components.gha
+E:\mydev\redback\Redback.Components\bin\Debug\net48\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.csproj.AssemblyReference.cache
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.GeneratedMSBuildEditorConfig.editorconfig
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.csproj.CoreCompileInputs.cache
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.gha
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.pdb

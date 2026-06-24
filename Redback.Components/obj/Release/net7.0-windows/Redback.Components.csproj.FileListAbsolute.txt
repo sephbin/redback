@@ -1,0 +1,13 @@
+E:\mydev\redback\Redback.Components\bin\Release\net7.0-windows\Redback.Components.deps.json
+E:\mydev\redback\Redback.Components\bin\Release\net7.0-windows\Redback.Components.runtimeconfig.json
+E:\mydev\redback\Redback.Components\bin\Release\net7.0-windows\Redback.Components.gha
+E:\mydev\redback\Redback.Components\bin\Release\net7.0-windows\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.csproj.AssemblyReference.cache
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.GeneratedMSBuildEditorConfig.editorconfig
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.csproj.CoreCompileInputs.cache
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.sourcelink.json
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.gha
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\refint\Redback.Components.gha
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\Redback.Components.genruntimeconfig.cache
+E:\mydev\redback\Redback.Components\obj\Release\net7.0-windows\ref\Redback.Components.gha

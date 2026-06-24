@@ -1,0 +1,81 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Redback.Components/0.5.44": {
+        "dependencies": {
+          "Grasshopper": "8.32.26160.13001",
+          "Microsoft.CSharp": "4.7.0",
+          "RhinoCommon": "8.32.26160.13001",
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "Redback.Components.gha": {}
+        }
+      },
+      "Grasshopper/8.32.26160.13001": {
+        "dependencies": {
+          "RhinoCommon": "8.32.26160.13001"
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {},
+      "Microsoft.Win32.SystemEvents/7.0.0": {},
+      "RhinoCommon/8.32.26160.13001": {
+        "dependencies": {
+          "System.Drawing.Common": "7.0.0"
+        }
+      },
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Redback.Components/0.5.44": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Grasshopper/8.32.26160.13001": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h11c/Iat77bdsTr7KiWn8uRDLbQealXgNC9lgw66xJohJTDK72oS7TEpEsCj3mYuNBLpF3AemlbhdovJ3CVURA==",
+      "path": "grasshopper/8.32.26160.13001",
+      "hashPath": "grasshopper.8.32.26160.13001.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+    },
+    "RhinoCommon/8.32.26160.13001": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CbTRRgCXXQU5CG0AYDLN2FVqmOcYbUij7n2qZhhKyaOz7rrYRFDVF/9eMX1qeolH4c5AY4FaOPEzIc6p/NrP+Q==",
+      "path": "rhinocommon/8.32.26160.13001",
+      "hashPath": "rhinocommon.8.32.26160.13001.nupkg.sha512"
+    },
+    "System.Drawing.Common/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    }
+  }
+}
