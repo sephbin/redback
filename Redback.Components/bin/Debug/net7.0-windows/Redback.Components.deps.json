@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "Redback.Components/0.5.44": {
+      "Redback.Components/0.5.45": {
         "dependencies": {
           "Grasshopper": "8.21.25188.17001",
           "Microsoft.CSharp": "4.7.0",
@@ -37,7 +37,7 @@
     }
   },
   "libraries": {
-    "Redback.Components/0.5.44": {
+    "Redback.Components/0.5.45": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

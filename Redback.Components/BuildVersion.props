@@ -1,6 +1,8 @@
 <Project>
 <PropertyGroup>
-<BuildCounter>39</BuildCounter>
-<Version>0.5.44</Version>
+<VersionMajor>0</VersionMajor>
+<VersionMinor>5</VersionMinor>
+<VersionPatch>46</VersionPatch>
+<BuildCounter>41</BuildCounter>
 </PropertyGroup>
 </Project>

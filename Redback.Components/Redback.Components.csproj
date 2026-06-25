@@ -1,10 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- Auto-incrementing build counter. Gitignored; auto-created on first build. -->
+  <!-- Auto-incrementing version. Gitignored; auto-created on first build. -->
   <Import Project="BuildVersion.props" Condition="Exists('BuildVersion.props')" />
   <PropertyGroup Condition="'$(BuildCounter)' == ''">
+    <VersionMajor>0</VersionMajor>
+    <VersionMinor>5</VersionMinor>
+    <VersionPatch>44</VersionPatch>
     <BuildCounter>0</BuildCounter>
-    <Version>0.5.44</Version>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Version>$(VersionMajor).$(VersionMinor).$(VersionPatch)</Version>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -82,23 +87,26 @@
     <Message Importance="high" Text="--- Yak package ready: $(YakDir)redback-$(YakVersion)-rh8-any.yak ---" />
   </Target>
 
-  <!-- Increment build counter after each build. -->
+  <!-- Increment version patch and build counter after each build. -->
   <Target Name="IncrementBuildVersion" AfterTargets="Build">
     <PropertyGroup>
+      <NextPatch>$([MSBuild]::Add($(VersionPatch), 1))</NextPatch>
       <NextCounter>$([MSBuild]::Add($(BuildCounter), 1))</NextCounter>
     </PropertyGroup>
     <ItemGroup>
       <_VLines Include="&lt;Project&gt;" />
       <_VLines Include="  &lt;PropertyGroup&gt;" />
+      <_VLines Include="    &lt;VersionMajor&gt;$(VersionMajor)&lt;/VersionMajor&gt;" />
+      <_VLines Include="    &lt;VersionMinor&gt;$(VersionMinor)&lt;/VersionMinor&gt;" />
+      <_VLines Include="    &lt;VersionPatch&gt;$(NextPatch)&lt;/VersionPatch&gt;" />
       <_VLines Include="    &lt;BuildCounter&gt;$(NextCounter)&lt;/BuildCounter&gt;" />
-      <_VLines Include="    &lt;Version&gt;0.5.44&lt;/Version&gt;" />
       <_VLines Include="  &lt;/PropertyGroup&gt;" />
       <_VLines Include="&lt;/Project&gt;" />
     </ItemGroup>
     <WriteLinesToFile File="$(MSBuildProjectDirectory)\BuildVersion.props"
                       Lines="@(_VLines)"
                       Overwrite="true" />
-    <Message Importance="high" Text="--- Build complete. Next build counter: $(NextCounter) ---" />
+    <Message Importance="high" Text="--- Build complete. Next version: $(VersionMajor).$(VersionMinor).$(NextPatch) (build $(NextCounter)) ---" />
   </Target>
 
 </Project>
