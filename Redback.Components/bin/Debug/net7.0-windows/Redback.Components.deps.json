@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v7.0": {
       "Redback.Components/0.5.44": {
         "dependencies": {
-          "Grasshopper": "8.32.26160.13001",
+          "Grasshopper": "8.21.25188.17001",
           "Microsoft.CSharp": "4.7.0",
-          "RhinoCommon": "8.32.26160.13001",
+          "RhinoCommon": "8.21.25188.17001",
           "System.Drawing.Common": "7.0.0"
         },
         "runtime": {
           "Redback.Components.gha": {}
         }
       },
-      "Grasshopper/8.32.26160.13001": {
+      "Grasshopper/8.21.25188.17001": {
         "dependencies": {
-          "RhinoCommon": "8.32.26160.13001"
+          "RhinoCommon": "8.21.25188.17001"
         }
       },
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Win32.SystemEvents/7.0.0": {},
-      "RhinoCommon/8.32.26160.13001": {
+      "RhinoCommon/8.21.25188.17001": {
         "dependencies": {
           "System.Drawing.Common": "7.0.0"
         }
@@ -42,12 +42,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Grasshopper/8.32.26160.13001": {
+    "Grasshopper/8.21.25188.17001": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-h11c/Iat77bdsTr7KiWn8uRDLbQealXgNC9lgw66xJohJTDK72oS7TEpEsCj3mYuNBLpF3AemlbhdovJ3CVURA==",
-      "path": "grasshopper/8.32.26160.13001",
-      "hashPath": "grasshopper.8.32.26160.13001.nupkg.sha512"
+      "sha512": "sha512-qpt9XQWuKLFfzn2cnYf5akfHRwYuffthK5AXsSY1UhjD0eG6bYSTtmAkNVH+Wdg130MZkGqJmPd012Om1kJPBA==",
+      "path": "grasshopper/8.21.25188.17001",
+      "hashPath": "grasshopper.8.21.25188.17001.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -63,12 +63,12 @@
       "path": "microsoft.win32.systemevents/7.0.0",
       "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
     },
-    "RhinoCommon/8.32.26160.13001": {
+    "RhinoCommon/8.21.25188.17001": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CbTRRgCXXQU5CG0AYDLN2FVqmOcYbUij7n2qZhhKyaOz7rrYRFDVF/9eMX1qeolH4c5AY4FaOPEzIc6p/NrP+Q==",
-      "path": "rhinocommon/8.32.26160.13001",
-      "hashPath": "rhinocommon.8.32.26160.13001.nupkg.sha512"
+      "sha512": "sha512-Wo6JXheyDBvilyIwDY6xZCQJC4170jzAlTSlMgh8yokUY+vYyCl4KJVXZofIOynNt/xx5wLqb2On5gZZekXR6w==",
+      "path": "rhinocommon/8.21.25188.17001",
+      "hashPath": "rhinocommon.8.21.25188.17001.nupkg.sha512"
     },
     "System.Drawing.Common/7.0.0": {
       "type": "package",

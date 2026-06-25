@@ -13,6 +13,6 @@
     <SourceRoot Include="C:\Users\Andrew.Butler\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)rhinocommon\8.32.26160.13001\buildTransitive\net7.0\RhinoCommon.props" Condition="Exists('$(NuGetPackageRoot)rhinocommon\8.32.26160.13001\buildTransitive\net7.0\RhinoCommon.props')" />
+    <Import Project="$(NuGetPackageRoot)rhinocommon\8.21.25188.17001\build\net7.0\RhinoCommon.props" Condition="Exists('$(NuGetPackageRoot)rhinocommon\8.21.25188.17001\build\net7.0\RhinoCommon.props')" />
   </ImportGroup>
 </Project>

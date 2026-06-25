@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
-      "Grasshopper/8.32.26160.13001": {
+      "Grasshopper/8.21.25188.17001": {
         "type": "package",
         "dependencies": {
-          "RhinoCommon": "[8.32.26160.13001]"
+          "RhinoCommon": "[8.21.25188.17001]"
         },
         "compile": {
           "lib/net7.0/GH_IO.dll": {
@@ -20,6 +20,9 @@
             "related": ".xml"
           }
         },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ],
         "build": {
           "build/net7.0/Grasshopper.targets": {}
         }
@@ -55,7 +58,7 @@
           }
         }
       },
-      "RhinoCommon/8.32.26160.13001": {
+      "RhinoCommon/8.21.25188.17001": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Common": "7.0.0"
@@ -78,8 +81,8 @@
           }
         },
         "build": {
-          "buildTransitive/net7.0/RhinoCommon.props": {},
-          "buildTransitive/net7.0/RhinoCommon.targets": {}
+          "build/net7.0/RhinoCommon.props": {},
+          "build/net7.0/RhinoCommon.targets": {}
         }
       },
       "System.Drawing.Common/7.0.0": {
@@ -110,16 +113,16 @@
     }
   },
   "libraries": {
-    "Grasshopper/8.32.26160.13001": {
-      "sha512": "h11c/Iat77bdsTr7KiWn8uRDLbQealXgNC9lgw66xJohJTDK72oS7TEpEsCj3mYuNBLpF3AemlbhdovJ3CVURA==",
+    "Grasshopper/8.21.25188.17001": {
+      "sha512": "qpt9XQWuKLFfzn2cnYf5akfHRwYuffthK5AXsSY1UhjD0eG6bYSTtmAkNVH+Wdg130MZkGqJmPd012Om1kJPBA==",
       "type": "package",
-      "path": "grasshopper/8.32.26160.13001",
+      "path": "grasshopper/8.21.25188.17001",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/net48/Grasshopper.targets",
         "build/net7.0/Grasshopper.targets",
-        "grasshopper.8.32.26160.13001.nupkg.sha512",
+        "grasshopper.8.21.25188.17001.nupkg.sha512",
         "grasshopper.nuspec",
         "grasshopper.png",
         "lib/net48/GH_IO.dll",
@@ -232,18 +235,17 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "RhinoCommon/8.32.26160.13001": {
-      "sha512": "CbTRRgCXXQU5CG0AYDLN2FVqmOcYbUij7n2qZhhKyaOz7rrYRFDVF/9eMX1qeolH4c5AY4FaOPEzIc6p/NrP+Q==",
+    "RhinoCommon/8.21.25188.17001": {
+      "sha512": "Wo6JXheyDBvilyIwDY6xZCQJC4170jzAlTSlMgh8yokUY+vYyCl4KJVXZofIOynNt/xx5wLqb2On5gZZekXR6w==",
       "type": "package",
-      "path": "rhinocommon/8.32.26160.13001",
+      "path": "rhinocommon/8.21.25188.17001",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Eto-LICENSE.txt",
         "build/net48/RhinoCommon.targets",
+        "build/net7.0/RhinoCommon.props",
         "build/net7.0/RhinoCommon.targets",
-        "buildTransitive/net7.0/RhinoCommon.props",
-        "buildTransitive/net7.0/RhinoCommon.targets",
         "lib/net48/Ed.Eto.dll",
         "lib/net48/Ed.Eto.xml",
         "lib/net48/Eto.dll",
@@ -258,7 +260,7 @@
         "lib/net7.0/Rhino.UI.dll",
         "lib/net7.0/RhinoCommon.dll",
         "lib/net7.0/RhinoCommon.xml",
-        "rhinocommon.8.32.26160.13001.nupkg.sha512",
+        "rhinocommon.8.21.25188.17001.nupkg.sha512",
         "rhinocommon.nuspec",
         "rhinocommon.png"
       ]
@@ -303,9 +305,9 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Grasshopper >= 8.*",
+      "Grasshopper >= 8.21.*",
       "Microsoft.CSharp >= 4.7.0",
-      "RhinoCommon >= 8.*",
+      "RhinoCommon >= 8.21.*",
       "System.Drawing.Common >= 7.0.0"
     ]
   },
@@ -351,7 +353,7 @@
           "Grasshopper": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[8.*, )"
+            "version": "[8.21.*, )"
           },
           "Microsoft.CSharp": {
             "suppressParent": "All",
@@ -361,7 +363,7 @@
           "RhinoCommon": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[8.*, )"
+            "version": "[8.21.*, )"
           },
           "System.Drawing.Common": {
             "target": "Package",

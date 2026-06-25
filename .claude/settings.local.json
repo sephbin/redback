@@ -8,7 +8,8 @@
       "Bash(dotnet build *)",
       "Bash(git mv *)",
       "Bash(python3 *)",
-      "Bash(Get-ChildItem *)"
+      "Bash(Get-ChildItem *)",
+      "PowerShell(Get-ChildItem *)"
     ]
   }
 }

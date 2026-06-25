@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "SMyCIiLQMWh4aPrUGe4d4FcKsNfa2B2zRAVSQocP4de/MuSShYa8ToFKTJxXhWI9TPAVp/kByl/iiiuVB6nKgw==",
+  "dgSpecHash": "qw/2IxKrMthjM5r1RheRSKpKfdlF7mlrw06U/BW9Omfbc2+QzanoI5y9nXo0qNUuI4uXNAelFtLGF0j0+uH8bg==",
   "success": true,
   "projectFilePath": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\grasshopper\\8.32.26160.13001\\grasshopper.8.32.26160.13001.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\grasshopper\\8.21.25188.17001\\grasshopper.8.21.25188.17001.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\rhinocommon\\8.32.26160.13001\\rhinocommon.8.32.26160.13001.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\rhinocommon\\8.21.25188.17001\\rhinocommon.8.21.25188.17001.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
   ],
   "logs": []
