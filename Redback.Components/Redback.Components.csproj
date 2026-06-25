@@ -51,6 +51,37 @@
     <Message Importance="high" Text="--- Copied to $(GHLibDir)Redback.Components.gha ---" />
   </Target>
 
+  <!-- Build a .yak package for Rhino Package Manager after each Debug build. -->
+  <Target Name="BuildYakPackage" AfterTargets="CopyToGHLibraries" Condition="'$(Configuration)' == 'Debug'">
+    <PropertyGroup>
+      <YakExe Condition="'$(YakExe)' == ''">C:\Program Files\Rhino 8\System\Yak.exe</YakExe>
+      <YakVersion>$(Version)+$(BuildCounter)</YakVersion>
+      <YakDir>$(MSBuildProjectDirectory)\..\yak-build\</YakDir>
+    </PropertyGroup>
+    <RemoveDir Directories="$(YakDir)" />
+    <MakeDir Directories="$(YakDir)" />
+    <ItemGroup>
+      <_YakManifest Include="---" />
+      <_YakManifest Include="name: Redback" />
+      <_YakManifest Include="version: $(YakVersion)" />
+      <_YakManifest Include="authors:" />
+      <_YakManifest Include="- Andrew Butler" />
+      <_YakManifest Include="description: ''" />
+      <_YakManifest Include="license: ''" />
+      <_YakManifest Include="url: ''" />
+      <_YakManifest Include="keywords:" />
+      <_YakManifest Include="- guid:7d142de6-7a37-4b73-961b-a5ef3f7bfbc8" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(YakDir)manifest.yml" Lines="@(_YakManifest)" Overwrite="true" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(YakDir)" />
+    <Exec Command="&quot;$(YakExe)&quot; build"
+          WorkingDirectory="$(YakDir)"
+          Condition="Exists('$(YakExe)')" />
+    <Warning Text="Yak.exe not found at $(YakExe) — skipping .yak package build."
+             Condition="!Exists('$(YakExe)')" />
+    <Message Importance="high" Text="--- Yak package ready: $(YakDir)redback-$(YakVersion)-rh8-any.yak ---" />
+  </Target>
+
   <!-- Increment build counter after each build. -->
   <Target Name="IncrementBuildVersion" AfterTargets="Build">
     <PropertyGroup>
