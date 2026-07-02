@@ -14,6 +14,7 @@ namespace Redback.Components.Files
 
         public override Guid ComponentGuid => new Guid("982b8e72-1322-42de-bca6-e65ee014c03c");
         public override GH_Exposure Exposure => GH_Exposure.primary;
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-WriteFile.svg");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

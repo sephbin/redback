@@ -15,6 +15,7 @@ namespace Redback.Components.GH
 
         public override Guid ComponentGuid => new Guid("17b83380-9bf2-466d-98ec-956107a0806e");
         public override GH_Exposure Exposure => GH_Exposure.primary;
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-MapStreamGraph.svg");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

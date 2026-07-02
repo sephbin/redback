@@ -13,6 +13,7 @@ namespace Redback.Components.DataJSON
 
         public override Guid ComponentGuid => new Guid("20dc8abf-ea08-46ad-82fa-cd1efd8023e1");
         public override GH_Exposure Exposure => GH_Exposure.secondary;
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-SerialiseModelObject-01.svg");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

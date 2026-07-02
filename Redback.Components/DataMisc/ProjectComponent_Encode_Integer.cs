@@ -16,6 +16,7 @@ namespace Redback.Components.DataMisc
 
         public override Guid ComponentGuid => new Guid("9ae23301-ce66-4a26-aa2b-d0620a0a8b11");
         public override GH_Exposure Exposure => GH_Exposure.tertiary;
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-EncodeInteger.svg");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Generator: Grasshopper 1.0.0, Redback Plugin. SVG Version: 6.00 Build 0) Made by Andrew Butler at Cox Architecture -->
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    width="24mm" height="24mm" viewBox="0 0 24 24" xml:space="preserve">
+    <style type="text/css">
+    .fill-white{fill:white;}
+.fill-red{fill:#ed1c24;}
+.Magenta{fill:#ec008c;}
+.White{fill:#ffffff;}
+.Black{fill:#000000;}
+.Shade{opacity:0.2;}
+.Highlight{fill: #ffffff; opacity:0.2;}
+    </style>
+    <path spline_1deg="" d=" M7.00,16.00 L1.00,8.00 L23.00,8.00 L17.00,16.00Z" class="Magenta"/>
+<path spline_1deg="" d=" M7.00,23.00 L17.00,23.00 L17.00,16.00 L7.00,16.00Z" class="White"/>
+<path spline_1deg="" d=" M1.00,8.00 L23.00,8.00 L23.00,1.00 L1.00,1.00Z" class="White"/>
+<path spline_1deg="" d=" M12.00,21.00 L13.00,21.00 L13.00,19.00 L12.00,19.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M10.00,21.00 L11.00,21.00 L11.00,17.00 L10.00,17.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M8.00,21.00 L9.00,21.00 L9.00,19.00 L8.00,19.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M16.00,21.00 L17.00,21.00 L17.00,19.00 L16.00,19.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M7.00,23.00 L17.00,23.00 L17.00,21.00 L7.00,21.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M1.00,8.00 L23.00,8.00 L23.00,6.00 L1.00,6.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M12.00,6.00 L13.00,6.00 L13.00,2.00 L12.00,2.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M6.00,6.00 L7.00,6.00 L7.00,2.00 L6.00,2.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M21.00,6.00 L22.00,6.00 L22.00,4.00 L21.00,4.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M15.00,6.00 L16.00,6.00 L16.00,4.00 L15.00,4.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M9.00,6.00 L10.00,6.00 L10.00,4.00 L9.00,4.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M3.00,6.00 L4.00,6.00 L4.00,4.00 L3.00,4.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M14.00,21.00 L15.00,21.00 L15.00,17.00 L14.00,17.00Z" z-index="10" class="Black"/>
+<path spline_1deg="" d=" M18.00,6.00 L19.00,6.00 L19.00,2.00 L18.00,2.00Z" z-index="10" class="Black"/>
+    </svg>

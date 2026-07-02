@@ -9,7 +9,13 @@
       "Bash(git mv *)",
       "Bash(python3 *)",
       "Bash(Get-ChildItem *)",
-      "PowerShell(Get-ChildItem *)"
+      "PowerShell(Get-ChildItem *)",
+      "Bash(Select-Object -First 20)",
+      "Bash(Select-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(xargs grep -l \"Rhino\\\\|Viewport\\\\|Display\")",
+      "Bash(grep -E \"\\\\.cs$\")",
+      "Bash(xargs grep -l \"Viewport\\\\|ViewCapture\\\\|RhinoViewport\")"
     ]
   }
 }

@@ -13,6 +13,7 @@ namespace Redback.Components.Rhino
 
         public override Guid ComponentGuid => new Guid("a76050d7-756a-40ef-8443-51b184fbdeb5");
         public override GH_Exposure Exposure => GH_Exposure.primary;
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-MaterialDiffusePath.svg");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

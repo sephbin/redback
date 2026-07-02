@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
+      "ExCSS/4.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/ExCSS.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/ExCSS.dll": {}
+        }
+      },
       "Grasshopper/8.21.25188.17001": {
         "type": "package",
         "dependencies": {
@@ -85,6 +94,23 @@
           "build/net7.0/RhinoCommon.targets": {}
         }
       },
+      "Svg/3.4.7": {
+        "type": "package",
+        "dependencies": {
+          "ExCSS": "4.2.3",
+          "System.Drawing.Common": "5.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Svg.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Svg.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Drawing.Common/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -113,6 +139,24 @@
     }
   },
   "libraries": {
+    "ExCSS/4.2.3": {
+      "sha512": "SyeAfu2wL5247sipJoPUzQfjiwQtfSd8hN4IbgoyVcDx4PP6Dud4znwPRibWQzLtTlUxYYcbf5f4p+EfFC7KtQ==",
+      "type": "package",
+      "path": "excss/4.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excss.4.2.3.nupkg.sha512",
+        "excss.nuspec",
+        "lib/net48/ExCSS.dll",
+        "lib/net6.0/ExCSS.dll",
+        "lib/net7.0/ExCSS.dll",
+        "lib/netcoreapp3.1/ExCSS.dll",
+        "lib/netstandard2.0/ExCSS.dll",
+        "lib/netstandard2.1/ExCSS.dll",
+        "readme.md"
+      ]
+    },
     "Grasshopper/8.21.25188.17001": {
       "sha512": "qpt9XQWuKLFfzn2cnYf5akfHRwYuffthK5AXsSY1UhjD0eG6bYSTtmAkNVH+Wdg130MZkGqJmPd012Om1kJPBA==",
       "type": "package",
@@ -265,6 +309,34 @@
         "rhinocommon.png"
       ]
     },
+    "Svg/3.4.7": {
+      "sha512": "Omez7ly5BGhg3OzdV+LHZ5sI0+JQ6hF7WVKUeyHw4jRvcEWNCPCf1MWMBaf+R0DRBSZHx5EUHwBTEF+2oYtsAw==",
+      "type": "package",
+      "path": "svg/3.4.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Svg.dll",
+        "lib/net462/Svg.xml",
+        "lib/net472/Svg.dll",
+        "lib/net472/Svg.xml",
+        "lib/net481/Svg.dll",
+        "lib/net481/Svg.xml",
+        "lib/net6.0/Svg.dll",
+        "lib/net6.0/Svg.xml",
+        "lib/net8.0/Svg.dll",
+        "lib/net8.0/Svg.xml",
+        "lib/netcoreapp3.1/Svg.dll",
+        "lib/netcoreapp3.1/Svg.xml",
+        "lib/netstandard2.0/Svg.dll",
+        "lib/netstandard2.0/Svg.xml",
+        "lib/netstandard2.1/Svg.dll",
+        "lib/netstandard2.1/Svg.xml",
+        "svg-logo-v.png",
+        "svg.3.4.7.nupkg.sha512",
+        "svg.nuspec"
+      ]
+    },
     "System.Drawing.Common/7.0.0": {
       "sha512": "KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
       "type": "package",
@@ -308,6 +380,7 @@
       "Grasshopper >= 8.21.*",
       "Microsoft.CSharp >= 4.7.0",
       "RhinoCommon >= 8.21.*",
+      "Svg >= 3.4.7",
       "System.Drawing.Common >= 7.0.0"
     ]
   },
@@ -315,7 +388,7 @@
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "0.5.46",
+    "version": "0.5.49",
     "restore": {
       "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
       "projectName": "Redback.Components",
@@ -364,6 +437,10 @@
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
             "version": "[8.21.*, )"
+          },
+          "Svg": {
+            "target": "Package",
+            "version": "[3.4.7, )"
           },
           "System.Drawing.Common": {
             "target": "Package",
