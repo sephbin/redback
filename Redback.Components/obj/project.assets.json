@@ -315,7 +315,7 @@
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "0.5.51",
+    "version": "0.5.55",
     "restore": {
       "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
       "projectName": "Redback.Components",

@@ -2,7 +2,7 @@
 <PropertyGroup>
 <VersionMajor>0</VersionMajor>
 <VersionMinor>5</VersionMinor>
-<VersionPatch>51</VersionPatch>
-<BuildCounter>46</BuildCounter>
+<VersionPatch>55</VersionPatch>
+<BuildCounter>50</BuildCounter>
 </PropertyGroup>
 </Project>

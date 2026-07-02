@@ -115,9 +115,11 @@ namespace Redback.Components.Render
                     if (!cameraOverridden)
                         AddRuntimeMessage(GH_RuntimeMessageLevel.Warning,
                             "Camera input must be a Line or Plane — camera input ignored.");
-                    else
-                        view.Redraw();
                 }
+
+                // Always redraw and flush before capture so the framebuffer is current.
+                view.Redraw();
+                RhinoApp.Wait();
 
                 string savedPath = fullRender
                     ? DoFullRender(doc, width, height, outputPath)
@@ -172,15 +174,8 @@ namespace Redback.Components.Render
 
         private static string DoViewCapture(RhinoView view, int w, int h, string path)
         {
-            var size     = new System.Drawing.Size(w, h);
-            var settings = new ViewCaptureSettings(view, size, 96.0)
-            {
-                DrawGrid = false,
-                DrawAxis = false,
-            };
-
-            var bmp = ViewCapture.CaptureToBitmap(settings);
-            if (bmp == null) throw new InvalidOperationException("ViewCapture returned a null bitmap.");
+            var bmp = view.CaptureToBitmap(new System.Drawing.Size(w, h));
+            if (bmp == null) throw new InvalidOperationException("CaptureToBitmap returned null bitmap.");
 
             EnsureDir(path);
             bmp.Save(path, ResolveFormat(path));
