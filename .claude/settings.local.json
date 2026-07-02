@@ -15,7 +15,8 @@
       "Bash(Format-Table -AutoSize)",
       "Bash(xargs grep -l \"Rhino\\\\|Viewport\\\\|Display\")",
       "Bash(grep -E \"\\\\.cs$\")",
-      "Bash(xargs grep -l \"Viewport\\\\|ViewCapture\\\\|RhinoViewport\")"
+      "Bash(xargs grep -l \"Viewport\\\\|ViewCapture\\\\|RhinoViewport\")",
+      "PowerShell(dotnet run *)"
     ]
   }
 }

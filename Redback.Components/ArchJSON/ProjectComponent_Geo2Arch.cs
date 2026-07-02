@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -16,7 +16,7 @@ namespace Redback.Components.ArchJSON
 
         public override Guid ComponentGuid => new Guid("f7528ac2-c3ad-4d18-b22e-4bd6f035829a");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-Geo2ArchiJSON.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-Geo2ArchiJSON.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

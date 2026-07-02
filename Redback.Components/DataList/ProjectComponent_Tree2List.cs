@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using Grasshopper.Kernel;
@@ -15,7 +15,7 @@ namespace Redback.Components.DataList
 
         public override Guid ComponentGuid => new Guid("85852905-7564-4610-9f9c-76fc94a5ad7a");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-TreeToList.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-TreeToList.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

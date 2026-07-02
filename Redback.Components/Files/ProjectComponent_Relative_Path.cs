@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace Redback.Components.Files
 
         public override Guid ComponentGuid => new Guid("aef758a6-b93c-442c-9f88-b8daffc854db");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-RelativePath.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-RelativePath.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using Grasshopper.Kernel;
@@ -13,7 +13,7 @@ namespace Redback.Components.DataJSON
 
         public override Guid ComponentGuid => new Guid("1863b4e0-dc8f-4542-b729-3b50878b3954");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-JSONKeys.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-JSONKeys.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

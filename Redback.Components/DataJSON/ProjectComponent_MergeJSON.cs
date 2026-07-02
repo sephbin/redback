@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using Grasshopper.Kernel;
@@ -13,7 +13,7 @@ namespace Redback.Components.DataJSON
 
         public override Guid ComponentGuid => new Guid("aa6a1a4d-feda-471d-b9bb-9b1f49b007e5");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-MergeJSON.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-MergeJSON.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

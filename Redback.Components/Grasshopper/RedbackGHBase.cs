@@ -18,12 +18,7 @@ namespace Redback.Components.Grasshopper
                 var asm = Assembly.GetExecutingAssembly();
                 using var stream = asm.GetManifestResourceStream($"Redback.Components.Resources.{name}");
                 if (stream == null) return null;
-                try
-                {
-                    var svgDoc = Svg.SvgDocument.Open<Svg.SvgDocument>(stream);
-                    return svgDoc.Draw(24, 24);
-                }
-                catch { return null; }
+                return new System.Drawing.Bitmap(stream);
             });
         }
     }

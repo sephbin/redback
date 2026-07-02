@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.Json.Nodes;
@@ -16,7 +16,7 @@ namespace Redback.Components.SVG
 
         public override Guid ComponentGuid => new Guid("c9354d5d-1daf-4b2b-a241-fdd8de4464bb");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-SVGLayout.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-SVGLayout.png");
 
         private static readonly Dictionary<string, (double w, double h)> PageLUT = new Dictionary<string, (double, double)>
         {

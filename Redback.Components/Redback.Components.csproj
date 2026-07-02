@@ -26,8 +26,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="all" />
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
-    <PackageReference Include="Svg" Version="3.4.7" />
-    <PackageReference Include="RhinoCommon" Version="8.21.*" ExcludeAssets="runtime" />
+<PackageReference Include="RhinoCommon" Version="8.21.*" ExcludeAssets="runtime" />
     <PackageReference Include="Grasshopper" Version="8.21.*" ExcludeAssets="runtime" />
   </ItemGroup>
 
@@ -47,18 +46,13 @@
           IgnoreExitCode="true" />
   </Target>
 
-  <!-- Copy the built .gha and dependency DLLs to Grasshopper's Libraries folder. -->
+  <!-- Copy the built .gha to Grasshopper's Libraries folder so GH discovers the components on next launch. -->
   <Target Name="CopyToGHLibraries" AfterTargets="Build">
     <PropertyGroup>
       <GHLibDir>$(APPDATA)\Grasshopper\Libraries\Redback\</GHLibDir>
     </PropertyGroup>
     <MakeDir Directories="$(GHLibDir)" />
     <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(GHLibDir)Redback.Components.gha" />
-    <ItemGroup>
-      <_ExtraDlls Include="$(OutDir)*.dll"
-                  Exclude="$(OutDir)RhinoCommon.dll;$(OutDir)Grasshopper.dll;$(OutDir)GH_IO.dll" />
-    </ItemGroup>
-    <Copy SourceFiles="@(_ExtraDlls)" DestinationFolder="$(GHLibDir)" SkipUnchangedFiles="true" />
     <Message Importance="high" Text="--- Copied to $(GHLibDir)Redback.Components.gha ---" />
   </Target>
 

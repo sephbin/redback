@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Grasshopper.Kernel;
 using Redback.Components.Grasshopper;
@@ -12,7 +12,7 @@ namespace Redback.Components.DataMisc
 
         public override Guid ComponentGuid => new Guid("b477f946-0652-476e-aebd-efbb5be28254");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-ReplaceText.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-ReplaceText.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

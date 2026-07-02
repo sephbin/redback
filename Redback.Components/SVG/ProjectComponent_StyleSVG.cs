@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Grasshopper.Kernel;
 using Redback.Components.Grasshopper;
@@ -12,7 +12,7 @@ namespace Redback.Components.SVG
 
         public override Guid ComponentGuid => new Guid("ef5a6f3f-63b0-4c89-b503-d75075096ec3");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-StyleSVG.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-StyleSVG.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {

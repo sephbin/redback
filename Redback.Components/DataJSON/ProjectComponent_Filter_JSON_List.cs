@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -14,7 +14,7 @@ namespace Redback.Components.DataJSON
 
         public override Guid ComponentGuid => new Guid("39b7bb81-5c4d-4b91-b14a-ba480cd10b69");
         public override GH_Exposure Exposure => GH_Exposure.primary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-FilterJSON.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-FilterJSON.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {
@@ -104,7 +104,7 @@ namespace Redback.Components.DataJSON
                 return false;
             }
 
-            // &["key"] — existence check
+            // &["key"] â€” existence check
             m = Regex.Match(expr, @"&\[[""'](.+?)[""']\]");
             if (m.Success)
             {

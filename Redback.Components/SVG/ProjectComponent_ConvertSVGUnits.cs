@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Grasshopper.Kernel;
@@ -13,7 +13,7 @@ namespace Redback.Components.SVG
 
         public override Guid ComponentGuid => new Guid("990df47d-b5b3-4c5d-831b-75ea31992127");
         public override GH_Exposure Exposure => GH_Exposure.secondary;
-        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-ConvertSVGUnits.svg");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-ConvertSVGUnits.png");
 
         protected override void RegisterInputParams(GH_InputParamManager p)
         {
