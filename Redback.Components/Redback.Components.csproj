@@ -49,9 +49,19 @@
        the .NET 7 runtime inside Revit's .NET Framework 4.8 process without the full shared
        framework probe paths). Explicitly copying it alongside the .gha fixes RiR loading. -->
   <Target Name="BundleWindowsSharedAssemblies" BeforeTargets="CopyToGHLibraries">
+    <PropertyGroup>
+      <!-- System.Drawing.Primitives lives in Microsoft.NETCore.App shared framework (not in any NuGet package),
+           so CopyLocalLockFileAssemblies can't pick it up. Rhino's standalone runtime provides it via its
+           shared framework probe path, but Rhino Inside Revit's embedded runtime does not. Bundle it
+           explicitly from the build machine's .NET 7 install so the yak package is self-contained. -->
+      <_NCARoot>$(ProgramFiles)\dotnet\shared\Microsoft.NETCore.App\</_NCARoot>
+    </PropertyGroup>
     <ItemGroup>
+      <!-- From NuGet cache (real Windows implementation, not the shared-framework stub) -->
       <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\7.0.0\runtimes\win\lib\**\System.Drawing.Common.dll" />
       <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\**\Microsoft.Win32.SystemEvents.dll" />
+      <!-- From .NET 7 NETCore.App shared framework on build machine -->
+      <_WinShared Include="$(_NCARoot)7.*\System.Drawing.Primitives.dll" />
     </ItemGroup>
     <Copy SourceFiles="@(_WinShared)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
   </Target>
