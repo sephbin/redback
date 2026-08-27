@@ -6,15 +6,24 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "Redback.Components/0.5.54": {
+      "Redback.Components/0.5.61": {
         "dependencies": {
           "Grasshopper": "8.21.25188.17001",
           "Microsoft.CSharp": "4.7.0",
           "RhinoCommon": "8.21.25188.17001",
+          "Svg": "3.4.7",
           "System.Drawing.Common": "7.0.0"
         },
         "runtime": {
           "Redback.Components.gha": {}
+        }
+      },
+      "ExCSS/4.2.3": {
+        "runtime": {
+          "lib/net7.0/ExCSS.dll": {
+            "assemblyVersion": "4.2.3.0",
+            "fileVersion": "4.2.3.0"
+          }
         }
       },
       "Grasshopper/8.21.25188.17001": {
@@ -29,6 +38,18 @@
           "System.Drawing.Common": "7.0.0"
         }
       },
+      "Svg/3.4.7": {
+        "dependencies": {
+          "ExCSS": "4.2.3",
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Svg.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.7.1"
+          }
+        }
+      },
       "System.Drawing.Common/7.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "7.0.0"
@@ -37,10 +58,17 @@
     }
   },
   "libraries": {
-    "Redback.Components/0.5.54": {
+    "Redback.Components/0.5.61": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ExCSS/4.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SyeAfu2wL5247sipJoPUzQfjiwQtfSd8hN4IbgoyVcDx4PP6Dud4znwPRibWQzLtTlUxYYcbf5f4p+EfFC7KtQ==",
+      "path": "excss/4.2.3",
+      "hashPath": "excss.4.2.3.nupkg.sha512"
     },
     "Grasshopper/8.21.25188.17001": {
       "type": "package",
@@ -69,6 +97,13 @@
       "sha512": "sha512-Wo6JXheyDBvilyIwDY6xZCQJC4170jzAlTSlMgh8yokUY+vYyCl4KJVXZofIOynNt/xx5wLqb2On5gZZekXR6w==",
       "path": "rhinocommon/8.21.25188.17001",
       "hashPath": "rhinocommon.8.21.25188.17001.nupkg.sha512"
+    },
+    "Svg/3.4.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Omez7ly5BGhg3OzdV+LHZ5sI0+JQ6hF7WVKUeyHw4jRvcEWNCPCf1MWMBaf+R0DRBSZHx5EUHwBTEF+2oYtsAw==",
+      "path": "svg/3.4.7",
+      "hashPath": "svg.3.4.7.nupkg.sha512"
     },
     "System.Drawing.Common/7.0.0": {
       "type": "package",

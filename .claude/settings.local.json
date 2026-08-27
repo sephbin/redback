@@ -16,7 +16,8 @@
       "Bash(xargs grep -l \"Rhino\\\\|Viewport\\\\|Display\")",
       "Bash(grep -E \"\\\\.cs$\")",
       "Bash(xargs grep -l \"Viewport\\\\|ViewCapture\\\\|RhinoViewport\")",
-      "PowerShell(dotnet run *)"
+      "PowerShell(dotnet run *)",
+      "Bash(Select-Object Name, PSIsContainer)"
     ]
   }
 }

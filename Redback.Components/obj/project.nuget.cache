@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "z6utbHROaqz5W52ONlqj2r5aWDkvbsNvQm1byH6nzFeyRnAFyhaaj3f5uNEKu/fumHV2BOFc3bPxQ3YQUWekfQ==",
+  "dgSpecHash": "/MURLDAyPQBpkOFsfpvlI9C414iNGhTHlTxjClJXdyqrZWnC5oXGEwssQ79v5N9WvitONCWQXeqdayRCwbW3rA==",
   "success": true,
   "projectFilePath": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\excss\\4.2.3\\excss.4.2.3.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\grasshopper\\8.21.25188.17001\\grasshopper.8.21.25188.17001.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\rhinocommon\\8.21.25188.17001\\rhinocommon.8.21.25188.17001.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\svg\\3.4.7\\svg.3.4.7.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
   ],
   "logs": []

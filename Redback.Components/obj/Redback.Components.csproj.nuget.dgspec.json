@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj": {
-      "version": "0.5.55",
+      "version": "0.5.62",
       "restore": {
         "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
         "projectName": "Redback.Components",
@@ -54,6 +54,10 @@
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[8.21.*, )"
+            },
+            "Svg": {
+              "target": "Package",
+              "version": "[3.4.7, )"
             },
             "System.Drawing.Common": {
               "target": "Package",

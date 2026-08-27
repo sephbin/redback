@@ -21,13 +21,16 @@
     <AssemblyName>Redback.Components</AssemblyName>
     <AssemblyVersion>$(Version).$(BuildCounter)</AssemblyVersion>
     <UseWindowsForms>true</UseWindowsForms>
+    <!-- Copy NuGet runtime DLLs (e.g. Svg.NET) to output so they're bundled in the yak package. -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="all" />
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
-<PackageReference Include="RhinoCommon" Version="8.21.*" ExcludeAssets="runtime" />
+    <PackageReference Include="RhinoCommon" Version="8.21.*" ExcludeAssets="runtime" />
     <PackageReference Include="Grasshopper" Version="8.21.*" ExcludeAssets="runtime" />
+    <PackageReference Include="Svg" Version="3.4.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +43,19 @@
     </None>
   </ItemGroup>
 
+  <!-- System.Drawing.Common is part of the Windows Desktop App shared framework, so the SDK
+       won't copy it to output even with CopyLocalLockFileAssemblies. It IS available in
+       standalone Rhino 8's runtime, but not when loaded via Rhino Inside Revit (which boots
+       the .NET 7 runtime inside Revit's .NET Framework 4.8 process without the full shared
+       framework probe paths). Explicitly copying it alongside the .gha fixes RiR loading. -->
+  <Target Name="BundleWindowsSharedAssemblies" BeforeTargets="CopyToGHLibraries">
+    <ItemGroup>
+      <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\7.0.0\runtimes\win\lib\**\System.Drawing.Common.dll" />
+      <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\**\Microsoft.Win32.SystemEvents.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_WinShared)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
+  </Target>
+
   <!-- Kill any processes that lock the .gha before we try to copy it. -->
   <Target Name="KillGHLockers" BeforeTargets="CopyToGHLibraries">
     <Exec Command="powershell -NonInteractive -Command &quot;Get-Process Rhino,compute.geometry -ErrorAction SilentlyContinue | Stop-Process -Force&quot;"
@@ -47,12 +63,17 @@
   </Target>
 
   <!-- Copy the built .gha to Grasshopper's Libraries folder so GH discovers the components on next launch. -->
+  <!-- Also copies runtime dependency DLLs (e.g. Svg.NET and its deps) so they are resolvable. -->
   <Target Name="CopyToGHLibraries" AfterTargets="Build">
     <PropertyGroup>
       <GHLibDir>$(APPDATA)\Grasshopper\Libraries\Redback\</GHLibDir>
     </PropertyGroup>
     <MakeDir Directories="$(GHLibDir)" />
     <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(GHLibDir)Redback.Components.gha" />
+    <ItemGroup>
+      <_DepDlls Include="$(OutputPath)*.dll" Exclude="$(OutputPath)Redback.Components.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_DepDlls)" DestinationFolder="$(GHLibDir)" SkipUnchangedFiles="true" />
     <Message Importance="high" Text="--- Copied to $(GHLibDir)Redback.Components.gha ---" />
   </Target>
 
@@ -79,6 +100,10 @@
     </ItemGroup>
     <WriteLinesToFile File="$(YakDir)manifest.yml" Lines="@(_YakManifest)" Overwrite="true" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(YakDir)" />
+    <ItemGroup>
+      <_YakDlls Include="$(OutputPath)*.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_YakDlls)" DestinationFolder="$(YakDir)" SkipUnchangedFiles="true" />
     <Exec Command="&quot;$(YakExe)&quot; build"
           WorkingDirectory="$(YakDir)"
           Condition="Exists('$(YakExe)')" />
