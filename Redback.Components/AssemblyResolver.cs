@@ -16,10 +16,15 @@ namespace Redback.Components
         // Microsoft .NET public key tokens we're willing to redirect:
         //   b03f5f7f11d50a3a — most System.* and Microsoft.Win32.* assemblies
         //   cc7b13ffcd2ddd51 — System.Drawing.Common and related
+        //   7cec85d7bea7798e — System.Private.CoreLib
+        //     Needed because the bundled .NET 7 System.Runtime.dll has a direct assembly
+        //     reference to System.Private.CoreLib Version=7.0.0.0. On a .NET 8 host only
+        //     Version=8.0.0.0 is loaded, so we redirect by name to the already-loaded copy.
         static readonly byte[][] s_knownPKTs =
         {
             new byte[] { 0xb0, 0x3f, 0x5f, 0x7f, 0x11, 0xd5, 0x0a, 0x3a },
             new byte[] { 0xcc, 0x7b, 0x13, 0xff, 0xcd, 0x2d, 0xdd, 0x51 },
+            new byte[] { 0x7c, 0xec, 0x85, 0xd7, 0xbe, 0xa7, 0x79, 0x8e },
         };
 
         [ModuleInitializer]

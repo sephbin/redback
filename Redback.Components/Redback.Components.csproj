@@ -103,6 +103,7 @@
       <YakExe Condition="'$(YakExe)' == ''">C:\Program Files\Rhino 8\System\Yak.exe</YakExe>
       <YakVersion>$(Version)+$(BuildCounter)</YakVersion>
       <YakDir>$(MSBuildProjectDirectory)\..\yak-build\</YakDir>
+      <YakArchiveDir>$(MSBuildProjectDirectory)\..\yak-archive\</YakArchiveDir>
     </PropertyGroup>
     <RemoveDir Directories="$(YakDir)" />
     <MakeDir Directories="$(YakDir)" />
@@ -129,7 +130,12 @@
           Condition="Exists('$(YakExe)')" />
     <Warning Text="Yak.exe not found at $(YakExe) — skipping .yak package build."
              Condition="!Exists('$(YakExe)')" />
-    <Message Importance="high" Text="--- Yak package ready: $(YakDir)redback-$(YakVersion)-rh8-any.yak ---" />
+    <MakeDir Directories="$(YakArchiveDir)" />
+    <ItemGroup>
+      <_BuiltYak Include="$(YakDir)*.yak" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_BuiltYak)" DestinationFolder="$(YakArchiveDir)" />
+    <Message Importance="high" Text="--- Yak package ready: $(YakArchiveDir)redback-$(YakVersion)-rh8-any.yak ---" />
   </Target>
 
   <!-- Increment version patch and build counter after each build. -->
