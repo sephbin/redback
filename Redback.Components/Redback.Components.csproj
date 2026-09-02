@@ -63,7 +63,13 @@
       <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\net7.0\Microsoft.Win32.SystemEvents.dll" />
       <!-- From .NET 7 NETCore.App shared framework — not in any NuGet package, not handled by
            CopyLocalLockFileAssemblies, not on the RiR probe path. AssemblyResolver.cs handles
-           these at runtime too, but bundling avoids the disk search on each load. -->
+           these at runtime too, but bundling avoids the disk search on each load.
+           System.Runtime is bundled specifically because Rhino 8.34+ runs on .NET 8, whose
+           probe path doesn't include the .NET 7 shared framework directories. Since
+           System.Runtime is needed before AssemblyResolver's [ModuleInitializer] can register
+           its hook, we can't fix the bootstrapping failure in code — the bundled copy must be
+           found in the plugin directory before the resolver is ever consulted. -->
+      <_WinShared Include="$(_NCARoot)7.*\System.Runtime.dll" />
       <_WinShared Include="$(_NCARoot)7.*\System.Drawing.Primitives.dll" />
       <_WinShared Include="$(_NCARoot)7.*\System.Collections.Concurrent.dll" />
     </ItemGroup>
