@@ -57,11 +57,15 @@
       <_NCARoot>$(ProgramFiles)\dotnet\shared\Microsoft.NETCore.App\</_NCARoot>
     </PropertyGroup>
     <ItemGroup>
-      <!-- From NuGet cache (real Windows implementation, not the shared-framework stub) -->
-      <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\7.0.0\runtimes\win\lib\**\System.Drawing.Common.dll" />
-      <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\**\Microsoft.Win32.SystemEvents.dll" />
-      <!-- From .NET 7 NETCore.App shared framework on build machine -->
+      <!-- Explicit net7.0 TFM paths — the lib\**\ and runtimes\**\ globs would match older TFMs
+           (e.g. netstandard2.0) that drag in System.Runtime Version=4.0.0.0, breaking RiR. -->
+      <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\7.0.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll" />
+      <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\net7.0\Microsoft.Win32.SystemEvents.dll" />
+      <!-- From .NET 7 NETCore.App shared framework — not in any NuGet package, not handled by
+           CopyLocalLockFileAssemblies, not on the RiR probe path. AssemblyResolver.cs handles
+           these at runtime too, but bundling avoids the disk search on each load. -->
       <_WinShared Include="$(_NCARoot)7.*\System.Drawing.Primitives.dll" />
+      <_WinShared Include="$(_NCARoot)7.*\System.Collections.Concurrent.dll" />
     </ItemGroup>
     <Copy SourceFiles="@(_WinShared)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
   </Target>
