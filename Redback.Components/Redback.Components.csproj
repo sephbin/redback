@@ -70,6 +70,7 @@
            its hook, we can't fix the bootstrapping failure in code — the bundled copy must be
            found in the plugin directory before the resolver is ever consulted. -->
       <_WinShared Include="$(_NCARoot)7.*\System.Runtime.dll" />
+      <_WinShared Include="$(_NCARoot)7.*\System.Runtime.Loader.dll" />
       <_WinShared Include="$(_NCARoot)7.*\System.Drawing.Primitives.dll" />
       <_WinShared Include="$(_NCARoot)7.*\System.Collections.Concurrent.dll" />
     </ItemGroup>

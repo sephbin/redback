@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.Loader;
 
 namespace Redback.Components
 {
@@ -11,6 +12,14 @@ namespace Redback.Components
     // directories. The [ModuleInitializer] fires before any type initialiser (including
     // RedbackGHBase's static ConcurrentDictionary field), so the resolver is always registered
     // in time.
+    //
+    // NOTE: We cannot use AppDomain.CurrentDomain.AssemblyResolve here. In Revit 2024 + RiR
+    // the .NET Framework 4.8 GAC provides System.Runtime Version=4.0.0.0 before our bundled
+    // Version=7.0.0.0 is found. The .NET Framework 4.8 version of System.Runtime does NOT
+    // include System.AppDomain in its type-forward list, so any reference to AppDomain from
+    // the [ModuleInitializer] causes TypeLoadException on every component.
+    // AssemblyLoadContext comes from System.Runtime.Loader.dll, which is NOT in the .NET
+    // Framework 4.8 GAC, so there is no version collision.
     static class AssemblyResolver
     {
         // Microsoft .NET public key tokens we're willing to redirect:
@@ -30,22 +39,27 @@ namespace Redback.Components
         [ModuleInitializer]
         internal static void Register()
         {
-            AppDomain.CurrentDomain.AssemblyResolve += OnAssemblyResolve;
+            var self = AssemblyLoadContext.GetLoadContext(Assembly.GetExecutingAssembly());
+            if (self != null && self != AssemblyLoadContext.Default)
+                self.Resolving += OnResolving;
+            AssemblyLoadContext.Default.Resolving += OnResolving;
         }
 
-        static Assembly OnAssemblyResolve(object sender, ResolveEventArgs args)
+        static Assembly OnResolving(AssemblyLoadContext ctx, AssemblyName name)
         {
-            var name = new AssemblyName(args.Name);
             if (!IsMicrosoftNetAssembly(name)) return null;
 
-            // First choice: return a compatible assembly that's already loaded in the AppDomain.
+            // First choice: return a compatible assembly that's already loaded in any ALC.
             // This handles the common RiR case where the host runs .NET 8 and already has
             // Version=8.0.0.0 of the same facade loaded; returning it is safe because these
             // are thin type-forwarding shims that all bottom out in System.Private.CoreLib.
-            foreach (var loaded in AppDomain.CurrentDomain.GetAssemblies())
+            foreach (var alc in AssemblyLoadContext.All)
             {
-                if (string.Equals(loaded.GetName().Name, name.Name, StringComparison.OrdinalIgnoreCase))
-                    return loaded;
+                foreach (var loaded in alc.Assemblies)
+                {
+                    if (string.Equals(loaded.GetName().Name, name.Name, StringComparison.OrdinalIgnoreCase))
+                        return loaded;
+                }
             }
 
             // Second choice: load from the .NET shared framework on disk.
@@ -67,7 +81,7 @@ namespace Redback.Components
                 {
                     var candidate = Path.Combine(versionDir, name.Name + ".dll");
                     if (File.Exists(candidate))
-                        return Assembly.LoadFrom(candidate);
+                        return ctx.LoadFromAssemblyPath(candidate);
                 }
             }
 
