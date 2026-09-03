@@ -1,0 +1,16 @@
+E:\mydev\redback\Redback.Components\bin\Debug\net8.0-windows\Redback.Components.deps.json
+E:\mydev\redback\Redback.Components\bin\Debug\net8.0-windows\Redback.Components.runtimeconfig.json
+E:\mydev\redback\Redback.Components\bin\Debug\net8.0-windows\Redback.Components.gha
+E:\mydev\redback\Redback.Components\bin\Debug\net8.0-windows\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\bin\Debug\net8.0-windows\ExCSS.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net8.0-windows\Svg.dll
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.csproj.AssemblyReference.cache
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.GeneratedMSBuildEditorConfig.editorconfig
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.csproj.CoreCompileInputs.cache
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.sourcelink.json
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback..FB633910.Up2Date
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.gha
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\refint\Redback.Components.gha
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\Redback.Components.genruntimeconfig.cache
+E:\mydev\redback\Redback.Components\obj\Debug\net8.0-windows\ref\Redback.Components.gha

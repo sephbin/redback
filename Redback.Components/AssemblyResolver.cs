@@ -6,29 +6,30 @@ using System.Runtime.Loader;
 
 namespace Redback.Components
 {
-    // Fixes missing .NET 7 shared-framework assemblies when Redback loads inside Rhino Inside
-    // Revit. The host process (Revit 2024, .NET Framework 4.8) bootstraps the CoreCLR via RiR,
-    // but the resulting runtime probe paths don't always include the .NET 7 shared-framework
-    // directories. The [ModuleInitializer] fires before any type initialiser (including
-    // RedbackGHBase's static ConcurrentDictionary field), so the resolver is always registered
-    // in time.
+    // Fixes missing .NET 8 shared-framework assemblies when Redback loads inside Rhino Inside
+    // Revit. The host process (Revit 2024, .NET Framework 4.8) bootstraps the .NET 8 CoreCLR
+    // via RiR, but the resulting runtime probe paths don't always include the .NET 8
+    // shared-framework directories. The [ModuleInitializer] fires before any type initialiser
+    // (including RedbackGHBase's static ConcurrentDictionary field), so the resolver is always
+    // registered in time.
     //
     // NOTE: We cannot use AppDomain.CurrentDomain.AssemblyResolve here. In Revit 2024 + RiR
-    // the .NET Framework 4.8 GAC provides System.Runtime Version=4.0.0.0 before our bundled
-    // Version=7.0.0.0 is found. The .NET Framework 4.8 version of System.Runtime does NOT
-    // include System.AppDomain in its type-forward list, so any reference to AppDomain from
-    // the [ModuleInitializer] causes TypeLoadException on every component.
-    // AssemblyLoadContext comes from System.Runtime.Loader.dll, which is NOT in the .NET
-    // Framework 4.8 GAC, so there is no version collision.
+    // the .NET Framework 4.8 GAC provides System.Runtime Version=4.0.0.0. Because our plugin
+    // targets net8.0, the GAC's v4 cannot satisfy our v8 reference — the CLR probes the plugin
+    // directory instead (where we bundle System.Runtime v8). But System.AppDomain is NOT in the
+    // .NET Framework 4.8 version of System.Runtime's type-forward list, so any reference to
+    // AppDomain anywhere in the module causes TypeLoadException.
+    // AssemblyLoadContext comes from System.Runtime.Loader.dll (also bundled as v8), which is
+    // NOT in the .NET Framework 4.8 GAC, so there is no version collision.
     static class AssemblyResolver
     {
         // Microsoft .NET public key tokens we're willing to redirect:
         //   b03f5f7f11d50a3a — most System.* and Microsoft.Win32.* assemblies
         //   cc7b13ffcd2ddd51 — System.Drawing.Common and related
         //   7cec85d7bea7798e — System.Private.CoreLib
-        //     Needed because the bundled .NET 7 System.Runtime.dll has a direct assembly
-        //     reference to System.Private.CoreLib Version=7.0.0.0. On a .NET 8 host only
-        //     Version=8.0.0.0 is loaded, so we redirect by name to the already-loaded copy.
+        //     Safety net for any third-party dependency compiled against an older TFM that
+        //     carries a direct reference to a different version of System.Private.CoreLib.
+        //     We redirect by name to the already-loaded copy.
         static readonly byte[][] s_knownPKTs =
         {
             new byte[] { 0xb0, 0x3f, 0x5f, 0x7f, 0x11, 0xd5, 0x0a, 0x3a },
@@ -37,6 +38,7 @@ namespace Redback.Components
         };
 
         [ModuleInitializer]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2255")]
         internal static void Register()
         {
             var self = AssemblyLoadContext.GetLoadContext(Assembly.GetExecutingAssembly());

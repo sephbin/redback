@@ -2,3 +2,4 @@
 components/SVGLayout.gh
 *.max
 yak-archive/
+.vs/
