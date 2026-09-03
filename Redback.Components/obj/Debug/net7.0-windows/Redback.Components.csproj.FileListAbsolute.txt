@@ -12,4 +12,5 @@ E:\mydev\redback\Redback.Components\obj\Debug\net7.0-windows\Redback.Components.
 E:\mydev\redback\Redback.Components\obj\Debug\net7.0-windows\ref\Redback.Components.gha
 E:\mydev\redback\Redback.Components\bin\Debug\net7.0-windows\ExCSS.dll
 E:\mydev\redback\Redback.Components\bin\Debug\net7.0-windows\Svg.dll
-E:\mydev\redback\Redback.Components\obj\Debug\net7.0-windows\Redback.Components.csproj.CopyComplete
+E:\mydev\redback\Redback.Components\obj\Debug\net7.0-windows\Redback.Components.sourcelink.json
+E:\mydev\redback\Redback.Components\obj\Debug\net7.0-windows\Redback..FB633910.Up2Date

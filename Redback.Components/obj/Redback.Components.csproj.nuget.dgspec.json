@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj": {
-      "version": "0.5.70",
+      "version": "0.5.73",
       "restore": {
         "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
         "projectName": "Redback.Components",
@@ -22,16 +22,16 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0-windows"
+          "net7.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-windows": {
-            "framework": "net8.0-windows7.0",
-            "targetAlias": "net8.0-windows",
+          "net7.0-windows": {
+            "framework": "net7.0-windows7.0",
+            "targetAlias": "net7.0-windows",
             "projectReferences": {}
           }
         },
@@ -48,9 +48,9 @@
         "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
-        "net8.0-windows": {
-          "framework": "net8.0-windows7.0",
-          "targetAlias": "net8.0-windows",
+        "net7.0-windows": {
+          "framework": "net7.0-windows7.0",
+          "targetAlias": "net7.0-windows",
           "dependencies": {
             "Grasshopper": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -73,7 +73,7 @@
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -95,7 +95,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

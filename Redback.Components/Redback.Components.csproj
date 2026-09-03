@@ -14,7 +14,7 @@
 
   <PropertyGroup>
     <TargetExt>.gha</TargetExt>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="all" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
     <PackageReference Include="RhinoCommon" Version="8.21.*" ExcludeAssets="runtime" />
     <PackageReference Include="Grasshopper" Version="8.21.*" ExcludeAssets="runtime" />
     <PackageReference Include="Svg" Version="3.4.7" />
@@ -59,16 +59,29 @@
       <_NCARoot>$(ProgramFiles)\dotnet\shared\Microsoft.NETCore.App\</_NCARoot>
     </PropertyGroup>
     <ItemGroup>
-      <!-- Explicit net8.0 TFM paths — the lib\**\ and runtimes\**\ globs would match older
-           TFMs (e.g. netstandard2.0) that drag in System.Runtime Version=4.0.0.0. -->
-      <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\8.0.0\lib\net8.0\System.Drawing.Common.dll" />
-      <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\8.0.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll" />
-      <_WinShared Include="$(_NCARoot)8.*\System.Runtime.dll" />
-      <_WinShared Include="$(_NCARoot)8.*\System.Runtime.Loader.dll" />
-      <_WinShared Include="$(_NCARoot)8.*\System.Drawing.Primitives.dll" />
-      <_WinShared Include="$(_NCARoot)8.*\System.Collections.Concurrent.dll" />
+      <!-- Explicit net7.0 TFM paths — the lib\**\ and runtimes\**\ globs would match older
+           TFMs (e.g. netstandard2.0) that drag in System.Runtime Version=4.0.0.0, breaking RiR.
+           System.Runtime.dll and System.Runtime.Loader.dll are intentionally NOT bundled here.
+           When loaded from the plugin directory via file path, these type-forwarding facades
+           trigger a file-system probe for System.Private.CoreLib.dll which is not in the plugin
+           directory. They must be found via TPA (provided by the RiR host's CoreCLR setup),
+           which resolves the CoreLib reference internally without a file probe. -->
+      <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\7.0.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll" />
+      <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\net7.0\Microsoft.Win32.SystemEvents.dll" />
+      <_WinShared Include="$(_NCARoot)7.*\System.Drawing.Primitives.dll" />
+      <_WinShared Include="$(_NCARoot)7.*\System.Collections.Concurrent.dll" />
     </ItemGroup>
     <Copy SourceFiles="@(_WinShared)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <!-- Remove type-forwarding BCL facades that CopyLocalLockFileAssemblies pulls into the output.
+       When loaded from the plugin directory via file path, these facades trigger a file-system
+       probe for System.Private.CoreLib.dll (which is not in the plugin directory), causing
+       FileNotFoundException in Revit 2024 + RiR. They must come from the TPA provided by the
+       RiR host's CoreCLR, not from the plugin directory. -->
+  <Target Name="RemoveRuntimeFacades" BeforeTargets="CopyToGHLibraries">
+    <Delete Files="$(OutputPath)System.Runtime.dll;$(OutputPath)System.Runtime.Loader.dll"
+            Condition="Exists('$(OutputPath)System.Runtime.dll') Or Exists('$(OutputPath)System.Runtime.Loader.dll')" />
   </Target>
 
   <!-- Kill any processes that lock the .gha before we try to copy it. -->

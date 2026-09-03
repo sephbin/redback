@@ -6,21 +6,24 @@ using System.Runtime.Loader;
 
 namespace Redback.Components
 {
-    // Fixes missing .NET 8 shared-framework assemblies when Redback loads inside Rhino Inside
-    // Revit. The host process (Revit 2024, .NET Framework 4.8) bootstraps the .NET 8 CoreCLR
-    // via RiR, but the resulting runtime probe paths don't always include the .NET 8
+    // Fixes missing .NET 7 shared-framework assemblies when Redback loads inside Rhino Inside
+    // Revit. The host process (Revit 2024, .NET Framework 4.8) bootstraps the .NET 7 CoreCLR
+    // via RiR, but the resulting runtime probe paths don't always include the .NET 7
     // shared-framework directories. The [ModuleInitializer] fires before any type initialiser
     // (including RedbackGHBase's static ConcurrentDictionary field), so the resolver is always
     // registered in time.
     //
     // NOTE: We cannot use AppDomain.CurrentDomain.AssemblyResolve here. In Revit 2024 + RiR
-    // the .NET Framework 4.8 GAC provides System.Runtime Version=4.0.0.0. Because our plugin
-    // targets net8.0, the GAC's v4 cannot satisfy our v8 reference — the CLR probes the plugin
-    // directory instead (where we bundle System.Runtime v8). But System.AppDomain is NOT in the
-    // .NET Framework 4.8 version of System.Runtime's type-forward list, so any reference to
-    // AppDomain anywhere in the module causes TypeLoadException.
-    // AssemblyLoadContext comes from System.Runtime.Loader.dll (also bundled as v8), which is
-    // NOT in the .NET Framework 4.8 GAC, so there is no version collision.
+    // the .NET Framework 4.8 GAC provides System.Runtime Version=4.0.0.0 (it redirects all
+    // System.Runtime version requests to v4). The .NET Framework 4.8 version of System.Runtime
+    // does NOT include System.AppDomain in its type-forward list, so any reference to AppDomain
+    // from the [ModuleInitializer] causes TypeLoadException on every component.
+    //
+    // AssemblyLoadContext (from System.Runtime.Loader) is used instead. System.Runtime.Loader
+    // is NOT in the .NET Framework 4.8 GAC and is not bundled in the plugin directory — it is
+    // provided by the RiR host's CoreCLR TPA list. TPA resolution avoids the file-system probe
+    // for System.Private.CoreLib.dll that path-based loading of type-forwarding facades would
+    // otherwise trigger (and fail, since CoreLib.dll is not in the plugin directory).
     static class AssemblyResolver
     {
         // Microsoft .NET public key tokens we're willing to redirect:
@@ -83,7 +86,12 @@ namespace Redback.Components
                 {
                     var candidate = Path.Combine(versionDir, name.Name + ".dll");
                     if (File.Exists(candidate))
-                        return ctx.LoadFromAssemblyPath(candidate);
+                        // Assembly.LoadFrom uses the Default ALC's "load from" context, where
+                        // System.Private.CoreLib is always available. Avoid ctx.LoadFromAssemblyPath
+                        // here — loading type-forwarding facades via path triggers a file-system
+                        // probe for CoreLib.dll in the plugin ALC, which has no shared-framework
+                        // probe path in the RiR environment.
+                        return Assembly.LoadFrom(candidate);
                 }
             }
 

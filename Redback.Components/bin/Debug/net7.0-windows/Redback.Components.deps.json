@@ -6,13 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "Redback.Components/0.5.67": {
+      "Redback.Components/0.5.72": {
         "dependencies": {
-          "Grasshopper": "8.21.25188.17001",
-          "Microsoft.CSharp": "4.7.0",
-          "RhinoCommon": "8.21.25188.17001",
-          "Svg": "3.4.7",
-          "System.Drawing.Common": "7.0.0"
+          "Svg": "3.4.7"
         },
         "runtime": {
           "Redback.Components.gha": {}
@@ -26,22 +22,9 @@
           }
         }
       },
-      "Grasshopper/8.21.25188.17001": {
-        "dependencies": {
-          "RhinoCommon": "8.21.25188.17001"
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {},
-      "Microsoft.Win32.SystemEvents/7.0.0": {},
-      "RhinoCommon/8.21.25188.17001": {
-        "dependencies": {
-          "System.Drawing.Common": "7.0.0"
-        }
-      },
       "Svg/3.4.7": {
         "dependencies": {
-          "ExCSS": "4.2.3",
-          "System.Drawing.Common": "7.0.0"
+          "ExCSS": "4.2.3"
         },
         "runtime": {
           "lib/net6.0/Svg.dll": {
@@ -49,16 +32,11 @@
             "fileVersion": "3.4.7.1"
           }
         }
-      },
-      "System.Drawing.Common/7.0.0": {
-        "dependencies": {
-          "Microsoft.Win32.SystemEvents": "7.0.0"
-        }
       }
     }
   },
   "libraries": {
-    "Redback.Components/0.5.67": {
+    "Redback.Components/0.5.72": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -70,47 +48,12 @@
       "path": "excss/4.2.3",
       "hashPath": "excss.4.2.3.nupkg.sha512"
     },
-    "Grasshopper/8.21.25188.17001": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qpt9XQWuKLFfzn2cnYf5akfHRwYuffthK5AXsSY1UhjD0eG6bYSTtmAkNVH+Wdg130MZkGqJmPd012Om1kJPBA==",
-      "path": "grasshopper/8.21.25188.17001",
-      "hashPath": "grasshopper.8.21.25188.17001.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
-    },
-    "Microsoft.Win32.SystemEvents/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
-      "path": "microsoft.win32.systemevents/7.0.0",
-      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
-    },
-    "RhinoCommon/8.21.25188.17001": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Wo6JXheyDBvilyIwDY6xZCQJC4170jzAlTSlMgh8yokUY+vYyCl4KJVXZofIOynNt/xx5wLqb2On5gZZekXR6w==",
-      "path": "rhinocommon/8.21.25188.17001",
-      "hashPath": "rhinocommon.8.21.25188.17001.nupkg.sha512"
-    },
     "Svg/3.4.7": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Omez7ly5BGhg3OzdV+LHZ5sI0+JQ6hF7WVKUeyHw4jRvcEWNCPCf1MWMBaf+R0DRBSZHx5EUHwBTEF+2oYtsAw==",
       "path": "svg/3.4.7",
       "hashPath": "svg.3.4.7.nupkg.sha512"
-    },
-    "System.Drawing.Common/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
-      "path": "system.drawing.common/7.0.0",
-      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
     }
   }
 }
