@@ -1,16 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "NCqI3+vxM0Y=",
+  "dgSpecHash": "TziqjsPcZIw=",
   "success": true,
   "projectFilePath": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\excss\\4.2.3\\excss.4.2.3.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\grasshopper\\8.21.25188.17001\\grasshopper.8.21.25188.17001.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\rhinocommon\\8.21.25188.17001\\rhinocommon.8.21.25188.17001.nupkg.sha512",
     "C:\\Users\\Andrew.Butler\\.nuget\\packages\\svg\\3.4.7\\svg.3.4.7.nupkg.sha512",
-    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\Andrew.Butler\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

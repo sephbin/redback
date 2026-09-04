@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj": {
-      "version": "0.5.75",
+      "version": "0.5.79",
       "restore": {
         "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
         "projectName": "Redback.Components",
@@ -22,16 +22,16 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0-windows"
+          "net48"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0-windows": {
-            "framework": "net7.0-windows7.0",
-            "targetAlias": "net7.0-windows",
+          "net48": {
+            "framework": "net48",
+            "targetAlias": "net48",
             "projectReferences": {}
           }
         },
@@ -48,9 +48,9 @@
         "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
-        "net7.0-windows": {
-          "framework": "net7.0-windows7.0",
-          "targetAlias": "net7.0-windows",
+        "net48": {
+          "framework": "net48",
+          "targetAlias": "net48",
           "dependencies": {
             "Grasshopper": {
               "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -71,28 +71,9 @@
               "target": "Package",
               "version": "[3.4.7, )"
             },
-            "System.Drawing.Common": {
+            "System.Text.Json": {
               "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
+              "version": "[8.0.5, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400\\RuntimeIdentifierGraph.json"

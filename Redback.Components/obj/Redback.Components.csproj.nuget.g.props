@@ -13,7 +13,4 @@
     <SourceRoot Include="C:\Users\Andrew.Butler\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)rhinocommon\8.21.25188.17001\build\net7.0\RhinoCommon.props" Condition="Exists('$(NuGetPackageRoot)rhinocommon\8.21.25188.17001\build\net7.0\RhinoCommon.props')" />
-  </ImportGroup>
 </Project>

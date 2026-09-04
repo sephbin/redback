@@ -13,3 +13,16 @@ E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.Generated
 E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.csproj.CoreCompileInputs.cache
 E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.gha
 E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.pdb
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback.Components.sourcelink.json
+E:\mydev\redback\Redback.Components\bin\Debug\net48\ExCSS.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\Microsoft.Bcl.AsyncInterfaces.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\Svg.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Buffers.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Memory.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Numerics.Vectors.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Runtime.CompilerServices.Unsafe.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Text.Encodings.Web.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Text.Json.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.Threading.Tasks.Extensions.dll
+E:\mydev\redback\Redback.Components\bin\Debug\net48\System.ValueTuple.dll
+E:\mydev\redback\Redback.Components\obj\Debug\net48\Redback..FB633910.Up2Date

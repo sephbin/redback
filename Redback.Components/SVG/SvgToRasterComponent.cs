@@ -266,7 +266,7 @@ namespace Redback.Components.SVG
             if (string.IsNullOrEmpty(value)) return 0;
             int i = value.Length - 1;
             while (i >= 0 && !char.IsDigit(value[i]) && value[i] != '.') i--;
-            return float.TryParse(value[..(i + 1)], NumberStyles.Float,
+            return float.TryParse(value.Substring(0, i + 1), NumberStyles.Float,
                 CultureInfo.InvariantCulture, out float f) ? f : 0;
         }
 

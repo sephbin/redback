@@ -14,23 +14,23 @@
 
   <PropertyGroup>
     <TargetExt>.gha</TargetExt>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <!-- net48: targets .NET Framework 4.8, which is what Revit 2023/2024 RiR runs plugins under.
+         .NET 7 and .NET 8 hosts (standalone Rhino 8, Revit 2025+) load net48 assemblies via
+         backwards compatibility, so this single TFM covers all supported environments. -->
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <AssemblyName>Redback.Components</AssemblyName>
     <AssemblyVersion>$(Version).$(BuildCounter)</AssemblyVersion>
     <UseWindowsForms>true</UseWindowsForms>
-    <!-- Copy NuGet runtime DLLs (e.g. Svg.NET) to output so they're bundled in the yak package. -->
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="all" />
-    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
     <PackageReference Include="RhinoCommon" Version="8.21.*" ExcludeAssets="runtime" />
     <PackageReference Include="Grasshopper" Version="8.21.*" ExcludeAssets="runtime" />
     <PackageReference Include="Svg" Version="3.4.7" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,47 +42,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-  <!-- System.Drawing.Common is part of the Windows Desktop App shared framework, so the SDK
-       won't copy it to output even with CopyLocalLockFileAssemblies. It IS available in
-       standalone Rhino 8's runtime, but not when loaded via Rhino Inside Revit (which boots
-       the .NET 8 CoreCLR inside Revit's .NET Framework 4.8 process without the full shared
-       framework probe paths). Explicitly copying it alongside the .gha fixes RiR loading. -->
-  <Target Name="BundleWindowsSharedAssemblies" BeforeTargets="CopyToGHLibraries">
-    <PropertyGroup>
-      <!-- Shared framework DLLs not in any NuGet package and not on the RiR probe path.
-           We target net8.0 so all references are to Version=8.0.0.0. The .NET Framework 4.8
-           GAC provides System.Runtime Version=4.0.0.0, which cannot satisfy a v8 request,
-           so the GAC does not interfere and the CLR probes the plugin directory instead.
-           System.Runtime and System.Runtime.Loader must be bundled so the [ModuleInitializer]
-           in AssemblyResolver.cs can JIT before the resolver itself is registered. -->
-      <_NCARoot>$(ProgramFiles)\dotnet\shared\Microsoft.NETCore.App\</_NCARoot>
-    </PropertyGroup>
-    <ItemGroup>
-      <!-- Explicit net7.0 TFM paths — the lib\**\ and runtimes\**\ globs would match older
-           TFMs (e.g. netstandard2.0) that drag in System.Runtime Version=4.0.0.0, breaking RiR.
-           System.Runtime.dll and System.Runtime.Loader.dll are intentionally NOT bundled here.
-           When loaded from the plugin directory via file path, these type-forwarding facades
-           trigger a file-system probe for System.Private.CoreLib.dll which is not in the plugin
-           directory. They must be found via TPA (provided by the RiR host's CoreCLR setup),
-           which resolves the CoreLib reference internally without a file probe. -->
-      <_WinShared Include="$(NuGetPackageRoot)system.drawing.common\7.0.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll" />
-      <_WinShared Include="$(NuGetPackageRoot)microsoft.win32.systemevents\7.0.0\lib\net7.0\Microsoft.Win32.SystemEvents.dll" />
-      <_WinShared Include="$(_NCARoot)7.*\System.Drawing.Primitives.dll" />
-      <_WinShared Include="$(_NCARoot)7.*\System.Collections.Concurrent.dll" />
-    </ItemGroup>
-    <Copy SourceFiles="@(_WinShared)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
-  </Target>
-
-  <!-- Remove type-forwarding BCL facades that CopyLocalLockFileAssemblies pulls into the output.
-       When loaded from the plugin directory via file path, these facades trigger a file-system
-       probe for System.Private.CoreLib.dll (which is not in the plugin directory), causing
-       FileNotFoundException in Revit 2024 + RiR. They must come from the TPA provided by the
-       RiR host's CoreCLR, not from the plugin directory. -->
-  <Target Name="RemoveRuntimeFacades" BeforeTargets="CopyToGHLibraries">
-    <Delete Files="$(OutputPath)System.Runtime.dll;$(OutputPath)System.Runtime.Loader.dll"
-            Condition="Exists('$(OutputPath)System.Runtime.dll') Or Exists('$(OutputPath)System.Runtime.Loader.dll')" />
-  </Target>
 
   <!-- Generate version attributes from BuildVersion.props so the assembly version matches the
        Yak manifest version. AssemblyInfo.cs intentionally omits version attributes; this target
