@@ -413,7 +413,7 @@ namespace Redback.Render
         // Private helpers
         // ──────────────────────────────────────────────────────────────────────
 
-        private static void WriteBitmap(int[] pixels, int width, int height, string path)
+        internal static void WriteBitmap(int[] pixels, int width, int height, string path)
         {
             var bmp     = new Bitmap(width, height, PixelFormat.Format32bppArgb);
             var bmpData = bmp.LockBits(

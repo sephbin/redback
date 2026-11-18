@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj": {
-      "version": "0.5.79",
+      "version": "0.5.89",
       "restore": {
         "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
         "projectName": "Redback.Components",
@@ -76,7 +76,7 @@
               "version": "[8.0.5, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
