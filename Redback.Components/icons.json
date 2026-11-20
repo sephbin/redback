@@ -1,0 +1,25 @@
+{
+  "size": 24,
+  "margin": 1,
+  "output_dir": "Resources",
+  "work_dir": "icons_ai",
+  "key": "#0000FF",
+  "mode": "smooth",
+  "style": "Stylised flat icon, NOT pixel art: a few broad, bold, simple shapes with confident gestures, like a modern app icon designed to be read at 24x24 pixels. Tonal variation instead of outlines: each colour in two or three tones (a light, a mid and a dark tone) laid down as large flat planes to show light and form; crisp clean edges. No outlines or strokes around shapes, no thin lines, no small details, minimal internal detail (at most one or two accent shapes inside a form), no text, no texture, no gradients finer than the broad tonal planes. Composition: ONE bold silhouette filling most of the canvas; never a diagram, no arrows between things, no scenes. Magenta is the brand colour, used for any subject without a natural colour of its own; other colours only where the subject needs them (green trees, brown wood, grey metal, yellow light). Shapes must stay readable on both light grey and dark grey backgrounds",
+  "style_pixel": "Redback plugin icon style: composition is ONE simple bold silhouette as the main subject filling most of the grid, plus optionally ONE small badge icon (about 8x8 cells) overlapping the bottom-right corner to show the action or modifier; never a diagram, no arrows between things, no scenes, no multiple equal objects. NO outlines at all - no black or dark border drawn around shapes; every shape is defined only by solid blocks of flat colour and the contrast between neighbouring colours. Magenta is the brand colour: use it for the badge and for any subject without a natural colour of its own. Use a darker shade tone of the same colour (e.g. dark magenta) for depth or to separate overlapping parts, and a lighter highlight tone sparingly. Shapes must stay readable against both a light grey and a dark grey background, so avoid large white or pale areas on their own. Bold, chunky shapes with strokes at least 2 cells thick; no single-cell detail. Other colours only where the subject needs them (green trees, brown wood, grey metal, yellow light)",
+  "palette": {
+    "black": "#000000",
+    "magenta": "#EC008C",
+    "darkmagenta": "#8C0055",
+    "pink": "#F7A8D0",
+    "white": "#FFFFFF",
+    "lightgrey": "#C8C8C8",
+    "grey": "#606060",
+    "red": "#ED1C24",
+    "green": "#3DB54A",
+    "darkgreen": "#1E6B2E",
+    "brown": "#8A5A2B",
+    "yellow": "#F8C000",
+    "cyan": "#29ABE2"
+  }
+}

@@ -787,7 +787,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "0.5.89",
+    "version": "0.5.92",
     "restore": {
       "projectUniqueName": "E:\\mydev\\redback\\Redback.Components\\Redback.Components.csproj",
       "projectName": "Redback.Components",

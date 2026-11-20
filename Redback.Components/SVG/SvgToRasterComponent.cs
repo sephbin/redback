@@ -24,6 +24,7 @@ namespace Redback.Components.SVG
                    "3-SVG") { }
 
         public override Guid ComponentGuid => new Guid("c2d3e4f5-a6b7-4890-bcde-f09876543210");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-SvgToImage.png");
         public override GH_Exposure Exposure => GH_Exposure.secondary;
 
         protected override void RegisterInputParams(GH_InputParamManager pManager)

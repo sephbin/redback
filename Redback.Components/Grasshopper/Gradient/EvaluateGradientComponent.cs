@@ -14,6 +14,7 @@ namespace Redback.Components.Grasshopper.Gradient
                    "Gradient") { }
 
         public override Guid ComponentGuid => new Guid("c3d4e5f6-a7b8-9012-cdef-123456789013");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-EvaluateGradient.png");
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         protected override void RegisterInputParams(GH_InputParamManager pManager)

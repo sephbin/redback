@@ -14,6 +14,7 @@ namespace Redback.Components.DataMisc
             "2-Data - Misc") { }
 
         public override Guid ComponentGuid => new Guid("72fc32cf-0615-45ae-9278-c2f2c3273bdb");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-RenderTemplate.png");
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         protected override void RegisterInputParams(GH_InputParamManager p)

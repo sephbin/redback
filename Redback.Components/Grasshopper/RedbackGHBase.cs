@@ -11,7 +11,7 @@ namespace Redback.Components.Grasshopper
 
         private static readonly ConcurrentDictionary<string, System.Drawing.Bitmap> _iconCache = new();
 
-        protected static System.Drawing.Bitmap LoadIcon(string resourceName)
+        protected internal static System.Drawing.Bitmap LoadIcon(string resourceName)
         {
             return _iconCache.GetOrAdd(resourceName, static name =>
             {

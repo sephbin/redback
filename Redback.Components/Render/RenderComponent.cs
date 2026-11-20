@@ -22,6 +22,7 @@ namespace Redback.Components.Render
                    "Render") { }
 
         public override Guid ComponentGuid => new Guid("e3f4a5b6-c7d8-4901-abcd-ef2345678902");
+        protected override System.Drawing.Bitmap Icon => LoadIcon("Icon-Render.png");
         public override GH_Exposure Exposure => GH_Exposure.primary;
 
         protected override void RegisterInputParams(GH_InputParamManager pManager)
